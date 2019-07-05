@@ -5,10 +5,13 @@
  */
 package com.movieNIghts.movieNights.repository;
 
+import com.movieNIghts.movieNights.model.Usersandmovies;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  *
  * @author bizmi
  */
-public interface UsersAndMoviesRepository {
+public interface UsersAndMoviesRepository extends JpaRepository<Usersandmovies,Integer>{
     
 }
