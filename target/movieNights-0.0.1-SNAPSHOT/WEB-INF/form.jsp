@@ -15,6 +15,7 @@
     <body>
         <form:form modelAttribute="movie" method="POST" action="${pageContext.request.contextPath}/movies/doinsert">
             <form:input  path="shName"/>
+            <form:input  path="shName"/>
             <form:errors  path="shName" cssClass="error"/>
             <input type="submit">    
         </form:form>

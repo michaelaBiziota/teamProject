@@ -16,13 +16,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class movieController {
     
-    @RequestMapping(value="/insert",method=RequestMethod.GET)
-    public String insertMovie(){
-        
-        
-    
-    
+    @RequestMapping(value="insert",method=RequestMethod.GET)
+    public String insertMovie(){ 
     return "";
+    }
+    
+    @RequestMapping(value="register",method=RequestMethod.GET)
+    public String register(){
+    
     }
     
     

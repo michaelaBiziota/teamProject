@@ -12,9 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="inserMovie">
-        <input type="text" placeholder="movie title">
-        <p></p>
-        </form>
+        <a href="${pageContext.request.contextPath}/login">Login</a>
+        <a href="${pageContext.request.contextPath}/register">Sign up</a>
     </body>
 </html>

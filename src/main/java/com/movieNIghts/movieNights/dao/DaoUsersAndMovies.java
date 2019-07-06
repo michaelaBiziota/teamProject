@@ -5,10 +5,13 @@
  */
 package com.movieNIghts.movieNights.dao;
 
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author bizmi
  */
+@Service
 public class DaoUsersAndMovies {
     
 }
