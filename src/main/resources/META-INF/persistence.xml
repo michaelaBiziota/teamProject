@@ -5,6 +5,9 @@
     <class>com.movieNIghts.movieNights.model.Roles</class>
     <class>com.movieNIghts.movieNights.model.Users</class>
     <class>com.movieNIghts.movieNights.model.Usersandmovies</class>
+    <class>com.movieNIghts.movieNights.model.User</class>
+    <class>com.movieNIghts.movieNights.model.Userandmovies</class>
+    <class>com.movieNIghts.movieNights.model.Userandmovie</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://5.189.135.166:3011/mtp?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>

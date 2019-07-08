@@ -13,18 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  * @author bizmi
  */
-@Controller
-public class movieController {
-    
-    @RequestMapping(value="insert",method=RequestMethod.GET)
-    public String insertMovie(){ 
-    return "";
-    }
-    
-    @RequestMapping(value="register",method=RequestMethod.GET)
-    public String register(){
-    
-    }
-    
-    
-}
+//@Controller
+//public class movieController {
+//    
+////    @RequestMapping(value="movies",method=RequestMethod.POST)
+////    public String movie(){ 
+////    return "movies";
+////    }
+// 
+//    
+//}
