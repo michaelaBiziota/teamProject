@@ -25,6 +25,13 @@ public void registration(User user){
 ur.save(user);
 }
 
+public User getUserByEmail(String email){
+return ur.findByEmail(email);
+}
+
+public User getByUsername(String username){
+return ur.findByUsername(username);
+}
 
     }
     

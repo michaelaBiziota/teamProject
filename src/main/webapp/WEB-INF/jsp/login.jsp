@@ -1,114 +1,64 @@
 <%-- 
     Document   : login
-    Created on : 7 Ιουλ 2019, 8:36:39 μμ
+    Created on : 8 Ιουλ 2019, 7:40:45 μμ
     Author     : bizmi
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-            background: url("image/iron1.png") no-repeat;
- 
-        }
-
-        .box {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 400px;
-            padding: 40px;
-            background: rgba(0, 0, 0, .8);
-            box-sizing: border-box;
-            box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
-            border-radius: 10px;
-        }
-
-        .box h2 {
-            margin: 0 0 30px;
-            padding: 0;
-            color: #fff;
-            color: #03a9f4;
-            text-align: center;
-        }
-
-        .box .inputBox {
-            position: relative;
-        }
-
-        .box .inputBox input {
-            width: 100%;
-            padding: 10px 0;
-            font-size: 16px;
-            color: #fff;
-            margin-bottom: 30px;
-            border: none;
-            border-bottom: 1px solid #fff;
-            outline: none;
-            background: transparent;
-        }
-
-        .box .inputBox label {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 10px 0;
-            font-size: 16px;
-            color: #fff;
-            pointer-events: none;
-            transition: .5s;
-        }
-
-        .box .inputBox input:focus~label,
-        .box .inputBox input:valid~label {
-            top: -20px;
-            left: 0;
-            color: #03a9f4;
-            font-size: 12px;
-        }
-
-        .box input[type="submit"] {
-            background: transparent;
-            border: none;
-            outline: none;
-            color: #fff;
-            background: #03a9f4;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-    </style>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/styles.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-    <body>
-        <div class="box">
-            <h2>Login</h2>
-              <form name='f' action="login" method='POST'>
-                <div class="inputBox">
-                    <input type="text" name="username" required="">
-                    <label>Username</label>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+  ${SPRING_SECURITY_LAST_EXCEPTION.message}
+                <div class="card-header">
+                    <h3>Sign In</h3>
                 </div>
-                <div class="inputBox">
-                    <input type="password" name="password" required="">
-                    <label>Password</label>
+                <div class="card-body">
+            <form name='f' action="login" method='POST'>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="username" name="username" required>
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="password" name="password" required>
+                        </div>
+                        <div class="row align-items-center remember">
+                            <input type="checkbox">Remember Me
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn float-right login_btn">
+                        </div>
+                    </form>
                 </div>
-                <input type="submit" name="submit" value="submit">
-            </form>
-                    <a href="registerUser">Register</a>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                        Don't have an account?<a href="registerUser">Sign Up</a>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="#">Forgot your password?</a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
-    </body>
+    </div>
+</body>
 
 </html>

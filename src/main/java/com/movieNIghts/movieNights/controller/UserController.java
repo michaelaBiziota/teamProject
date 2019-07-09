@@ -5,9 +5,13 @@
  */
 package com.movieNIghts.movieNights.controller;
 
+import com.movieNIghts.movieNights.conf.MyUserDetailsService;
 import com.movieNIghts.movieNights.dao.DaoRoles;
 import com.movieNIghts.movieNights.dao.DaoUser;
 import com.movieNIghts.movieNights.model.User;
+import com.movieNIghts.movieNights.repository.UserRepository;
+import com.movieNIghts.movieNights.validation.MailValidator;
+import com.movieNIghts.movieNights.validation.UserValidation;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -35,10 +39,18 @@ public class UserController {
     DaoRoles dr;
     @Autowired
     BCryptPasswordEncoder passwordEncoder;
-    
-//        @InitBinder
-//    private void initBider(WebDataBinder binder){
-//    binder.setValidator(vs);}
+    @Autowired
+    UserValidation uv;
+    @Autowired
+    MyUserDetailsService ud;
+//    @Autowired
+//    MailValidator mv;
+
+    @InitBinder
+    private void initBider(final WebDataBinder binder) {
+        binder.addValidators(uv);
+        
+    }
 
     @RequestMapping(value = "registerUser", method = RequestMethod.GET)
     public String registerUser(ModelMap mm) {
@@ -49,7 +61,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "doRegisterUser", method = RequestMethod.POST)
-    public String doRegisterUser(@RequestParam(value="password") String pass, @ModelAttribute("user") User us, @Valid User ur, BindingResult br) {
+    public String doRegisterUser(@RequestParam(value = "password") String pass, @ModelAttribute("user") User us, @Valid User user, BindingResult br) {
         if (br.hasErrors()) {
             return "registration";
         } else {

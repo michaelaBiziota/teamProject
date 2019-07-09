@@ -11,17 +11,23 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <style>.error{background-color: red} </style>
     </head>
     <body>
         <form:form modelAttribute="user" method="POST" action="${pageContext.request.contextPath}/doRegisterUser">
-            <form:input  path="firstname" cssClass="error" placeholder="firstname"/>
-            <form:input  path="lastname" cssClass="error" placeholder="lastname"/>
-            <form:input  path="username" cssClass="error" placeholder="username"/>
-            <form:input  path="email" cssClass="error" placeholder="email"/>
-            <form:input  path="password" cssClass="error" name="password" placeholder="password"/>
+            <form:input  path="firstname" placeholder="firstname" />
+            <form:errors  path="firstname" cssClass="error"/>
+            <form:input  path="lastname"  placeholder="lastname" />
+            <form:errors  path="lastname" cssClass="error"/>
+            <form:input  path="username"  placeholder="username" />
+            <form:errors  path="username" cssClass="error"/>
+            <form:input  path="email"  placeholder="email"/>
+            <form:errors  path="email" cssClass="error"/>
+            <form:input  path="password"  name="password" placeholder="password" />
+            <form:errors  path="password" cssClass="error"/>
             <input type="submit">    
         </form:form>
-           
+
 
     </body>
 </html>
