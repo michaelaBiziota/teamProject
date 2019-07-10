@@ -26,7 +26,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserDetailsService userDetailsService;
-    
 
 //    @Bean
 //    public AuthenticationProvider authProvider() {
@@ -35,25 +34,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //        provider.setPasswordEncoder(passwordEncoder());
 //        return provider;
 //    }
-        @Autowired
+    @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
- 
+
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
- 
-    }
-    
 
-        @Bean
+    }
+
+    @Bean
     public BCryptPasswordEncoder passwordEncoder() {
-        return  new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder();
     }
-
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-        .csrf().disable()
-                .authorizeRequests().antMatchers("/login*","/registerUser","/doRegisterUser","/static/**").permitAll()
+                .csrf().disable()
+                .authorizeRequests().antMatchers("/login*", "/registerUser", "/doRegisterUser", "/static/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -63,7 +60,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout().invalidateHttpSession(true)
                 .clearAuthentication(true)
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/logout-success").permitAll();
-                
+                .logoutSuccessUrl("/logout-success").permitAll()
+        .and()
+        .rememberMe().key("uniqueAndSecret");
     }
 }

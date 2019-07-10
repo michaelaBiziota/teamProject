@@ -21,7 +21,7 @@
     <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="card">
-  ${SPRING_SECURITY_LAST_EXCEPTION.message}
+                            <div id="bc">        ${SPRING_SECURITY_LAST_EXCEPTION.message}         </div>
                 <div class="card-header">
                     <h3>Sign In</h3>
                 </div>
@@ -41,7 +41,7 @@
                             <input type="password" class="form-control" placeholder="password" name="password" required>
                         </div>
                         <div class="row align-items-center remember">
-                            <input type="checkbox">Remember Me
+                            <input type="checkbox" name="remember-me" value="true">Remember Me
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Login" class="btn float-right login_btn">
@@ -56,6 +56,7 @@
                         <a href="#">Forgot your password?</a>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

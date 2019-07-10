@@ -6,6 +6,8 @@ com\movieNIghts\movieNights\model\UserandmoviePK_.class
 com\movieNIghts\movieNights\validation\UserValidation.class
 com\movieNIghts\movieNights\model\Roles_.class
 com\movieNIghts\movieNights\model\UserandmoviePK.class
+com\movieNIghts\movieNights\authentication\IAuthenticationFacade.class
+com\movieNIghts\movieNights\controller\MoviesController.class
 com\movieNIghts\movieNights\repository\UserAndMovieRepository.class
 com\movieNIghts\movieNights\conf\UserDetailsImpl.class
 com\movieNIghts\movieNights\controller\UserController.class
@@ -19,4 +21,5 @@ com\movieNIghts\movieNights\model\Roles.class
 com\movieNIghts\movieNights\controller\HomeController.class
 com\movieNIghts\movieNights\repository\RolesRepository.class
 com\movieNIghts\movieNights\MovieNightsApplication.class
+com\movieNIghts\movieNights\authentication\AuthenticationFacadeImpl.class
 com\movieNIghts\movieNights\model\Userandmovie.class

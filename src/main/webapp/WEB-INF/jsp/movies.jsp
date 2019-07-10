@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +13,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+       <sec:authorize access="isAuthenticated()">
+    authenticated as <sec:authentication property="principal.username" /> 
+</sec:authorize>
+    <a href="logout">Logout</a>
     </body>
 </html>

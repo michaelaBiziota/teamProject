@@ -5,6 +5,8 @@
  */
 package com.movieNIghts.movieNights.controller;
 
+import com.movieNIghts.movieNights.authentication.IAuthenticationFacade;
+import com.movieNIghts.movieNights.authentication.AuthenticationFacadeImpl;
 import com.movieNIghts.movieNights.conf.MyUserDetailsService;
 import com.movieNIghts.movieNights.dao.DaoRoles;
 import com.movieNIghts.movieNights.dao.DaoUser;
@@ -13,6 +15,7 @@ import com.movieNIghts.movieNights.repository.UserRepository;
 import com.movieNIghts.movieNights.validation.UserValidation;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,6 +27,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -43,11 +47,13 @@ public class UserController {
     @Autowired
     MyUserDetailsService ud;
 
+    @Autowired
+    IAuthenticationFacade authenticationFacade;
 
     @InitBinder
     private void initBider(final WebDataBinder binder) {
         binder.setValidator(uv);
-        
+
     }
 
     @RequestMapping(value = "registerUser", method = RequestMethod.GET)
@@ -73,4 +79,12 @@ public class UserController {
         return "movies";
     }
 
+    @RequestMapping(value = "/username", method = RequestMethod.GET)
+    @ResponseBody
+    public String currentUserNameSimple() {
+        Authentication authentication = authenticationFacade.getAuthentication();
+        return authentication.getName();
+    }
 }
+
+

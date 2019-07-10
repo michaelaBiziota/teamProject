@@ -21,6 +21,7 @@ public class DaoUser{
     @Autowired 
     UserRepository ur;
 
+    
 public void registration(User user){
 ur.save(user);
 }

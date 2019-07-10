@@ -8,6 +8,9 @@ html, body {
     font-family: 'Numans', sans-serif;
 }
 
+#bc{text-align: center;
+color: white;
+font-size: 20px;}
 .container {
     height: 100%;
     align-content: center;

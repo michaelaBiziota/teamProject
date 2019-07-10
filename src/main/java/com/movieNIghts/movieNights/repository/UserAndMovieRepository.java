@@ -17,5 +17,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserAndMovieRepository extends JpaRepository<Userandmovie,UserandmoviePK>{
-    
+
 }
