@@ -1,6 +1,5 @@
 com\movieNIghts\movieNights\dao\DaoUser.class
 com\movieNIghts\movieNights\model\User_.class
-com\movieNIghts\movieNights\validation\MailValidator.class
 com\movieNIghts\movieNights\conf\WebSecurityConfig.class
 com\movieNIghts\movieNights\ServletInitializer.class
 com\movieNIghts\movieNights\model\UserandmoviePK_.class

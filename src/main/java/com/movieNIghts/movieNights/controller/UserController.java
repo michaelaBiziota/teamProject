@@ -10,7 +10,6 @@ import com.movieNIghts.movieNights.dao.DaoRoles;
 import com.movieNIghts.movieNights.dao.DaoUser;
 import com.movieNIghts.movieNights.model.User;
 import com.movieNIghts.movieNights.repository.UserRepository;
-import com.movieNIghts.movieNights.validation.MailValidator;
 import com.movieNIghts.movieNights.validation.UserValidation;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,12 +42,11 @@ public class UserController {
     UserValidation uv;
     @Autowired
     MyUserDetailsService ud;
-//    @Autowired
-//    MailValidator mv;
+
 
     @InitBinder
     private void initBider(final WebDataBinder binder) {
-        binder.addValidators(uv);
+        binder.setValidator(uv);
         
     }
 
@@ -62,6 +60,7 @@ public class UserController {
 
     @RequestMapping(value = "doRegisterUser", method = RequestMethod.POST)
     public String doRegisterUser(@RequestParam(value = "password") String pass, @ModelAttribute("user") User us, @Valid User user, BindingResult br) {
+
         if (br.hasErrors()) {
             return "registration";
         } else {

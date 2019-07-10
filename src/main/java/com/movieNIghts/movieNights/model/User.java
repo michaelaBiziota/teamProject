@@ -20,6 +20,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -53,7 +54,7 @@ public class User implements Serializable {
     @Column(name = "username")
     private String username;
     @Size(max = 400)
-    @Length(min=5,message = "Password should be at least 5 characters")
+
 
     @Column(name = "password")
     private String password;

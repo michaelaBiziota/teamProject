@@ -25,12 +25,17 @@ public void registration(User user){
 ur.save(user);
 }
 
-public User getUserByEmail(String email){
-return ur.findByEmail(email);
+public boolean EmailAlreadyExists(String email){
+User u=ur.findByEmail(email);
+if (u==null){return false;}
+else{return true;}
 }
 
-public User getByUsername(String username){
-return ur.findByUsername(username);
+public boolean usernameAlreadyExists(String username){
+User user= ur.findByUsername(username);
+if (user==null){return false;}
+else{return true;}
+
 }
 
     }

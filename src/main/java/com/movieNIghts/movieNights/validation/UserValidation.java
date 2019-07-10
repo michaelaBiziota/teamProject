@@ -21,10 +21,8 @@ import org.springframework.validation.Validator;
 @Component
 public class UserValidation implements Validator {
 
-    
     @Autowired
     DaoUser du;
-    
 
     @Override
     public boolean supports(Class<?> type) {
@@ -34,16 +32,18 @@ public class UserValidation implements Validator {
     @Override
     public void validate(Object o, Errors errors) {
         User user = (User) o;
-        if (user.getUsername().equals(du.getByUsername(user.getUsername()).getUsername()));
-       errors.rejectValue("username", "username.already.exists");
-//        if (user.getEmail().equals(du.getUserByEmail(user.getEmail()).getEmail()));
-//        errors.rejectValue("email", "email.already.exists");
-//        
-       
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "username.empty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "password.empty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "email.empty");
+        if (du.usernameAlreadyExists(user.getUsername())) {
+            errors.rejectValue("username", "username.already.exists");
+        } if (du.EmailAlreadyExists(user.getEmail())) {
+            errors.rejectValue("email", "email.already.exists");
+        }
+        if(!user.getEmail().matches("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"))
+        {errors.rejectValue("email", "invalid.email");}
+        if(user.getPassword().length()<5){errors.rejectValue("password","password.min");}
+
     }
 
-
-
-
-    }  
-
+}
