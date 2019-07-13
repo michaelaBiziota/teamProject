@@ -19,7 +19,7 @@ public class HomeController {
     @RequestMapping(value = "/login")
     public String loginPage() {
 
-        return "login";
+        return "login";//hjhj
     }
 
     @RequestMapping(value = "/logout-success")
