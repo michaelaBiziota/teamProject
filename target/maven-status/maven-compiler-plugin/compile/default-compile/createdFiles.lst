@@ -12,7 +12,6 @@ com\movieNIghts\movieNights\dao\PasswordResetDao.class
 com\movieNIghts\movieNights\authentication\IAuthenticationFacade.class
 com\movieNIghts\movieNights\controller\MoviesController.class
 com\movieNIghts\movieNights\repository\UserAndMovieRepository.class
-.netbeans_automatic_build
 com\movieNIghts\movieNights\conf\UserDetailsImpl.class
 com\movieNIghts\movieNights\controller\UserController.class
 com\movieNIghts\movieNights\model\User.class
