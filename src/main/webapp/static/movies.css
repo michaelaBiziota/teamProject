@@ -1,0 +1,25 @@
+body {
+    background-image: url("bg2.png");
+    color: white;
+}
+
+#movies img {
+    width: 106%;
+    border-radius: 15px;
+}
+
+@media(min-width:960px) {
+    #movies .col-md-3 .well {
+        height: auto;
+    }
+    #movies .col-md-3 img {
+        height: auto;
+    }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    margin-right: 20px;
+}

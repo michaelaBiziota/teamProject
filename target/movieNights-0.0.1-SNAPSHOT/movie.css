@@ -1,0 +1,27 @@
+body {
+    background-image: url("static/bg2.png");
+    color: white;
+}
+
+#movie img {
+    width: auto;
+    border-radius: 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#movie li {
+    font-size: 17px;
+    background-color: rgba(128, 128, 128, 0.178);
+    border-radius: 10px;
+    margin: 3px;
+}
+
+#movie .well {
+    margin-top: 15px;
+    font-size: 16px;
+    background-color: rgba(128, 128, 128, 0.178);
+    padding: 15px;
+    border-radius: 15px;
+}
