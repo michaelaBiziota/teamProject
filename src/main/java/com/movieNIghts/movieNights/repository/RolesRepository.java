@@ -7,11 +7,13 @@ package com.movieNIghts.movieNights.repository;
 
 import com.movieNIghts.movieNights.model.Roles;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author bizmi
  */
+@Repository
 public interface RolesRepository extends JpaRepository<Roles,Integer>{
     
 }

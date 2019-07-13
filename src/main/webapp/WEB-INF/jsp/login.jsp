@@ -53,7 +53,7 @@
                         Don't have an account?<a href="registerUser">Sign Up</a>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a href="#">Forgot your password?</a>
+                        <a href="forgot-password">Forgot your password?</a>
                     </div>
                 </div>
 

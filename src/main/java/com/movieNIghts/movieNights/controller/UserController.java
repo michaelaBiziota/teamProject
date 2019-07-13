@@ -6,7 +6,7 @@
 package com.movieNIghts.movieNights.controller;
 
 import com.movieNIghts.movieNights.authentication.IAuthenticationFacade;
-import com.movieNIghts.movieNights.authentication.AuthenticationFacadeImpl;
+
 import com.movieNIghts.movieNights.conf.MyUserDetailsService;
 import com.movieNIghts.movieNights.dao.DaoRoles;
 import com.movieNIghts.movieNights.dao.DaoUser;
@@ -23,7 +23,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -46,7 +45,8 @@ public class UserController {
     UserValidation uv;
     @Autowired
     MyUserDetailsService ud;
-
+    @Autowired
+    UserRepository ur;
     @Autowired
     IAuthenticationFacade authenticationFacade;
 
@@ -85,6 +85,5 @@ public class UserController {
         Authentication authentication = authenticationFacade.getAuthentication();
         return authentication.getName();
     }
+
 }
-
-

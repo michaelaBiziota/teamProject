@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .authorizeRequests().antMatchers("/login*", "/registerUser", "/doRegisterUser", "/static/**").permitAll()
+                .authorizeRequests().antMatchers("/login*", "/registerUser", "/doRegisterUser", "/static/**","/forgot-password**","/user/changePassword","/savePassword").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -60,7 +60,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout().invalidateHttpSession(true)
                 .clearAuthentication(true)
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/logout-success").permitAll()
+                .logoutSuccessUrl("/login").permitAll()
         .and()
         .rememberMe().key("uniqueAndSecret");
     }

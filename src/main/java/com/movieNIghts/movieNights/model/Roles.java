@@ -33,15 +33,16 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Roles.findByUserrole", query = "SELECT r FROM Roles r WHERE r.userrole = :userrole")})
 public class Roles implements Serializable {
 
+    @Size(max = 45)
+    @Column(name = "userrole")
+    private String userrole;
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
     @Column(name = "id")
     private Integer id;
-    @Size(max = 45)
-    @Column(name = "userrole")
-    private String userrole;
     @OneToMany(mappedBy = "role")
     private Collection<User> userCollection;
 
@@ -60,13 +61,6 @@ public class Roles implements Serializable {
         this.id = id;
     }
 
-    public String getUserrole() {
-        return userrole;
-    }
-
-    public void setUserrole(String userrole) {
-        this.userrole = userrole;
-    }
 
     @XmlTransient
     public Collection<User> getUserCollection() {
@@ -100,6 +94,14 @@ public class Roles implements Serializable {
     @Override
     public String toString() {
         return "com.movieNIghts.movieNights.model.Roles[ id=" + id + " ]";
+    }
+
+    public String getUserrole() {
+        return userrole;
+    }
+
+    public void setUserrole(String userrole) {
+        this.userrole = userrole;
     }
     
 }

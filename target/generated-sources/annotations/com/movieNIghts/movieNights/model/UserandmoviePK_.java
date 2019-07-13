@@ -11,5 +11,8 @@ public abstract class UserandmoviePK_ {
 	public static volatile SingularAttribute<UserandmoviePK, Integer> movieid;
 	public static volatile SingularAttribute<UserandmoviePK, Integer> userid;
 
+	public static final String MOVIEID = "movieid";
+	public static final String USERID = "userid";
+
 }
 

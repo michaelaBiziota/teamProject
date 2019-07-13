@@ -15,8 +15,17 @@ public abstract class User_ {
 	public static volatile CollectionAttribute<User, Userandmovie> userandmovieCollection;
 	public static volatile SingularAttribute<User, Integer> id;
 	public static volatile SingularAttribute<User, String> email;
-	public static volatile SingularAttribute<User, String> username;
 	public static volatile SingularAttribute<User, String> lastname;
+	public static volatile SingularAttribute<User, String> username;
+
+	public static final String PASSWORD = "password";
+	public static final String FIRSTNAME = "firstname";
+	public static final String ROLE = "role";
+	public static final String USERANDMOVIE_COLLECTION = "userandmovieCollection";
+	public static final String ID = "id";
+	public static final String EMAIL = "email";
+	public static final String LASTNAME = "lastname";
+	public static final String USERNAME = "username";
 
 }
 

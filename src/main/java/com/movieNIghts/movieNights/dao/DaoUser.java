@@ -5,6 +5,7 @@
  */
 package com.movieNIghts.movieNights.dao;
 
+
 import com.movieNIghts.movieNights.model.User;
 import com.movieNIghts.movieNights.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,7 @@ if (user==null){return false;}
 else{return true;}
 
 }
+
 
     }
     
