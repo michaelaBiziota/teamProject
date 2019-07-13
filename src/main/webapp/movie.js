@@ -9,7 +9,7 @@ function Load($) {
     success: handleResponse,
     error: handleError
   });
-//TODO GOBACK BUTTON
+//TODO GOBACK BUTTON,C FOR EACH GENRES
   function handleResponse(data) {
     console.log(data);
     $("#movie").html(`
@@ -34,7 +34,9 @@ function Load($) {
             <div class="well">
               <h3>Plot</h3>`+ data.overview + `<hr>
               <a href="http://imdb.com/title/${data.imdb_id}" target="_blank" class="btn btn-primary">View IMDB</a>
-              <a href="#" class="btn btn-primary">Go Back</a>        
+              <a href="http://localhost:8080/movieNights/movies" class="btn btn-primary">Go Back</a>
+      <a href="http://localhost:8080/movieNights/likeMovie" class="btn btn-primary">Like</a>
+      <a href="http://localhost:8080/movieNights/watchedMovie" class="btn btn-primary">Watched</a>
             </div>
           </div>
         `)
