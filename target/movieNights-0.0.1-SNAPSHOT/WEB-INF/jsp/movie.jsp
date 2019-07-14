@@ -30,7 +30,6 @@
   <div class="container">
     <div id="movie" class="well"></div>
   </div>
-  <button id="favourite">Add to Favourites</button>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="${pageContext.request.contextPath}/movie.js"></script>
 </body>

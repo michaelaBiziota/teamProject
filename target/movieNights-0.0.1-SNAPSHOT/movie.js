@@ -36,7 +36,7 @@ function Load($) {
               <a href="http://imdb.com/title/${data.imdb_id}" target="_blank" class="btn btn-primary">View IMDB</a>
               <a href="http://localhost:8080/movieNights/movies" class="btn btn-primary">Go Back</a>
       <a href="http://localhost:8080/movieNights/likeMovie" class="btn btn-primary">Like</a>
-      <a href="http://localhost:8080/movieNights/watchedMovie" class="btn btn-primary">Watched</a>
+      <a href="http://localhost:8080/movieNights/seen/${data.id}" class="btn btn-primary">Watched</a>
             </div>
           </div>
         `)

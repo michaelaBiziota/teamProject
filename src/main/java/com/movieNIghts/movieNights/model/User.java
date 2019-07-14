@@ -54,9 +54,12 @@ public class User implements Serializable {
     @Column(name = "lastname")
     private String lastname;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
+    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Size(max = 45)
     @Column(name = "email")
     private String email;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private Collection<Seenmovies> seenmoviesCollection;
 
 
     private static final long serialVersionUID = 1L;
@@ -171,6 +174,15 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @XmlTransient
+    public Collection<Seenmovies> getSeenmoviesCollection() {
+        return seenmoviesCollection;
+    }
+
+    public void setSeenmoviesCollection(Collection<Seenmovies> seenmoviesCollection) {
+        this.seenmoviesCollection = seenmoviesCollection;
     }
 
 

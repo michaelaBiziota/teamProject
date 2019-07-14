@@ -5,9 +5,16 @@
  */
 package com.movieNIghts.movieNights.controller;
 
+import com.movieNIghts.movieNights.authentication.AuthenticationFacadeImpl;
+import com.movieNIghts.movieNights.conf.UserDetailsImpl;
+import com.movieNIghts.movieNights.dao.DaoSeenMovies;
 import com.movieNIghts.movieNights.dao.DaoUserAndMovie;
+import com.movieNIghts.movieNights.model.Seenmovies;
+import com.movieNIghts.movieNights.model.SeenmoviesPK;
+import com.movieNIghts.movieNights.model.User;
 import com.movieNIghts.movieNights.model.UserandmoviePK;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,8 +30,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MoviesController {
  
     @Autowired
+    AuthenticationFacadeImpl fa;
     DaoUserAndMovie dum;
-
+    DaoSeenMovies dsm;
+    
+@Autowired
+AuthenticationFacadeImpl authentication;
+    
     @RequestMapping(value="getMovie/{id}",method=RequestMethod.GET)
     public String findMovie(ModelMap mm,@PathVariable("id") int movieId){
     mm.addAttribute("mId",movieId);
@@ -35,6 +47,17 @@ public class MoviesController {
     public String findUserIdByMovieId(@PathVariable UserandmoviePK id){
     dum.findById(id);
     return "";    
+    }
+    
+    @RequestMapping(value="/seen/{id}",method=RequestMethod.GET)
+    public void addToSeen(@PathVariable("id") int movieId){
+        UserDetailsImpl user = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        
+
+//    SeenmoviesPK pk=new SeenmoviesPK(movieId,user.getUser().getId());
+        Seenmovies sm=new Seenmovies(movieId,user.getUser().getId());
+                sm.setUser(user.getUser());
+    dsm.addToseenMovies(sm);
     }
     
 }
