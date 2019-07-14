@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
  *
  * @author bizmi
  */
-@Repository
+@Repository 
 public interface SeenMoviesRepository extends JpaRepository<Seenmovies,SeenmoviesPK>{
     
 }

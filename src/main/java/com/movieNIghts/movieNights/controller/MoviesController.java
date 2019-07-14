@@ -28,36 +28,36 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Controller
 public class MoviesController {
- 
+
     @Autowired
     AuthenticationFacadeImpl fa;
+    @Autowired
     DaoUserAndMovie dum;
+    @Autowired
     DaoSeenMovies dsm;
-    
-@Autowired
-AuthenticationFacadeImpl authentication;
-    
-    @RequestMapping(value="getMovie/{id}",method=RequestMethod.GET)
-    public String findMovie(ModelMap mm,@PathVariable("id") int movieId){
-    mm.addAttribute("mId",movieId);
-    return "movie";    
-    }
-    
-@RequestMapping(value="/findUserIdByMovieId/{id}",method=RequestMethod.GET)
-    public String findUserIdByMovieId(@PathVariable UserandmoviePK id){
-    dum.findById(id);
-    return "";    
-    }
-    
-    @RequestMapping(value="/seen/{id}",method=RequestMethod.GET)
-    public void addToSeen(@PathVariable("id") int movieId){
-        UserDetailsImpl user = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        
 
-//    SeenmoviesPK pk=new SeenmoviesPK(movieId,user.getUser().getId());
-        Seenmovies sm=new Seenmovies(movieId,user.getUser().getId());
-                sm.setUser(user.getUser());
-    dsm.addToseenMovies(sm);
+    @Autowired
+    AuthenticationFacadeImpl authentication;
+
+    @RequestMapping(value = "getMovie/{id}", method = RequestMethod.GET)
+    public String findMovie(ModelMap mm, @PathVariable("id") int movieId) {
+        mm.addAttribute("mId", movieId);
+        return "movie";
     }
-    
+
+    @RequestMapping(value = "/findUserIdByMovieId/{id}", method = RequestMethod.GET)
+    public String findUserIdByMovieId(@PathVariable UserandmoviePK id) {
+        dum.findById(id);
+        return "";
+    }
+
+    @RequestMapping(value = "/seen/{id}", method = RequestMethod.GET)
+    public void addToSeen(@PathVariable("id") int movieId) {
+        UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userd.getUser();
+        Seenmovies sm = new Seenmovies(movieId, user.getId());
+        sm.setUser(user);
+        dsm.addToseenMovies(sm);
+    }
+
 }
