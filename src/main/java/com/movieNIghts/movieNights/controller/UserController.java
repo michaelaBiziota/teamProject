@@ -8,6 +8,7 @@ package com.movieNIghts.movieNights.controller;
 import com.movieNIghts.movieNights.authentication.IAuthenticationFacade;
 
 import com.movieNIghts.movieNights.conf.MyUserDetailsService;
+import com.movieNIghts.movieNights.conf.UserDetailsImpl;
 import com.movieNIghts.movieNights.dao.DaoRoles;
 import com.movieNIghts.movieNights.dao.DaoUser;
 import com.movieNIghts.movieNights.model.User;
@@ -72,11 +73,12 @@ public class UserController {
         } else {
             us.setPassword(passwordEncoder.encode(pass));
             us.setRole(dr.getRole(1));
-
+            
             du.registration(us);
+            
         }
 
-        return "movies";
+        return "login";
     }
 
     @RequestMapping(value = "/username", method = RequestMethod.GET)

@@ -24,5 +24,8 @@ public class DaoUserAndMovie {
     public Userandmovie findById(UserandmoviePK id){
    return umr.getOne(id);  
     }
+        public void addToUserAndMovie(Userandmovie usermovie){
+    umr.save(usermovie);
+    }
     
 }
