@@ -25,7 +25,7 @@ public class HomeController {
     @RequestMapping(value = "/logout-success")
     public String logoutPage() {
 
-        return "logout";
+        return "login";
     }
 
     @RequestMapping(value = "/movies",method=RequestMethod.GET)

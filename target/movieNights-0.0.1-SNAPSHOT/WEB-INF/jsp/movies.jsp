@@ -67,7 +67,7 @@
                                         class="glyphicon glyphicon-heart pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="#">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a>
+                            <li><a href="${pageContext.request.contextPath}/logout-success">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a>
                             </li>
                         </ul>
                     </li>

@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-
+        <% response.sendRedirect("movies"); %>
         <a href="${pageContext.request.contextPath}/login">Login</a>
         <a href="${pageContext.request.contextPath}/register">Sign up</a>
     </body>
