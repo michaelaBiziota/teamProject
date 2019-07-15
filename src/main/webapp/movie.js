@@ -35,16 +35,17 @@ function Load($) {
               <h3>Plot</h3>`+ data.overview + `<hr>
               <a href="http://imdb.com/title/${data.imdb_id}" target="_blank" class="btn btn-primary">View IMDB</a>
               <a href="http://localhost:8080/movieNights/movies" class="btn btn-primary">Go Back</a>
-      <a href="http://localhost:8080/movieNights/likeMovie" class="btn btn-primary">Like</a>
-      <a href="http://localhost:8080/movieNights/watchedMovie" class="btn btn-primary">Watched</a>
+      <a href="http://localhost:8080/movieNights/like/${data.id}" class="btn btn-primary">Like</a>
+      <a href="http://localhost:8080/movieNights/seen/${data.id}" class="btn btn-primary">Already watched</a>
             </div>
           </div>
-        `)
+        `);
+      $("#seen").click(function(){alert("have seen");});
   }
 
 
 
-  function handleError(jqXHR, textStatus, errorThrown, ) {
+  function handleError(jqXHR, textStatus, errorThrown) {
     console.log(textStatus, errorThrown);
 
   }
