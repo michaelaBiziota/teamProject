@@ -1,0 +1,93 @@
+body {
+    background-image: url("bg2.png");
+}
+
+/* NAVBAR */
+
+.navbar {
+    background-color: #21252900;
+    font-size: 15px;
+    right: 0;
+    padding: 13px;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
+    background-image: url("bg2.png");
+    opacity: 0.95;
+    border-radius: 20px;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+}
+
+.navbar-brand {
+    font-size: 20px;
+    color: white;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.navbar-brand:hover {
+    color: gold;
+}
+
+.nav-link {
+    font-size: 18px;
+    margin: 5px;
+    color: white;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* NAVBAR END*/
+
+/* Search */
+
+.search {
+    width: 300px;
+    margin: 0 auto;
+}
+
+/* Search END*/
+
+/* Slider */
+
+.slidecontainer {
+    width: 160px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background: url('cut.png');
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background: url('cut.png');
+    cursor: pointer;
+}
+
+/* Slider END*/

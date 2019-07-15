@@ -17,9 +17,12 @@ body {
     }
 }
 
-a {
+#movies {
     color: white;
     text-decoration: none;
     font-size: 25px;
     margin-right: 20px;
+}
+#moviestitle{
+    font-size: 18px;
 }
