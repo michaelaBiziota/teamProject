@@ -44,10 +44,6 @@
         <a href="admin">admin</a>
 </sec:authorize>
     
-
-
-
-<!--        <a href="admin">admin</a>-->
         <div class="row">
             <!-- MovieNights Logo -->
             <div col-md-7>

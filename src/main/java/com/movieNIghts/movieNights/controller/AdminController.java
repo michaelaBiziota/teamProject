@@ -14,26 +14,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author bizmi
  */
 @Controller
-public class HomeController {
+public class AdminController {
 
-    @RequestMapping(value = "/login")
-    public String loginPage() {
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String admin() {
 
-        return "login";
+        return "admin";
     }
-
-    @RequestMapping(value = "/logout")
-    public String logoutPage() {
-
-        return "";
-    }
-
-    @RequestMapping(value = "/movies",method=RequestMethod.GET)
-    public String movies() {
-
-        return "movies";
-    }
-
-
 
 }
