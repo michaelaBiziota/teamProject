@@ -89,6 +89,12 @@ public class User implements Serializable {
         return id;
     }
 
+    public User(String password, String username, Roles role) {
+        this.password = password;
+        this.username = username;
+        this.role = role;
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }

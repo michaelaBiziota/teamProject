@@ -22,16 +22,21 @@ public class HomeController {
         return "login";
     }
 
-    @RequestMapping(value = "/logout-success")
+    @RequestMapping(value = "/logout")
     public String logoutPage() {
 
-        return "login";
+        return "";
     }
 
     @RequestMapping(value = "/movies",method=RequestMethod.GET)
     public String movies() {
 
         return "movies";
+    }
+        @RequestMapping(value = "/admin",method=RequestMethod.GET)
+    public String admin() {
+
+        return "admin";
     }
 
 

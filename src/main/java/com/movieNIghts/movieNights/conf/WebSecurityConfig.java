@@ -50,7 +50,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .authorizeRequests().antMatchers("/login*", "/registerUser", "/doRegisterUser", "/static/**","/forgot-password**","/user/changePassword","/savePassword").permitAll()
+                .authorizeRequests().antMatchers("/login*", "/registerUser", "/doRegisterUser", "/static/**", "/forgot-password**", "/user/changePassword", "/savePassword").permitAll()
+                .and()
+                .authorizeRequests().antMatchers("/admin").access("hasRole('ROLE_ADMIN')")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -61,7 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .clearAuthentication(true)
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/login").permitAll()
-        .and()
-        .rememberMe().key("uniqueAndSecret");
+                .and()
+                .rememberMe().key("uniqueAndSecret");
     }
 }

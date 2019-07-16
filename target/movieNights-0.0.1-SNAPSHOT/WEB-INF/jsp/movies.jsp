@@ -6,6 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,8 +40,14 @@
 </sec:authorize>
     <input type="number" hidden id="hidden" name="movieId">
     <header>
+<sec:authorize access="hasRole('ROLE_ADMIN')">
+        <a href="admin">admin</a>
+</sec:authorize>
+    
 
 
+
+<!--        <a href="admin">admin</a>-->
         <div class="row">
             <!-- MovieNights Logo -->
             <div col-md-7>
@@ -67,7 +75,7 @@
                                         class="glyphicon glyphicon-heart pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="${pageContext.request.contextPath}/logout-success">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a>
+                            <li><a href="${pageContext.request.contextPath}/logout">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a>
                             </li>
                         </ul>
                     </li>
