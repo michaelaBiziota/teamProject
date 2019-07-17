@@ -2,3 +2,7 @@
 target/movieNights-0\.0\.1-SNAPSHOT/WEB-INF/classes/\.netbeans_automatic_build~master
 
 target/movieNights-0\.0\.1-SNAPSHOT/WEB-INF/classes/\.netbeans_automatic_build~HEAD
+
+target/movieNights-0\.0\.1-SNAPSHOT/WEB-INF/classes/\.netbeans_automatic_build
+
+*.original
