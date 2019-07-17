@@ -25,5 +25,8 @@ public class DaoRoles {
         return rr.getOne(id);
     }
 
-    
+    public List<Roles> getAll() {
+        return rr.findAll();
+    }
+
 }

@@ -8,6 +8,7 @@ package com.movieNIghts.movieNights.dao;
 
 import com.movieNIghts.movieNights.model.User;
 import com.movieNIghts.movieNights.repository.UserRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +39,17 @@ User user= ur.findByUsername(username);
 if (user==null){return false;}
 else{return true;}
 
+}
+
+public List<User> getAll(){
+return ur.findAll();
+}
+
+public void deleteUser(int id){
+ur.deleteById(id);
+}
+public User findById(int id){
+return ur.getOne(id);
 }
 
 

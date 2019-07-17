@@ -4,6 +4,12 @@
     Author     : bizmi
 --%>
 
+<%-- 
+    Document   : resetPassword
+    Created on : 11 Ιουλ 2019, 7:09:17 μμ
+    Author     : bizmi
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
@@ -11,15 +17,43 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <style>.error{background-color: red} </style>
+        <title>Reset Password</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/register.css">
     </head>
     <body>
-        <h2>Reset Password</h2>
-            <form method="POST" action="${pageContext.request.contextPath}/savePassword">              
-                <input type="password" placeholder="new password" name="newPassword"/>
-                <input type="submit">    
-            </form>
+
+
+        <div class="content text-center">
+            <div class="graphics">
+                <img src="../static/dr.strange.png" class="container">
+            </div>
+        </div>
+        <div class="forgot">
+
+            <article class="card-body mx-auto" style="max-width: 400px;">
+
+                <h2 class="text-center">Reset Password?</h2>
+                ${message}
+                <p class="text-center">Enter your new password
+                <form method="POST" action="${pageContext.request.contextPath}/savePassword">   
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input placeholder="New Password" class="form-control" name="newPassword" minlength="5" type="password" title="The password must be at least 5 characters" required/>
+                    </div> 
+
+                    <div class="form-group">
+                        <input type="submit"  class="form-control btn btn-primary btn-block">   
+                    </div> 
+                </form>
+            </article>
+        </div>
 
 
     </body>

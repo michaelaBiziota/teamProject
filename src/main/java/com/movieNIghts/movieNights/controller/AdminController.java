@@ -5,9 +5,24 @@
  */
 package com.movieNIghts.movieNights.controller;
 
+import com.movieNIghts.movieNights.dao.DaoRoles;
+import com.movieNIghts.movieNights.dao.DaoUser;
+import com.movieNIghts.movieNights.model.User;
+import com.movieNIghts.movieNights.validation.UserValidation;
+import javax.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -16,10 +31,63 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class AdminController {
 
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public String admin() {
+    @Autowired
+    DaoUser du;
+    @Autowired
+    BCryptPasswordEncoder passwordEncoder;
+    @Autowired
+    UserValidation uv;
+    @Autowired
+    DaoRoles dr;
 
+    @RequestMapping(value = "/allusers", method = RequestMethod.GET)
+    public String getAllUsers(ModelMap m) {
+        m.addAttribute("userlist", du.getAll());
         return "admin";
+
     }
 
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public String delete(@PathVariable int id) {
+        du.deleteUser(id);
+        return "redirect:/allusers";
+    }
+
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
+    public String update(ModelMap m, @PathVariable int id, @ModelAttribute("users") User u) {
+
+        User user = du.findById(id);
+        m.addAttribute("id", user);
+        m.addAttribute("rolesArray", dr.getAll());
+
+        return "update";
+    }
+
+    @RequestMapping(value = "updatedUser", method = RequestMethod.POST)
+    public String updatedUser(@RequestParam(value = "password") String pass, @ModelAttribute("id") User us) {
+
+        us.setPassword(passwordEncoder.encode(pass));
+
+        du.registration(us);
+
+        return "redirect:/allusers";
+
+    }
+
+    @RequestMapping(value = "insertByAdmin", method = RequestMethod.GET)
+    public String inserByAdmin(ModelMap mm) {
+        User u = new User();
+        mm.addAttribute("user", u);
+        mm.addAttribute("rolesArray", dr.getAll());
+
+        return "adminInsert";
+    }
+
+    @RequestMapping(value = "doInsertByAdmin", method = RequestMethod.POST)
+    public String doInsertByAdminUser(@RequestParam(value = "password") String pass, @ModelAttribute("user") User us) {
+        us.setPassword(passwordEncoder.encode(pass));
+        du.registration(us);
+
+        return "redirect:/allusers";
+    }
 }

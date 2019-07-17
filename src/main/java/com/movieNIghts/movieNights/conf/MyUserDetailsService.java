@@ -38,20 +38,6 @@ public class MyUserDetailsService implements UserDetailsService{
            throw new UsernameNotFoundException("User not found");
         }
        
-//        String roleNames = dr.getRole(user.getId()).getUserrole();
-// 
-//
-//        if (roleNames != null) {
-//
-//                // ROLE_USER, ROLE_ADMIN,..
-//                GrantedAuthority authority = new SimpleGrantedAuthority(roleNames);
-//
-//            
-//        
-// 
-//        UserDetails userDetails = (UserDetails) new User(user.getUsername(), //
-//                user.getPassword(), user.setRole(authority));
-//        }
        return new UserDetailsImpl(user);
     }
     

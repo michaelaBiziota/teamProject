@@ -41,7 +41,7 @@
     <input type="number" hidden id="hidden" name="movieId">
     <header>
 <sec:authorize access="hasRole('ROLE_ADMIN')">
-        <a href="admin">admin</a>
+        <a href="${pageContext.request.contextPath}/allusers">admin</a>
 </sec:authorize>
     
         <div class="row">

@@ -150,6 +150,8 @@ public class User implements Serializable {
         return "com.movieNIghts.movieNights.model.User[ id=" + id + " ]";
     }
 
+    
+
     public String getPassword() {
         return password;
     }

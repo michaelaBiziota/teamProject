@@ -33,10 +33,7 @@ public class UserDetailsImpl implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singleton(new SimpleGrantedAuthority(user.getRole().getUserrole()));
     }
-//            @Override
-//    public Collection<? extends GrantedAuthority> getAuthorities() {
-//        return user.getRole().stream().map(authority -> new SimpleGrantedAuthority(authority.getName().toString())).collect(Collectors.toList());
-//    }
+
     
 
     @Override
