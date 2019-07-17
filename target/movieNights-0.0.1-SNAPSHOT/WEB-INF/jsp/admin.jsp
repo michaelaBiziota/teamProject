@@ -17,7 +17,7 @@
             <tr><th>username</th>
                 <th>email</th>
                 <th>firstname</th>
-                <th>lastrname</th>
+                <th>lastname</th>
                 <th>role</th>
             </tr>
             <c:forEach var = "i" items="${userlist}">
@@ -41,6 +41,6 @@
     </c:forEach>
 </table>
 <br>
-<a id="a" href="${pageContext.request.contextPath}/insertByAdmin">Insert a new admin</a>
+<a id="a" href="${pageContext.request.contextPath}/insertByAdmin">Insert a new admin or a new user</a>
 </body>
 </html>

@@ -26,7 +26,7 @@
         <tr><td>   
                       <form:select path="role">
                           <form:option value="-1">Select role</form:option>
-    <form:options items="${rolesArray}" itemLabel="id" itemValue="id" />
+    <form:options items="${rolesArray}" itemLabel="userrole" itemValue="id" />
                </form:select></td></tr>
       <tr>  <td> <input type="submit">  </td></tr>
     </table>

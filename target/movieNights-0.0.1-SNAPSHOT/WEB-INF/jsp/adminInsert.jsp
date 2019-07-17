@@ -27,7 +27,7 @@
             <form:errors  path="password" cssClass="error"/>           
                         <form:select path="role">
                             <form:option value="-1">Select role</form:option>
-                            <form:options items="${rolesArray}" itemLabel="id" itemValue="id" />
+                            <form:options items="${rolesArray}" itemLabel="userrole" itemValue="id" />
                         </form:select>
             <input type="submit">    
         </form:form>
