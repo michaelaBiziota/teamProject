@@ -40,7 +40,7 @@ function Load($) {
             </div>
           </div>
         `);
-      $("#seen").click(function(){alert("have seen");});
+      
   }
 
 

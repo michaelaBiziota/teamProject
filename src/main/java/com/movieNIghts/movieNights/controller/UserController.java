@@ -8,7 +8,6 @@ package com.movieNIghts.movieNights.controller;
 import com.movieNIghts.movieNights.authentication.IAuthenticationFacade;
 
 import com.movieNIghts.movieNights.conf.MyUserDetailsService;
-import com.movieNIghts.movieNights.conf.UserDetailsImpl;
 import com.movieNIghts.movieNights.dao.DaoRoles;
 import com.movieNIghts.movieNights.dao.DaoUser;
 import com.movieNIghts.movieNights.model.User;

@@ -8,6 +8,7 @@ package com.movieNIghts.movieNights.conf;
 import com.movieNIghts.movieNights.model.User;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.stream.Collectors;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,10 +25,16 @@ public class UserDetailsImpl implements UserDetails {
         this.user = user;
     }
 
-    @Override
+//    @Override
+//    public Collection<? extends GrantedAuthority> getAuthorities() {
+//        return Collections.singleton(new SimpleGrantedAuthority("user"));
+//    }
+        @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singleton(new SimpleGrantedAuthority("user"));
+        return Collections.singleton(new SimpleGrantedAuthority(user.getRole().getUserrole()));
     }
+
+    
 
     @Override
     public String getPassword() {

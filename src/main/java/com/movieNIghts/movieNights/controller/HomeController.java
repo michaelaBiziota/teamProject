@@ -22,10 +22,10 @@ public class HomeController {
         return "login";
     }
 
-    @RequestMapping(value = "/logout-success")
+    @RequestMapping(value = "/logout")
     public String logoutPage() {
 
-        return "login";
+        return "";
     }
 
     @RequestMapping(value = "/movies",method=RequestMethod.GET)
@@ -33,6 +33,7 @@ public class HomeController {
 
         return "movies";
     }
+
 
 
 }

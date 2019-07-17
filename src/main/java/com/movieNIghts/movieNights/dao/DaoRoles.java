@@ -7,6 +7,7 @@ package com.movieNIghts.movieNights.dao;
 
 import com.movieNIghts.movieNights.model.Roles;
 import com.movieNIghts.movieNights.repository.RolesRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,4 +24,9 @@ public class DaoRoles {
     public Roles getRole(int id) {
         return rr.getOne(id);
     }
+
+    public List<Roles> getAll() {
+        return rr.findAll();
+    }
+
 }

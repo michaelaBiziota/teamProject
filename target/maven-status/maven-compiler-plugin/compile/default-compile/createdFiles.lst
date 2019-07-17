@@ -32,6 +32,7 @@ com\movieNIghts\movieNights\model\Seenmovies.class
 com\movieNIghts\movieNights\repository\RolesRepository.class
 com\movieNIghts\movieNights\MovieNightsApplication.class
 com\movieNIghts\movieNights\authentication\AuthenticationFacadeImpl.class
+com\movieNIghts\movieNights\controller\AdminController.class
 com\movieNIghts\movieNights\model\Userandmovie.class
 com\movieNIghts\movieNights\repository\SeenMoviesRepository.class
 com\movieNIghts\movieNights\controller\PasswordForgotController.class
