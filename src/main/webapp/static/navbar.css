@@ -102,3 +102,7 @@ body {
 #navbarDropdownMenuLink{
     cursor: pointer;
 }
+
+.genres{
+  cursor: pointer;
+}
