@@ -35,27 +35,31 @@
 </head>
 
 <body>
- <sec:authorize access="isAuthenticated()">
-    authenticated as <sec:authentication property="principal.username" /> 
-</sec:authorize>
+
     <input type="number" hidden id="hidden" name="movieId">
     <header>
-<sec:authorize access="hasRole('ROLE_ADMIN')">
-        <a href="${pageContext.request.contextPath}/allusers">admin</a>
-</sec:authorize>
+        
     
         <div class="row">
             <!-- MovieNights Logo -->
-            <div col-md-7>
+            <div class="col-md-4 col-xs-12 mt-4">
                 <img src="static/mn.png" class="mx-5 img-fluid" id="movienights">
             </div>
             <!-- End -->
+            <div class="col-md-4 col-xs-12 mt-4">
+                <sec:authorize access="hasRole('ROLE_ADMIN')">
+                    <a href="${pageContext.request.contextPath}/allusers" id="adminmenu">Admin ⚙️</a>
+              </sec:authorize>   
+            </div>
 
             <!-- USER PROFILE DROP DOWN -->
-            <div col-md-5>
+            <div class="col-md-4 col-sm-xs mt-4">
                 <ul class="nav navbar-nav">
                     <li class="dropdown1">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Profile <span
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+                            <sec:authorize access="isAuthenticated()">
+                                <sec:authentication property="principal.username" /> 
+                              </sec:authorize><span
                                 class="glyphicon glyphicon-user pull-right"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Account Settings <span
@@ -65,10 +69,10 @@
                             <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="#">Messages <span class="badge pull-right"> 12 </span></a></li>
+                            <li><a href="#">Messages <span class="badge pull-right"> 12 </span></a>
+                            </li>
                             <li class="divider"></li>
-                            <li><a href="#">Favourite Movies <span
-                                        class="glyphicon glyphicon-heart pull-right"></span></a>
+                            <li><a href="#">Favourite Movies <span class="glyphicon glyphicon-heart pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
                             <li><a href="${pageContext.request.contextPath}/logout">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a>
@@ -86,9 +90,9 @@
 
         <!-- Navbar brand -->
 
-        <a href="#HOME" data-toggle="tooltip" data-placement="bottom" title="Home"><img class="logo" alt="Brand"
-                src="static/cam.png"></a>
-        <a class="navbar-brand" href="Homepage.jsp">Recommended Movies</a>
+<!--        <a href="#HOME" data-toggle="tooltip" data-placement="bottom" title="Home"><img class="logo" alt="Brand"
+                src="static/cam.png"></a>-->
+        <a class="navbar-brand " href="Homepage.jsp">Recommended Movies</a>
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
             aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -120,7 +124,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-services" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item hvr-sweep-to-top" href="Genre.jsp"> Action</a>
-                        <a class="dropdown-item hvr-sweep-to-top" href="Genre.jsp"> Adventure</a>
+                        <a class="dropdown-item hvr-sweep-to-top" href="Genre.jsp"> Animation</a>
                         <a class="dropdown-item hvr-sweep-to-top" href="Genre.jsp"> Comedy</a>
                         <a class="dropdown-item hvr-sweep-to-top" href="Genre.jsp"> Drama</a>
                         <a class="dropdown-item hvr-sweep-to-top" href="Genre.jsp"> Mystery</a>

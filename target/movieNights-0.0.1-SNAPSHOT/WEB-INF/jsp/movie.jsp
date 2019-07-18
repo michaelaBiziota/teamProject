@@ -21,13 +21,6 @@
     <div  hidden id="hidden">${mId}</div>
     <div id="warnseen">${seen}</div>
     <div id="like">${like}</div>
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">MENU</a>
-      </div>
-    </div>
-  </nav>
 
   <div class="container">
     <div id="movie" class="well"></div>
