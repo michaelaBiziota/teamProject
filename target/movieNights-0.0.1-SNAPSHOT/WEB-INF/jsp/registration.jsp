@@ -21,7 +21,7 @@
     <body>
         <div class="content">
             <div class="graphics">
-                <img src="static/spiderman.png" class="container">
+                <img src="static/pictures/spiderman.png" class="container">
             </div>
         </div>
 
@@ -73,8 +73,6 @@
                     <form:input  path="email"  placeholder="Email" class="form-control" type="email" title="Enter your Email Address" required="required"/>
                     <form:errors  path="email" cssClass="error"/>
                 </div> <!-- form-group// -->
-
-
 
                 <div class="form-group input-group">
                     <div class="input-group-prepend">

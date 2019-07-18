@@ -4,18 +4,39 @@ body {
 }
 
 #movienights {
-    width: 500px;
+    width: 400px;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#adminmenu{
+    margin-left:40%;
+    background-color: graytext;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 22px;
+    border-radius: 6px;
+    text-decoration:none;
+}
+
+#adminmenu:hover{
+    background-color: rgb(64,64,64);
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.27), 0 17px 50px 0 rgba(0, 0, 0, 0.22);
+    text-decoration: none;
+    color: white;
 }
 
 /* USER CSS */
 
 .nav {
-    left: 81%;
+    left: 70%;
     margin-left: -130px;
-    top: 30px;
     position: absolute;
     z-index: 2;
-    
 }
 
 .nav>li>a:hover, .nav>li>a:focus, .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
