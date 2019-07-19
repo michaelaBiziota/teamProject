@@ -14,6 +14,7 @@ public abstract class User_ {
 	public static volatile SingularAttribute<User, Roles> role;
 	public static volatile CollectionAttribute<User, Seenmovies> seenmoviesCollection;
 	public static volatile CollectionAttribute<User, Userandmovie> userandmovieCollection;
+	public static volatile CollectionAttribute<User, Watchlist> watchlistCollection;
 	public static volatile SingularAttribute<User, Integer> id;
 	public static volatile SingularAttribute<User, String> email;
 	public static volatile SingularAttribute<User, String> lastname;
@@ -24,6 +25,7 @@ public abstract class User_ {
 	public static final String ROLE = "role";
 	public static final String SEENMOVIES_COLLECTION = "seenmoviesCollection";
 	public static final String USERANDMOVIE_COLLECTION = "userandmovieCollection";
+	public static final String WATCHLIST_COLLECTION = "watchlistCollection";
 	public static final String ID = "id";
 	public static final String EMAIL = "email";
 	public static final String LASTNAME = "lastname";

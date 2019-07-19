@@ -8,6 +8,7 @@ package com.movieNIghts.movieNights.dao;
 import com.movieNIghts.movieNights.model.Seenmovies;
 import com.movieNIghts.movieNights.model.SeenmoviesPK;
 import com.movieNIghts.movieNights.repository.SeenMoviesRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,8 @@ public class DaoSeenMovies {
     
     public void addToseenMovies(Seenmovies seenmovie){
     sr.save(seenmovie);
+    }
+    public List <Seenmovies> findMovieByUserid(int userid){
+    return sr.findByuserId(userid);
     }
 }

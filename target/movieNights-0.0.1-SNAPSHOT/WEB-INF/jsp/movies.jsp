@@ -66,13 +66,13 @@
                                         class="glyphicon glyphicon-cog pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a>
+                            <li><a href="watchList">Your watchlist<span class="glyphicon glyphicon-stats pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="#">Messages <span class="badge pull-right"> 12 </span></a>
+                            <li><a href="alreadyWatchedMovies">You have Already Watched <span class="glyphicon glyphicon-heart pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="#">Favourite Movies <span class="glyphicon glyphicon-heart pull-right"></span></a>
+                            <li><a href="favoriteMovies">Favourite Movies <span class="glyphicon glyphicon-heart pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
                             <li><a href="${pageContext.request.contextPath}/logout">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a>
@@ -104,32 +104,35 @@
 
             <!-- Links -->
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="All Movies.jsp">All Movies
+                <li class="nav-item" id="popular">
+                    <a class="nav-link" href="#">Most Popular
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="Most Popular.jsp">Most Popular</a>
+                <li class="nav-item" id="toprated">
+                    <a class="nav-link" href="#">Top Rated</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Top Rated.jsp">Top Rated</a>
+                    <a class="nav-link" href="#">Whatever</a>
                 </li>
 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" id="dropdownli">
                     <a class=" nav-link dropdown-toggle " id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         Genre
                     </a>
                     <div class="dropdown-menu dropdown-services" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item hvr-sweep-to-top" href="Genre.jsp"> Action</a>
-                        <a class="dropdown-item hvr-sweep-to-top" href="Genre.jsp"> Animation</a>
-                        <a class="dropdown-item hvr-sweep-to-top" href="Genre.jsp"> Comedy</a>
-                        <a class="dropdown-item hvr-sweep-to-top" href="Genre.jsp"> Drama</a>
-                        <a class="dropdown-item hvr-sweep-to-top" href="Genre.jsp"> Mystery</a>
-                        <a class="dropdown-item hvr-sweep-to-top" href="Genre.jsp"> Thriller</a>
-                        <a class="dropdown-item hvr-sweep-to-top" href="Genre.jsp"> Western</a>
+                        <a class="dropdown-item hvr-sweep-to-top genres" id="action"> Action</a>
+                        <a class="dropdown-item hvr-sweep-to-top genres" id="animation"> Animation</a>
+                        <a class="dropdown-item hvr-sweep-to-top genres" id="comedy"> Comedy</a>
+                        <a class="dropdown-item hvr-sweep-to-top genres" id="drama"> Drama</a>
+                        <a class="dropdown-item hvr-sweep-to-top genres" id="romance"> Romance</a>
+                        
+                        <a class="dropdown-item hvr-sweep-to-top genres" id="mystery"> Mystery</a>
+                        
+                        <a class="dropdown-item hvr-sweep-to-top genres" id="science" > Science Fiction</a>
+                        <a class="dropdown-item hvr-sweep-to- genres" id="thriller"> Thriller</a>
                     </div>
                 </li>
                 <li class="nav-item">

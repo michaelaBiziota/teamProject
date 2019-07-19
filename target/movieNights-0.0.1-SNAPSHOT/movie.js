@@ -12,6 +12,22 @@ function Load($) {
 //TODO GOBACK BUTTON,C FOR EACH GENRES
     function handleResponse(data) {
         console.log(data);
+for (i = 0; i < data.casts.crew.length; i++) {
+           if (data.casts.crew[i].department === "Writing") {
+               var writer = data.casts.crew[i].name;
+               break;
+           }
+       }
+       for (i = 0; i < data.casts.crew.length; i++) {
+           if (data.casts.crew[i].department === "Directing") {
+               var director = data.casts.crew[i].name;
+               break;
+           }
+       }
+   for(i=0;i<data.videos.results.length;i++){
+      if (data.videos.results[i].type==="Trailer"){
+         var trailer=data.videos.results[i].key;
+      }}
         $("#movie").html(`
 
    <div class="row">
@@ -23,17 +39,17 @@ function Load($) {
      </div>
     <div class="col-md-6 my-3">
       <ul class="list-group">
-       <li class="list-group-item"><strong>Genre:</strong> ` + data.genres[0].name + ', ' + data.genres[1].name + ', ' +
-                data.genres[2].name + `</li>
+       <li class="list-group-item" id="gen"><strong>Genre:</strong></li>
        <li class="list-group-item"><strong>Released:</strong> ` + data.release_date + `</li>
        <li class="list-group-item"><strong>Runtime:</strong> ` + data.runtime + ` min</li>
        <li class="list-group-item"><strong>Rating:</strong> ` + data.vote_average + `</li>
-       <li class="list-group-item"><strong>Writer:</strong> ` + data.casts.crew[1].name + `</li>
+        <li class="list-group-item"><strong>Director:</strong> `+ director +` </li>
+       <li class="list-group-item"><strong>Writer:</strong> ` + writer + `</li>
        <li class="list-group-item"><strong>Actors:</strong> ` + data.casts.cast[0].name + ', ' + data.casts.cast[1].name +
                 ', ' + data.casts.cast[2].name + `</li>
       </ul>
    </div>
-    <div class="col-md-3"><iframe src="https://www.youtube.com/embed/`+ data.videos.results[0].key+`" allowfullscreen="allowfullscreen"
+    <div class="col-md-3"><iframe src="https://www.youtube.com/embed/`+ trailer+`" allowfullscreen="allowfullscreen"
       mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen"
       webkitallowfullscreen="webkitallowfullscreen"></iframe>
     </div>
@@ -44,10 +60,21 @@ function Load($) {
               <a href="http://localhost:8080/movieNights/movies" class="btn btn-primary">Go Back</a>
       <a href="http://localhost:8080/movieNights/like/${data.id}" class="btn btn-primary">Like</a>
       <a href="http://localhost:8080/movieNights/seen/${data.id}" class="btn btn-primary">Already watched</a>
+      <a href="http://localhost:8080/movieNights/watchlist/${data.id}" class="btn btn-primary">Add to watchlist</a>
             </div>
           </div>
         `);
-
+var count=0;
+   for(i=0;i<data.genres.length;i++){
+       count++;
+   }
+   if(count===1){
+       $("#gen").append(data.genres[0].name);
+   }else if(count===2){
+      $("#gen").append(data.genres[0].name+","+data.genres[1].name);
+   }else{
+       $("#gen").append(data.genres[0].name+","+data.genres[1].name+","+data.genres[2].name);
+   }
     }
 
 

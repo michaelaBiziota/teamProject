@@ -55,5 +55,7 @@
         </table>
         <br>
         <p class="text-center"><a id="a" href="${pageContext.request.contextPath}/insertByAdmin" class="insert my-5">Insert User</a></p>
+        <br>
+        <a href="${pageContext.request.contextPath}/movies" class="pager">Back to movies</a>
     </body>
 </html>

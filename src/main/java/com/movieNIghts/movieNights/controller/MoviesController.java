@@ -9,10 +9,12 @@ import com.movieNIghts.movieNights.authentication.AuthenticationFacadeImpl;
 import com.movieNIghts.movieNights.conf.UserDetailsImpl;
 import com.movieNIghts.movieNights.dao.DaoSeenMovies;
 import com.movieNIghts.movieNights.dao.DaoUserAndMovie;
+import com.movieNIghts.movieNights.dao.DaoWatchList;
 import com.movieNIghts.movieNights.model.Seenmovies;
 import com.movieNIghts.movieNights.model.User;
 import com.movieNIghts.movieNights.model.Userandmovie;
 import com.movieNIghts.movieNights.model.UserandmoviePK;
+import com.movieNIghts.movieNights.model.Watchlist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -35,6 +37,8 @@ public class MoviesController {
     DaoUserAndMovie dum;
     @Autowired
     DaoSeenMovies dsm;
+    @Autowired
+    DaoWatchList dw;
 
     @Autowired
     AuthenticationFacadeImpl authentication;
@@ -45,34 +49,42 @@ public class MoviesController {
         return "movie";
     }
 
-    @RequestMapping(value = "/findUserIdByMovieId/{id}", method = RequestMethod.GET)
-    public String findUserIdByMovieId(@PathVariable UserandmoviePK id) {
-        dum.findById(id);
-        return "";
-    }
 
     @RequestMapping(value = "/seen/{id}", method = RequestMethod.GET)
-    
-    public String addToSeen(@PathVariable("id") int movieId,RedirectAttributes redirAttr) {
+
+    public String addToSeen(@PathVariable("id") int movieId, RedirectAttributes redirAttr) {
         UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userd.getUser();
         Seenmovies sm = new Seenmovies(movieId, user.getId());
         sm.setUser(user);
         dsm.addToseenMovies(sm);
-        redirAttr.addFlashAttribute("seen","Already watched that movie? Recommendations will be made based on your feedback");
-        return "redirect:/getMovie/"+movieId;
- 
+        redirAttr.addFlashAttribute("seen", "Already watched that movie? Recommendations will be made based on your feedback");
+        return "redirect:/getMovie/" + movieId;
+
     }
-        @RequestMapping(value = "/like/{id}", method = RequestMethod.GET)
-        public String like(@PathVariable("id") int movieId,RedirectAttributes redirAttr) {
+
+    @RequestMapping(value = "/like/{id}", method = RequestMethod.GET)
+    public String like(@PathVariable("id") int movieId, RedirectAttributes redirAttr) {
         UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userd.getUser();
         Userandmovie um = new Userandmovie(movieId, user.getId());
         um.setUser(user);
         dum.addToUserAndMovie(um);
-        redirAttr.addFlashAttribute("like","You liked the movie. Recommendations will be made based on your feedback");
-        return "redirect:/getMovie/"+movieId;
- 
+        redirAttr.addFlashAttribute("like", "You liked the movie. Recommendations will be made based on your feedback");
+        return "redirect:/getMovie/" + movieId;
+
+    }
+
+    @RequestMapping(value = "/watchlist/{id}", method = RequestMethod.GET)
+    public String watchlist(@PathVariable("id") int movieId, RedirectAttributes redirAttr) {
+        UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userd.getUser();
+        Watchlist w = new Watchlist(movieId, user.getId());
+        w.setUser(user);
+        dw.addToWatchList(w);
+        redirAttr.addFlashAttribute("watchlist", "Added to your watchlist.");
+        return "redirect:/getMovie/" + movieId;
+
     }
 
 }

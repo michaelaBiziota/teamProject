@@ -8,14 +8,21 @@ package com.movieNIghts.movieNights.controller;
 import com.movieNIghts.movieNights.authentication.IAuthenticationFacade;
 
 import com.movieNIghts.movieNights.conf.MyUserDetailsService;
+import com.movieNIghts.movieNights.conf.UserDetailsImpl;
 import com.movieNIghts.movieNights.dao.DaoRoles;
+import com.movieNIghts.movieNights.dao.DaoSeenMovies;
 import com.movieNIghts.movieNights.dao.DaoUser;
+import com.movieNIghts.movieNights.dao.DaoUserAndMovie;
+import com.movieNIghts.movieNights.dao.DaoWatchList;
 import com.movieNIghts.movieNights.model.User;
+import com.movieNIghts.movieNights.model.Userandmovie;
+import com.movieNIghts.movieNights.model.UserandmoviePK;
 import com.movieNIghts.movieNights.repository.UserRepository;
 import com.movieNIghts.movieNights.validation.UserValidation;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -49,6 +56,12 @@ public class UserController {
     UserRepository ur;
     @Autowired
     IAuthenticationFacade authenticationFacade;
+    @Autowired
+    DaoUserAndMovie dum;
+    @Autowired
+    DaoSeenMovies sm;
+    @Autowired
+    DaoWatchList wl;
 
     @InitBinder
     private void initBider(final WebDataBinder binder) {
@@ -72,9 +85,9 @@ public class UserController {
         } else {
             us.setPassword(passwordEncoder.encode(pass));
             us.setRole(dr.getRole(1));
-            
+
             du.registration(us);
-            
+
         }
 
         return "login";
@@ -85,6 +98,30 @@ public class UserController {
     public String currentUserNameSimple() {
         Authentication authentication = authenticationFacade.getAuthentication();
         return authentication.getName();
+    }
+
+    @RequestMapping(value = "/favoriteMovies", method = RequestMethod.GET)
+    public String getFavorite(ModelMap mm) {
+        UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User userm = userd.getUser();
+        mm.addAttribute("favoriteMovies", dum.findMovieByUserId(userm.getId()));
+        return "profile";
+    }
+
+    @RequestMapping(value = "/alreadyWatchedMovies", method = RequestMethod.GET)
+    public String getAlreadyWatched(ModelMap mm) {
+        UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User userm = userd.getUser();
+        mm.addAttribute("seenMovies", sm.findMovieByUserid(userm.getId()));
+        return "profile";
+    }
+
+    @RequestMapping(value = "/watchList", method = RequestMethod.GET)
+    public String watchList(ModelMap mm) {
+        UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User userm = userd.getUser();
+        mm.addAttribute("watchlist", wl.findWatchListByUserId(userm.getId()));
+        return "profile";
     }
 
 }
