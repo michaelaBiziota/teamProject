@@ -66,13 +66,13 @@
                                         class="glyphicon glyphicon-cog pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a>
+                            <li><a href="watchList">Your watchlist<span class="glyphicon glyphicon-stats pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="#">Messages <span class="badge pull-right"> 12 </span></a>
+                            <li><a href="alreadyWatchedMovies">You have Already Watched <span class="glyphicon glyphicon-heart pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="#">Favourite Movies <span class="glyphicon glyphicon-heart pull-right"></span></a>
+                            <li><a href="favoriteMovies">Favourite Movies <span class="glyphicon glyphicon-heart pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
                             <li><a href="${pageContext.request.contextPath}/logout">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a>

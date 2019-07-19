@@ -5,9 +5,11 @@
  */
 package com.movieNIghts.movieNights.dao;
 
+import com.movieNIghts.movieNights.model.User;
 import com.movieNIghts.movieNights.model.Userandmovie;
 import com.movieNIghts.movieNights.model.UserandmoviePK;
 import com.movieNIghts.movieNights.repository.UserAndMovieRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,5 +29,9 @@ public class DaoUserAndMovie {
         public void addToUserAndMovie(Userandmovie usermovie){
     umr.save(usermovie);
     }
+        
+public List<Userandmovie> findMovieByUserId(int userid){
+return umr.findByuserId(userid);
+}
     
 }

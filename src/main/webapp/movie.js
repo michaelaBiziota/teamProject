@@ -12,14 +12,22 @@ function Load($) {
 //TODO GOBACK BUTTON,C FOR EACH GENRES
     function handleResponse(data) {
         console.log(data);
-        for(i=0;i<data.casts.crew.length;i++){
-       if (data.casts.crew[i].department==="Writing"){
-           writer=data.casts.crew[i].name;
+for (i = 0; i < data.casts.crew.length; i++) {
+           if (data.casts.crew[i].department === "Writing") {
+               var writer = data.casts.crew[i].name;
+               break;
+           }
        }
-       if (data.casts.crew[i].department==="Directing"){
-           director=data.casts.crew[i].name;
+       for (i = 0; i < data.casts.crew.length; i++) {
+           if (data.casts.crew[i].department === "Directing") {
+               var director = data.casts.crew[i].name;
+               break;
+           }
        }
-   }
+   for(i=0;i<data.videos.results.length;i++){
+      if (data.videos.results[i].type==="Trailer"){
+         var trailer=data.videos.results[i].key;
+      }}
         $("#movie").html(`
 
    <div class="row">
@@ -41,7 +49,7 @@ function Load($) {
                 ', ' + data.casts.cast[2].name + `</li>
       </ul>
    </div>
-    <div class="col-md-3"><iframe src="https://www.youtube.com/embed/`+ data.videos.results[0].key+`" allowfullscreen="allowfullscreen"
+    <div class="col-md-3"><iframe src="https://www.youtube.com/embed/`+ trailer+`" allowfullscreen="allowfullscreen"
       mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen"
       webkitallowfullscreen="webkitallowfullscreen"></iframe>
     </div>
@@ -52,6 +60,7 @@ function Load($) {
               <a href="http://localhost:8080/movieNights/movies" class="btn btn-primary">Go Back</a>
       <a href="http://localhost:8080/movieNights/like/${data.id}" class="btn btn-primary">Like</a>
       <a href="http://localhost:8080/movieNights/seen/${data.id}" class="btn btn-primary">Already watched</a>
+      <a href="http://localhost:8080/movieNights/watchlist/${data.id}" class="btn btn-primary">Add to watchlist</a>
             </div>
           </div>
         `);

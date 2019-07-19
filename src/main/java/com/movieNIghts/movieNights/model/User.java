@@ -55,9 +55,12 @@ public class User implements Serializable {
     private String lastname;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
+    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Size(max = 45)
     @Column(name = "email")
     private String email;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private Collection<Watchlist> watchlistCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private Collection<Seenmovies> seenmoviesCollection;
 
@@ -149,8 +152,13 @@ public class User implements Serializable {
     public String toString() {
         return "com.movieNIghts.movieNights.model.User[ id=" + id + " ]";
     }
-
-    
+    @XmlTransient
+    public Collection<Seenmovies> getSeenmoviesCollection() {
+        return seenmoviesCollection;
+    }
+    public void setSeenmoviesCollection(Collection<Seenmovies> seenmoviesCollection) {
+        this.seenmoviesCollection = seenmoviesCollection;
+    }
 
     public String getPassword() {
         return password;
@@ -185,12 +193,12 @@ public class User implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Seenmovies> getSeenmoviesCollection() {
-        return seenmoviesCollection;
+    public Collection<Watchlist> getWatchlistCollection() {
+        return watchlistCollection;
     }
 
-    public void setSeenmoviesCollection(Collection<Seenmovies> seenmoviesCollection) {
-        this.seenmoviesCollection = seenmoviesCollection;
+    public void setWatchlistCollection(Collection<Watchlist> watchlistCollection) {
+        this.watchlistCollection = watchlistCollection;
     }
 
 

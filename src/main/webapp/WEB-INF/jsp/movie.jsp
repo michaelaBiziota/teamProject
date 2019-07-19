@@ -21,6 +21,7 @@
     <div  hidden id="hidden">${mId}</div>
     <div id="warnseen">${seen}</div>
     <div id="like">${like}</div>
+    <div id="watchlist">${watchlist}</div>
 
   <div class="container">
     <div id="movie" class="well"></div>
