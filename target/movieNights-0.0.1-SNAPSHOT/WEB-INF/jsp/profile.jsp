@@ -11,10 +11,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-    </head>
+    </head> 
     <body>
-         <table>
-
+         <table id="favouriteMovies" hidden>
             <c:forEach var = "i" items="${favoriteMovies}">
                 <tr> <td>
                         <c:out value="${i.userandmoviePK.movieid}"/>
@@ -22,7 +21,7 @@
             </c:forEach>
                                    
                     </table>
-                 <table>
+                 <table id="seenMovies" hidden>
 
             <c:forEach var = "i" items="${seenMovies}">
                 <tr> <td>
@@ -32,7 +31,7 @@
                                    
                     </table>
         
-                         <table>
+                         <table id="watchlist" hidden>
 
             <c:forEach var = "i" items="${watchlist}">
                 <tr> <td>
@@ -41,5 +40,12 @@
             </c:forEach>
                                    
                     </table>
+        
+        <div class="container">
+        <div id="movies" class="row"></div>
+        <a href="${pageContext.request.contextPath}/movies" class="pager">Back to movies</a>
+    </div>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="static/profile.js"></script>
     </body>
 </html>
