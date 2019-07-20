@@ -86,3 +86,6 @@ input:focus {
 .links a {
     margin-left: 4px;
 }
+
+#email,#token{color:white;
+text-align: center;}

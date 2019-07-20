@@ -6,6 +6,7 @@
 package com.movieNIghts.movieNights.conf;
 
 import com.movieNIghts.movieNights.dao.DaoRoles;
+import com.movieNIghts.movieNights.dao.DaoUser;
 import com.movieNIghts.movieNights.model.User;
 import com.movieNIghts.movieNights.repository.UserRepository;
 import java.util.ArrayList;
@@ -27,13 +28,16 @@ public class MyUserDetailsService implements UserDetailsService{
 
     @Autowired
     UserRepository ur;
+
     
     @Autowired
     DaoRoles dr;
     
     @Override
     public UserDetails loadUserByUsername(String string) throws UsernameNotFoundException {
+
        User user=ur.findByUsername(string);
+//||(!user.getEnabled())
        if (user==null){
            throw new UsernameNotFoundException("User not found");
         }

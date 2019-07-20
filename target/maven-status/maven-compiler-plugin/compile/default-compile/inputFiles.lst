@@ -3,6 +3,7 @@ D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\mo
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\authentication\IAuthenticationFacade.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\model\WatchlistPK.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\repository\UserAndMovieRepository.java
+D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\repository\VerificationRepository.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\controller\PasswordForgotController.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\controller\HomeController.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\model\Userandmovie.java
@@ -20,10 +21,10 @@ D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\mo
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\repository\WatchListRepository.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\model\SeenmoviesPK.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\model\UserandmoviePK.java
+D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\model\Verificationtoken.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\dao\PasswordResetDao.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\model\Roles.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\dao\DaoUser.java
-D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\emailConfig\EmailConfig.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\emailConfig\EmailService.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\dao\DaoWatchList.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\validation\UserValidation.java
@@ -33,6 +34,7 @@ D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\mo
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\dto\PasswordResetDto.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\MovieNightsApplication.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\conf\UserDetailsImpl.java
+D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\dao\VerificationDao.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\controller\PasswordResetController.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\conf\WebSecurityConfig.java
 D:\Εγγραφα\NetBeansProjects\javaweb\movieNights\movieNights\src\main\java\com\movieNIghts\movieNights\dao\DaoSeenMovies.java

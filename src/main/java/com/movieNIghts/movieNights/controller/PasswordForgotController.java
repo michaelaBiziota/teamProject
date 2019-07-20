@@ -107,8 +107,11 @@ public class PasswordForgotController {
     }
         @PostMapping
 //    @ResponseBody
-    public String resetPassword(HttpServletRequest request, @RequestParam("email") String userEmail) {
-        User user = userService.findByEmail(userEmail);      
+    public String resetPassword(ModelMap mm,HttpServletRequest request, @RequestParam("email") String userEmail) {
+        User user = userService.findByEmail(userEmail); 
+        if (user==null){mm.addAttribute("userNotFound", "This email address doe not belong to any registered user");
+        return"forgotPassword";
+        }
         String token = UUID.randomUUID().toString();
         prd.createPasswordResetTokenForUser(user, token);
         mailSender.send(emailService.constructResetTokenEmail(getAppUrl(request), request.getLocale(), token, user));
