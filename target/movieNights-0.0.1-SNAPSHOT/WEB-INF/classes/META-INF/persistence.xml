@@ -11,6 +11,7 @@
     <class>com.movieNIghts.movieNights.model.PasswordResetToken</class>
     <class>com.movieNIghts.movieNights.model.Seenmovies</class>
     <class>com.movieNIghts.movieNights.model.Watchlist</class>
+    <class>com.movieNIghts.movieNights.model.Verificationtoken</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://5.189.135.166:3011/mtp?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>

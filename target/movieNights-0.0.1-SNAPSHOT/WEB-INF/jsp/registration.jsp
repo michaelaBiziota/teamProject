@@ -10,7 +10,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <style>.error{background-color: red} </style>
+        <style>.error{color: white;
+            border: 4px dotted red} </style>
         <title>Register</title>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -31,8 +32,8 @@
             Instead of picking movies for you, we make it
             super easy to discover great stuff yourself!</h6>
     </p>
-    <hr>
 
+    <hr>
 
     <div class="">
         <article class="card-body mx-auto" style="max-width: 400px;">
@@ -45,6 +46,7 @@
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
                     <form:input  path="firstname" placeholder="Firstname" class="form-control" title="Enter your Firstname" required="required"/>
+                    
                     <form:errors  path="firstname" cssClass="error"/>
                 </div> <!-- form-group// -->
 
@@ -70,7 +72,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
-                    <form:input  path="email"  placeholder="Email" class="form-control" type="email" title="Enter your Email Address" required="required"/>
+                    <form:input  path="email"  placeholder="Email" class="form-control" type="email" title="Enter your Email Address" required="required" name="email"/>
                     <form:errors  path="email" cssClass="error"/>
                 </div> <!-- form-group// -->
 

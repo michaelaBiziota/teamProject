@@ -50,4 +50,12 @@ public class EmailService {
         email.setFrom(environment.getProperty("support.email"));
         return email;
     }
+    
+        public SimpleMailMessage constructVerificationEmail(
+            String contextPath, Locale locale, String token, User user) {
+        String url = contextPath + "/activateAccount?id="
+                + user.getId() + "&token=" + token;
+        String message = ("activate your account");
+        return constructEmail("Activate your account", message + " \r\n" + url, user);
+    }
 }

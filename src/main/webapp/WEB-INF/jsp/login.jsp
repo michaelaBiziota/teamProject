@@ -22,6 +22,8 @@
         <div class="d-flex justify-content-center h-100">
             <div class="card">
                             <div id="bc">        ${SPRING_SECURITY_LAST_EXCEPTION.message}         </div>
+                            <div id="email">        ${EmailSent}         </div>
+                                <div id="token">${invalidToken}</div>
                 <div class="card-header">
                     <h3>Sign In</h3>
                 </div>

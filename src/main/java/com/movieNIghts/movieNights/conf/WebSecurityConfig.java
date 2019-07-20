@@ -27,13 +27,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
 
-//    @Bean
-//    public AuthenticationProvider authProvider() {
-//        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-//        provider.setUserDetailsService(userdetailsService);
-//        provider.setPasswordEncoder(passwordEncoder());
-//        return provider;
-//    }
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 
@@ -50,7 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .authorizeRequests().antMatchers("/login*", "/registerUser", "/doRegisterUser", "/static/**", "/forgot-password**", "/user/changePassword", "/savePassword").permitAll()
+                .authorizeRequests().antMatchers("/login*", "/registerUser", "/doRegisterUser", "/static/**", "/forgot-password**", "/user/changePassword", "/savePassword","/verificationemail","/activateAccount").permitAll()
                 .and()
                 .authorizeRequests().antMatchers("/admin","/delete/{id}","/update/{id}","/updatedUser","/allusers","/insertByAdmin","/doInsertByAdmin").access("hasRole('ROLE_ADMIN')")
                 .anyRequest().authenticated()
