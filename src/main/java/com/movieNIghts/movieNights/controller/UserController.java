@@ -159,4 +159,12 @@ public class UserController {
         return "login";
     }
 
+        @RequestMapping(value = "/getRecommendations", method = RequestMethod.GET)
+    public String getRecommendations(ModelMap mm) {
+        UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User userm = userd.getUser();
+        mm.addAttribute("favoriteMovies", dum.findMovieByUserId(userm.getId()));
+         mm.addAttribute("seenMovies", sm.findMovieByUserid(userm.getId()));
+        return "recommendations";
+    }
 }
