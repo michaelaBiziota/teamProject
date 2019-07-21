@@ -25,7 +25,7 @@
         </div>
         <div class="forgot">
             <article class="card-body " style="max-width: 400px;">
-
+${userNotFound}
                 <h2 class="text-center">Forgot Password?</h2>
                 ${message}
                 <p class="text-center">Enter your e-mail address and we'll send you a link to reset your password.

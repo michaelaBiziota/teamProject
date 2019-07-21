@@ -2,6 +2,7 @@ com\movieNIghts\movieNights\dao\DaoUser.class
 com\movieNIghts\movieNights\model\User_.class
 com\movieNIghts\movieNights\conf\WebSecurityConfig.class
 com\movieNIghts\movieNights\model\SeenmoviesPK.class
+com\movieNIghts\movieNights\dao\VerificationDao.class
 com\movieNIghts\movieNights\controller\PasswordResetController.class
 com\movieNIghts\movieNights\ServletInitializer.class
 com\movieNIghts\movieNights\model\UserandmoviePK_.class
@@ -16,7 +17,11 @@ com\movieNIghts\movieNights\model\Watchlist.class
 com\movieNIghts\movieNights\authentication\IAuthenticationFacade.class
 com\movieNIghts\movieNights\controller\MoviesController.class
 com\movieNIghts\movieNights\dao\DaoSeenMovies.class
+<<<<<<< HEAD
 com\movieNIghts\movieNights\repository\UserAndMovieRepository.class
+=======
+com\movieNIghts\movieNights\model\Verificationtoken.class
+>>>>>>> michaela
 com\movieNIghts\movieNights\conf\UserDetailsImpl.class
 com\movieNIghts\movieNights\controller\UserController.class
 com\movieNIghts\movieNights\model\User.class
@@ -39,7 +44,26 @@ com\movieNIghts\movieNights\repository\RolesRepository.class
 com\movieNIghts\movieNights\MovieNightsApplication.class
 com\movieNIghts\movieNights\authentication\AuthenticationFacadeImpl.class
 com\movieNIghts\movieNights\controller\AdminController.class
+com\movieNIghts\movieNights\repository\VerificationRepository.class
 com\movieNIghts\movieNights\model\Userandmovie.class
+<<<<<<< HEAD
+=======
+com\movieNIghts\movieNights\ServletInitializer.class
+com\movieNIghts\movieNights\validation\UserValidation.class
+com\movieNIghts\movieNights\model\Roles_.class
+com\movieNIghts\movieNights\dao\PasswordResetDao.class
+com\movieNIghts\movieNights\authentication\IAuthenticationFacade.class
+com\movieNIghts\movieNights\controller\MoviesController.class
+com\movieNIghts\movieNights\repository\UserAndMovieRepository.class
+com\movieNIghts\movieNights\model\User.class
+com\movieNIghts\movieNights\model\Verificationtoken_.class
+com\movieNIghts\movieNights\model\Userandmovie_.class
+com\movieNIghts\movieNights\dao\DaoUserAndMovie.class
+com\movieNIghts\movieNights\repository\UserRepository.class
+com\movieNIghts\movieNights\model\WatchlistPK_.class
+com\movieNIghts\movieNights\repository\RolesRepository.class
+com\movieNIghts\movieNights\MovieNightsApplication.class
+>>>>>>> michaela
 com\movieNIghts\movieNights\repository\SeenMoviesRepository.class
 com\movieNIghts\movieNights\controller\PasswordForgotController.class
 com\movieNIghts\movieNights\emailConfig\EmailService.class

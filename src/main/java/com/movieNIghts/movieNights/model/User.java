@@ -8,7 +8,6 @@ package com.movieNIghts.movieNights.model;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,13 +18,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
-import org.hibernate.validator.constraints.Length;
 
 /**
  *
@@ -41,9 +37,13 @@ import org.hibernate.validator.constraints.Length;
     , @NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password = :password")
     , @NamedQuery(name = "User.findByFirstname", query = "SELECT u FROM User u WHERE u.firstname = :firstname")
     , @NamedQuery(name = "User.findByLastname", query = "SELECT u FROM User u WHERE u.lastname = :lastname")
-    , @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email")})
+    , @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email")
+    , @NamedQuery(name = "User.findByEnabled", query = "SELECT u FROM User u WHERE u.enabled = :enabled")})
 public class User implements Serializable {
 
+    @Size(max = 45)
+    @Column(name = "username")
+    private String username;
     @Size(max = 400)
     @Column(name = "password")
     private String password;
@@ -54,16 +54,11 @@ public class User implements Serializable {
     @Column(name = "lastname")
     private String lastname;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
-    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
-    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Size(max = 45)
     @Column(name = "email")
     private String email;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private Collection<Watchlist> watchlistCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private Collection<Seenmovies> seenmoviesCollection;
-
+    @OneToMany(mappedBy = "user")
+    private Collection<Verificationtoken> verificationtokenCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -71,12 +66,8 @@ public class User implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-
-//    @Size(min = 2, max = 8, message = "Min 2 character and max 8")
-    @Column(name = "username")
-    private String username;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private Collection<Userandmovie> userandmovieCollection;
+    @Column(name = "enabled")
+    private Boolean enabled;
     @JoinColumn(name = "role", referencedColumnName = "id")
     @ManyToOne
     private Roles role;
@@ -92,33 +83,20 @@ public class User implements Serializable {
         return id;
     }
 
-    public User(String password, String username, Roles role) {
-        this.password = password;
-        this.username = username;
-        this.role = role;
-    }
-
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
+    public Boolean getEnabled() {
+        return enabled;
     }
 
 
-    @XmlTransient
-    public Collection<Userandmovie> getUserandmovieCollection() {
-        return userandmovieCollection;
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 
-    public void setUserandmovieCollection(Collection<Userandmovie> userandmovieCollection) {
-        this.userandmovieCollection = userandmovieCollection;
-    }
+
 
     public Roles getRole() {
         return role;
@@ -152,12 +130,13 @@ public class User implements Serializable {
     public String toString() {
         return "com.movieNIghts.movieNights.model.User[ id=" + id + " ]";
     }
-    @XmlTransient
-    public Collection<Seenmovies> getSeenmoviesCollection() {
-        return seenmoviesCollection;
+
+    public String getUsername() {
+        return username;
     }
-    public void setSeenmoviesCollection(Collection<Seenmovies> seenmoviesCollection) {
-        this.seenmoviesCollection = seenmoviesCollection;
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -193,14 +172,12 @@ public class User implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Watchlist> getWatchlistCollection() {
-        return watchlistCollection;
+    public Collection<Verificationtoken> getVerificationtokenCollection() {
+        return verificationtokenCollection;
     }
 
-    public void setWatchlistCollection(Collection<Watchlist> watchlistCollection) {
-        this.watchlistCollection = watchlistCollection;
+    public void setVerificationtokenCollection(Collection<Verificationtoken> verificationtokenCollection) {
+        this.verificationtokenCollection = verificationtokenCollection;
     }
-
-
-
+    
 }
