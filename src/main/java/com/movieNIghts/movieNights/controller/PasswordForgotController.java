@@ -115,6 +115,7 @@ public class PasswordForgotController {
         String token = UUID.randomUUID().toString();
         prd.createPasswordResetTokenForUser(user, token);
         mailSender.send(emailService.constructResetTokenEmail(getAppUrl(request), request.getLocale(), token, user));
+        mm.addAttribute("reset", "An Email has been sent to reset your password");
         return "login";
     }
 
