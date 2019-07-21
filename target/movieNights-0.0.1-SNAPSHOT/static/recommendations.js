@@ -1,10 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 jQuery(Load);
 function Load($) {
 
@@ -50,12 +43,7 @@ function Load($) {
 
     }
     $("#button").on("click", function () {
-        var sorted_arr = recommendedMovies.slice().sort();
-        for (var i = 0; i < sorted_arr.length - 1; i++) {
-            if (sorted_arr[i + 1] === sorted_arr[i]) {
-                results.push(sorted_arr[i]);
-            }
-        }
+results = recommendedMovies.filter((a, i, aa) => aa.indexOf(a) === i && aa.lastIndexOf(a) !== i);
         console.log(results, recommendedMovies,seenArray);
         for (i = 0; i < results.length; i++) {
 
@@ -69,11 +57,10 @@ function Load($) {
 
             function handleResponse(data) {
                 console.log(data);
-                for (i = 0; i < seenArray.length; i++) {
                     if (seenArray.includes(data.id)===false){
                         $("#movies").append("<div class='col-md-3'><div class=' text-center'><a href='getMovie/" + data.id + "'><img src='https://image.tmdb.org/t/p/w300" + data.poster_path + "'></a><h5 id='moviestitle'>" + data.title + "</h5></div></div>");
                     }
-                }
+               
             }
 
 
@@ -87,12 +74,3 @@ function Load($) {
     });
 
 }
-
-
-
-
-
-
-
-
-
