@@ -26,3 +26,47 @@ body {
 #moviestitle{
     font-size: 18px;
 }
+
+
+
+/*Profile CSS*/
+
+h2 ,.profpage{
+    font-family: "Times","Times New Roman", "serif";
+}
+
+.pager{
+    background-color: forestgreen;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    font-size: 25px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+
+.pager:hover{
+    background-color: forestgreen;
+    cursor: pointer;
+    padding: 12px 15px;
+    transition: 0.2s;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.27), 0 17px 50px 0 rgba(0, 0, 0, 0.22);
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+}
+
+#movienightsprof {
+    width: 400px;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration:none;
+}
+
+.profnavbar-nav {
+    margin-top:10px;
+    margin-left: 25%;
+    margin-right: 25%;
+}

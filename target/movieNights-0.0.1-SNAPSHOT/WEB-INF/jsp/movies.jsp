@@ -42,7 +42,7 @@
     
         <div class="row">
             <!-- MovieNights Logo -->
-            <div class="col-md-4 col-xs-12 mt-4">
+            <div class="col-md-4 col-xs-12 mt-3">
                 <img src="static/mn.png" class="mx-5 img-fluid" id="movienights">
             </div>
             <!-- End -->
@@ -66,10 +66,10 @@
                                         class="glyphicon glyphicon-cog pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="watchList">Your watchlist<span class="glyphicon glyphicon-stats pull-right"></span></a>
+                            <li><a href="watchList">Watchlist<span class="glyphicon  glyphicon-eye-open pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="alreadyWatchedMovies">You have Already Watched <span class="glyphicon glyphicon-heart pull-right"></span></a>
+                            <li><a href="alreadyWatchedMovies">Already Watched<span class="glyphicon glyphicon-eye-close pull-right"></span></a>
                             </li>
                             <li class="divider"></li>
                             <li><a href="favoriteMovies">Favourite Movies <span class="glyphicon glyphicon-heart pull-right"></span></a>
