@@ -24,6 +24,7 @@
                 <div class="card">
                     <c:if test="${empty EmailSent && empty reset&& empty invalidToken}">
                         <div id="bc">    <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}"/> </div>
+                        
                     </c:if>
                     <div id="email">        ${EmailSent}         </div>
                     <div id="token">${invalidToken}</div>
