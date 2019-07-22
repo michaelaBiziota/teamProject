@@ -4,7 +4,7 @@ body {
 }
 
 #movies img {
-    width: 106%;
+    width: 105%;
     border-radius: 15px;
 }
 
@@ -67,6 +67,4 @@ h2 ,.profpage{
 
 .profnavbar-nav {
     margin-top:10px;
-    margin-left: 25%;
-    margin-right: 25%;
 }

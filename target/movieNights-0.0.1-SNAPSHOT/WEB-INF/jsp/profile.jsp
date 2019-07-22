@@ -23,51 +23,58 @@
         <link rel="stylesheet" type="text/css" href="static/navbar.css">
     </head> 
     <body>
-        <div class="row">
-            <!-- MovieNights Logo -->
-            <div class="col-md-4 col-xs-12 mt-3">
-                <a href="${pageContext.request.contextPath}/movies">
-                    <img src="static/mn.png" class="mx-5 img-fluid" id="movienightsprof" title="Home">
-                </a>
+        <div class="container">
+            <div class="row">
+                <!-- MovieNights Logo -->
+                <div class="col-md-4 col-xs-12 mt-3">
+                    <a href="${pageContext.request.contextPath}/movies">
+                        <img src="static/mn.png" class="mx-5 img-fluid" id="movienightsprof" title="Home">
+                    </a>
+                </div>
+                <!-- End -->
+                <div class="col-md-4 text-center profpage mt-3"><h2>My profile</h2></div>
             </div>
-            <!-- End -->
-              <div class="col-md-4 text-center profpage mt-3"><h2>My profile</h2></div>
+
+            <!--Navbar-->
+            <div class="row">
+                <div class="d-flex justify-content-center mx-auto">
+                    <nav class="navbar navbar-expand-lg navbar-dark ">
+
+                        <!-- Navbar brand -->
+
+                        <!-- Collapsible content -->
+                        <div class="collapse navbar-collapse " id="basicExampleNav">
+
+                            <!-- Links -->
+                            <ul class="navbar-nav profnavbar-nav">
+                                <li class="nav-item" id="popular">
+                                    <a class="nav-link" href="accountSettings">Account Settings
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" id="favourite">
+                                    <a class="nav-link" href="watchList" id="fav">Favourite Movies</a>
+                                </li>
+                                <li class="nav-item" id="alreadywatched">
+                                    <a class="nav-link" href="alreadyWatchedMovies" id="seen">Already Watched</a>
+                                </li>
+                                <li class="nav-item " id="watchlists">
+                                    <a class="nav-link" href="favoriteMovies" id="watch">Watch Later</a>
+                                </li>
+                                <li class="nav-item vertical-line">
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/logout">Sign out</a>
+                                </li>
+                            </ul>
+                            <!-- Links -->
+                        </div>
+                        <!-- Collapsible content -->
+
+                    </nav>
+                    <!--/.Navbar-->
+                </div>
+
+            </div>
         </div>
-
-        <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark ">
-
-            <!-- Navbar brand -->
-
-            <!-- Collapsible content -->
-            <div class="collapse navbar-collapse " id="basicExampleNav">
-
-                <!-- Links -->
-                <ul class="navbar-nav profnavbar-nav">
-                    <li class="nav-item" id="popular">
-                        <a class="nav-link" href="accountSettings">Account Settings
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item" id="toprated">
-                        <a class="nav-link" href="watchList">Watchlist</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="alreadyWatchedMovies">Already Watched</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="favoriteMovies">Favourite Movies</a>
-                    </li>
-                    <li class="nav-item vertical-line">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/logout">Sign out</a>
-                    </li>
-                </ul>
-                <!-- Links -->
-            </div>
-            <!-- Collapsible content -->
-
-        </nav>
-        <!--/.Navbar-->
 
         <table id="favouriteMovies" hidden>
             <c:forEach var = "i" items="${favoriteMovies}">
@@ -103,9 +110,9 @@
             <div id="pagetitle" class="my-5 text-center "></div>
             <div id="movies" class="row"></div>
 
-            <div class="text-center">
-                <a href="${pageContext.request.contextPath}/movies" class="pager btn btn-primary my-5">Back to movies</a>
-            </div>
+            <!--            <div class="text-center">
+                            <a href="${pageContext.request.contextPath}/movies" class="pager btn btn-primary my-5">Back to movies</a>
+                        </div>-->
         </div>
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
