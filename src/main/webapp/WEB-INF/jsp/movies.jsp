@@ -62,7 +62,7 @@
                               </sec:authorize><span
                                 class="glyphicon glyphicon-user pull-right"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Account Settings <span
+                            <li><a href="accountSettings">Account Settings <span
                                         class="glyphicon glyphicon-cog pull-right"></span></a>
                             </li>
                             <li class="divider"></li>

@@ -91,11 +91,12 @@ public class PasswordResetController {
     }
 @RequestMapping(value = "/savePassword", method = RequestMethod.POST)
 //@ResponseBody
-public String savePassword(@RequestParam(value="newPassword") String newPassword) {
+public String savePassword(@RequestParam(value="newPassword") String newPassword,ModelMap mm) {
     User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
      newPassword=passwordEncoder.encode(newPassword);
      user.setPassword(newPassword);
     du.registration(user);
+    mm.addAttribute("savePass","your password has been reset");
 return "login";
 }
 }

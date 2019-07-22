@@ -16,6 +16,7 @@ import com.movieNIghts.movieNights.dao.DaoUserAndMovie;
 import com.movieNIghts.movieNights.dao.DaoWatchList;
 import com.movieNIghts.movieNights.dao.VerificationDao;
 import com.movieNIghts.movieNights.emailConfig.EmailService;
+import com.movieNIghts.movieNights.model.Roles;
 import com.movieNIghts.movieNights.model.User;
 import com.movieNIghts.movieNights.model.Userandmovie;
 import com.movieNIghts.movieNights.model.UserandmoviePK;
@@ -91,7 +92,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "doRegisterUser", method = RequestMethod.POST)
-    public String doRegisterUser(ModelMap mm,HttpServletRequest request, @RequestParam(value = "password") String pass, @ModelAttribute("user") User us, @Valid User user, BindingResult br) {
+    public String doRegisterUser(ModelMap mm, HttpServletRequest request, @RequestParam(value = "password") String pass, @ModelAttribute("user") User us, @Valid User user, BindingResult br) {
 
         if (br.hasErrors()) {
             return "registration";
@@ -103,7 +104,7 @@ public class UserController {
             String token = UUID.randomUUID().toString();
             vd.createVerificationTokenForUser(us, token);
             mailSender.send(emailService.constructVerificationEmail(getAppUrl(request), request.getLocale(), token, user));
-            mm.addAttribute("EmailSent","An email has been sent to activate your account");
+            mm.addAttribute("EmailSent", "An email has been sent to activate your account");
         }
         return "login";
 
@@ -121,6 +122,8 @@ public class UserController {
         UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User userm = userd.getUser();
         mm.addAttribute("favoriteMovies", dum.findMovieByUserId(userm.getId()));
+        mm.addAttribute("seenMovies", sm.findMovieByUserid(userm.getId()));
+        mm.addAttribute("watchlist", wl.findWatchListByUserId(userm.getId()));
         return "profile";
     }
 
@@ -128,7 +131,9 @@ public class UserController {
     public String getAlreadyWatched(ModelMap mm) {
         UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User userm = userd.getUser();
+        mm.addAttribute("favoriteMovies", dum.findMovieByUserId(userm.getId()));
         mm.addAttribute("seenMovies", sm.findMovieByUserid(userm.getId()));
+        mm.addAttribute("watchlist", wl.findWatchListByUserId(userm.getId()));
         return "profile";
     }
 
@@ -136,6 +141,8 @@ public class UserController {
     public String watchList(ModelMap mm) {
         UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User userm = userd.getUser();
+        mm.addAttribute("favoriteMovies", dum.findMovieByUserId(userm.getId()));
+        mm.addAttribute("seenMovies", sm.findMovieByUserid(userm.getId()));
         mm.addAttribute("watchlist", wl.findWatchListByUserId(userm.getId()));
         return "profile";
     }
@@ -159,12 +166,33 @@ public class UserController {
         return "login";
     }
 
-        @RequestMapping(value = "/getRecommendations", method = RequestMethod.GET)
+    @RequestMapping(value = "/getRecommendations", method = RequestMethod.GET)
     public String getRecommendations(ModelMap mm) {
         UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User userm = userd.getUser();
         mm.addAttribute("favoriteMovies", dum.findMovieByUserId(userm.getId()));
-         mm.addAttribute("seenMovies", sm.findMovieByUserid(userm.getId()));
+        mm.addAttribute("seenMovies", sm.findMovieByUserid(userm.getId()));
         return "recommendations";
+    }
+
+    @RequestMapping(value = "/accountSettings", method = RequestMethod.GET)
+    public String accountSettings(ModelMap mm) {
+        UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userd.getUser();
+        mm.addAttribute("user", user);
+        return "accountSettings";
+    }
+
+    @RequestMapping(value = "resetSettings", method = RequestMethod.POST)
+    public String resetSettings(ModelMap mm, @RequestParam(value = "password") String pass, @ModelAttribute("user") User us) {
+
+        us.setPassword(passwordEncoder.encode(pass));
+        us.setEnabled(true);
+        us.setRole(dr.getRole(1));
+
+        du.registration(us);
+        mm.addAttribute("settings", "Your data have been successfully updated");
+        return "accountSettings";
+
     }
 }

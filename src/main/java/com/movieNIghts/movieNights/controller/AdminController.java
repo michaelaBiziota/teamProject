@@ -86,6 +86,7 @@ public class AdminController {
     @RequestMapping(value = "doInsertByAdmin", method = RequestMethod.POST)
     public String doInsertByAdminUser(@RequestParam(value = "password") String pass, @ModelAttribute("user") User us) {
         us.setPassword(passwordEncoder.encode(pass));
+        us.setEnabled(true);
         du.registration(us);
 
         return "redirect:/allusers";

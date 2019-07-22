@@ -87,5 +87,5 @@ input:focus {
     margin-left: 4px;
 }
 
-#email,#token,#reset{color:white;
+#email,#token,#reset,#pass{color:white;
 text-align: center;}

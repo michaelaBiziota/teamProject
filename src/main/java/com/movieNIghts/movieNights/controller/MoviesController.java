@@ -49,7 +49,6 @@ public class MoviesController {
         return "movie";
     }
 
-
     @RequestMapping(value = "/seen/{id}", method = RequestMethod.GET)
 
     public String addToSeen(@PathVariable("id") int movieId, RedirectAttributes redirAttr) {
@@ -70,7 +69,10 @@ public class MoviesController {
         Userandmovie um = new Userandmovie(movieId, user.getId());
         um.setUser(user);
         dum.addToUserAndMovie(um);
-        redirAttr.addFlashAttribute("like", "You liked the movie. Recommendations will be made based on your feedback");
+        Seenmovies sm = new Seenmovies(movieId, user.getId());
+        sm.setUser(user);
+        dsm.addToseenMovies(sm);
+        redirAttr.addFlashAttribute("like", "This movie has been added to your favorites and to your already have watched list. Recommendations will be made based on your feedback");
         return "redirect:/getMovie/" + movieId;
 
     }

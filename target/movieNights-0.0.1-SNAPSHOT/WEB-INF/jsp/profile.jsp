@@ -45,7 +45,7 @@
                 <!-- Links -->
                 <ul class="navbar-nav profnavbar-nav">
                     <li class="nav-item" id="popular">
-                        <a class="nav-link" href="#">Account Settings
+                        <a class="nav-link" href="accountSettings">Account Settings
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
