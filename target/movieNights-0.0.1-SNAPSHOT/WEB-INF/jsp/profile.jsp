@@ -53,13 +53,13 @@
                                     </a>
                                 </li>
                                 <li class="nav-item" id="favourite">
-                                    <a class="nav-link" href="watchList" id="fav">Favourite Movies</a>
+                                    <a class="nav-link" href="#" id="fav">Favourite Movies</a>
                                 </li>
                                 <li class="nav-item" id="alreadywatched">
-                                    <a class="nav-link" href="alreadyWatchedMovies" id="seen">Already Watched</a>
+                                    <a class="nav-link" href="#" id="seen">Already Watched</a>
                                 </li>
                                 <li class="nav-item " id="watchlists">
-                                    <a class="nav-link" href="favoriteMovies" id="watch">Watch Later</a>
+                                    <a class="nav-link" href="#" id="watch">Watch Later</a>
                                 </li>
                                 <li class="nav-item vertical-line">
                                     <a class="nav-link" href="${pageContext.request.contextPath}/logout">Sign out</a>
