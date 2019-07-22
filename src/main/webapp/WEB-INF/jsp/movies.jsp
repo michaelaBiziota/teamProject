@@ -25,12 +25,9 @@
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-
         <link rel="stylesheet" type="text/css" href="static/header.css">
         <link rel="stylesheet" type="text/css" href="static/navbar.css">
         <link rel="stylesheet" type="text/css" href="static/movies.css">
-
-
 
     </head>
 

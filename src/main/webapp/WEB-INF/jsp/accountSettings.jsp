@@ -10,21 +10,119 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Account settings</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/register.css">
+        <link rel="stylesheet" type="text/css" href="static/navbar.css">
+        <link rel="stylesheet" type="text/css" href="static/movies.css">
     </head>
     <body>
+
+        <div class="container">
+            <div class="row">
+                <!-- MovieNights Logo -->
+                <div class="col-md-4 col-xs-12 mt-3">
+                    <a href="${pageContext.request.contextPath}/movies">
+                        <img src="static/mn.png" class="mx-5 img-fluid" id="movienightsprof" title="Home">
+                    </a>
+                </div>
+                <!-- End -->
+                <div class="col-md-4 text-center profpage mt-3"><h2>My profile</h2></div>
+            </div>
+
+            <!--Navbar-->
+            <div class="row">
+                <div class="d-flex justify-content-center mx-auto">
+                    <nav class="navbar navbar-expand-lg navbar-dark ">
+
+                        <!-- Navbar brand -->
+
+                        <!-- Collapsible content -->
+                        <div class="collapse navbar-collapse " id="basicExampleNav">
+
+                            <!-- Links -->
+                            <ul class="navbar-nav profnavbar-nav">
+                                <li class="nav-item" id="popular">
+                                    <a class="nav-link active" href="accountSettings">Account Settings
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" id="favourite">
+                                    <a class="nav-link" href="myMovies" id="fav">Favourite Movies</a>
+                                </li>
+                                <li class="nav-item" id="alreadywatched">
+                                    <a class="nav-link" href="#" id="seen">Already Watched</a>
+                                </li>
+                                <li class="nav-item " id="watchlists">
+                                    <a class="nav-link" href="#" id="watch">Watch Later</a>
+                                </li>
+                                <li class="nav-item vertical-line">
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/logout">Sign out</a>
+                                </li>
+                            </ul>
+                            <!-- Links -->
+                        </div>
+                        <!-- Collapsible content -->
+
+                    </nav>
+                    <!--/.Navbar-->
+                </div>
+
+            </div>
+        </div>
+
         ${settings}
-        <table >
-            <form:form modelAttribute="user" method="POST" action="${pageContext.request.contextPath}/resetSettings">
-                <form:input path="id" type="hidden"/>
-                <tr><td>Username</td> <td><form:input  path="username"  placeholder="Username"  title="Update Username"  required="required" /></td></tr>
-                <tr><td>Lastname</td><td><form:input  path="lastname"  placeholder="Lastname" title="Update Lastname" required="required" /></td></tr>
-                <tr><td>FirstName</td><td><form:input  path="firstname"   title="Update Firstname" required="required"/></td></tr>
-                <tr><td>Email Address</td><td> <form:input  path="email"  placeholder="Email"  type="email" title="Update Email Address" required="required"/></td></tr>
-                <tr><td>Password</td><td><input type="password" name="password" placeholder="Password"  minlength="5" title="Update password, must be at least 5 characters" required="required" /></td></tr>
-                <tr><td><input type="submit"></td></tr>
-                    </form:form>
-        </table>
-        <a href="${pageContext.request.contextPath}/movies">Back to movies</a>
+        <div class="">
+            <article class="card-body mx-auto" style="max-width: 400px;">
+                <form:form modelAttribute="user" method="POST" action="${pageContext.request.contextPath}/resetSettings">
+                    <form:input type="hidden" path="id"/>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+                        <form:input  path="firstname" placeholder="Firstname" class="form-control" title="Update Firstname" required="required"/>
+                    </div> 
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+                        <form:input  path="lastname"  placeholder="Lastname" class="form-control" title="Update Lastname" required="required" />
+                    </div> 
+
+                    <hr>
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+                        <form:input  path="username"  placeholder="Username" class="form-control" title="Update Username"  required="required" />
+                    </div> 
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                        </div>
+                        <form:input  path="email"  placeholder="Email" class="form-control" type="email" title="Update Email Address" required="required"/>
+                    </div> 
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input type="password"  name="password" placeholder="Password"  minlength="5" title="Update password, must be at least 5 characters" class="form-control" required="required" />
+                    </div> 
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="form-control btn btn-primary btn-block">   
+                    </div> <!-- form-group// -->
+                </form:form>
+            </article>
+        </div> <!-- card.// -->
     </body>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="static/profile.js"></script>
 </html>

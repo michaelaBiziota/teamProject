@@ -1,40 +1,40 @@
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\model\Verificationtoken.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\conf\WebSecurityConfig.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\model\SeenmoviesPK.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\validation\UserValidation.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\repository\RolesRepository.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\conf\MyUserDetailsService.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\conf\UserDetailsImpl.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\model\PasswordResetToken.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\dao\PasswordResetDao.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\dao\DaoUserAndMovie.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\repository\WatchListRepository.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\model\User.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\dao\DaoWatchList.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\controller\MoviesController.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\repository\VerificationRepository.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\model\UserandmoviePK.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\dao\VerificationDao.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\ServletInitializer.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\repository\SeenMoviesRepository.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\controller\UserController.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\authentication\IAuthenticationFacade.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\model\Watchlist.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\emailConfig\EmailService.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\model\Roles.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\MovieNightsApplication.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\controller\PasswordForgotController.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\model\Seenmovies.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\repository\UserRepository.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\repository\UserAndMovieRepository.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\repository\PasswordResetTokenRepository.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\dao\DaoSeenMovies.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\model\Userandmovie.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\controller\AdminController.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\dao\DaoRoles.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\authentication\AuthenticationFacadeImpl.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\model\WatchlistPK.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\dao\DaoUser.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\controller\PasswordResetController.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\dto\PasswordResetDto.java
-C:\Users\creoo\Desktop\Group Project\teamProject\src\main\java\com\movieNIghts\movieNights\controller\HomeController.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\authentication\AuthenticationFacadeImpl.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\authentication\IAuthenticationFacade.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\dao\PasswordResetDao.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\emailConfig\EmailService.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\model\Verificationtoken.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\repository\UserRepository.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\conf\WebSecurityConfig.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\repository\SeenMoviesRepository.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\controller\MoviesController.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\dto\PasswordResetDto.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\controller\UserController.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\dao\VerificationDao.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\dao\DaoSeenMovies.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\model\Seenmovies.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\repository\VerificationRepository.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\model\Watchlist.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\repository\PasswordResetTokenRepository.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\MovieNightsApplication.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\controller\HomeController.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\dao\DaoRoles.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\model\Userandmovie.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\controller\PasswordForgotController.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\model\WatchlistPK.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\model\PasswordResetToken.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\model\UserandmoviePK.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\repository\RolesRepository.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\controller\PasswordResetController.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\model\User.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\conf\UserDetailsImpl.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\validation\UserValidation.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\dao\DaoUserAndMovie.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\repository\UserAndMovieRepository.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\model\SeenmoviesPK.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\controller\AdminController.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\ServletInitializer.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\dao\DaoWatchList.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\conf\MyUserDetailsService.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\dao\DaoUser.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\model\Roles.java
+C:\Users\thodo\Documents\NetBeansProjects\JavaWeb\teamProject\src\main\java\com\movieNIghts\movieNights\repository\WatchListRepository.java
