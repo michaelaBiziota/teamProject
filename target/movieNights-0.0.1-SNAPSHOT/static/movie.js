@@ -90,9 +90,9 @@ function Load($) {
         if (data.genres.length === 1) {
             $("#gen").append(data.genres[0].name);
         } else if (data.genres.length === 2) {
-            $("#gen").append(data.genres[0].name + "," + data.genres[1].name);
+            $("#gen").append(data.genres[0].name + ", " + data.genres[1].name);
         } else {
-            $("#gen").append(data.genres[0].name + "," + data.genres[1].name + "," + data.genres[2].name);
+            $("#gen").append(data.genres[0].name + ", " + data.genres[1].name + ", " + data.genres[2].name);
         }
     }
 

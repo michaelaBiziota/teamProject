@@ -12,21 +12,27 @@
         <title>Login Page</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/styles.css">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/login.css">
     </head>
 
     <body>
+        <div class="content">
+            <div class="graphics">
+                <img src="static/pictures/ironman.png" class="container">
+            </div>
+        </div>
+
         <div class="container">
             <div class="d-flex justify-content-center h-100">
                 <div class="card">
                     <c:if test="${empty EmailSent && empty reset&& empty invalidToken && empty savePass}">
                         <div id="bc">    <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}"/> </div>
-                        
+
                     </c:if>
-                    <div id="email">        ${EmailSent}         </div>
+                    <div id="email">${EmailSent}</div>
                     <div id="token">${invalidToken}</div>
                     <div id="reset">${reset}</div>
                     <div id="pass">${savePass}</div>
@@ -68,6 +74,16 @@
                 </div>
             </div>
         </div>
+        <article >
+            <div class="card-body text-center">
+
+                <p class="h5 text-white text-center" id="text">
+                    Movie Nights is the site for you.
+                    It's simple enough, you input a film you like and it returns results that offer similar action to your favorites.<br>
+                    Movie Nights is a full entertainment recommendation engine!
+                </p>
+            </div>
+        </article>
     </body>
 
 </html>
