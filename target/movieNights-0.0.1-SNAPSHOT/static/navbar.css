@@ -102,3 +102,7 @@
 .genres{
   cursor: pointer;
 }
+
+h2 ,.profpage{
+    font-family: "Times","Times New Roman", "serif";
+}

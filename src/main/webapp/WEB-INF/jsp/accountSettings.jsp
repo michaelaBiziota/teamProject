@@ -17,7 +17,6 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/register.css">
         <link rel="stylesheet" type="text/css" href="static/navbar.css">
-        <link rel="stylesheet" type="text/css" href="static/movies.css">
     </head>
     <body>
 
@@ -51,13 +50,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item" id="favourite">
-                                    <a class="nav-link" href="myMovies" id="fav">Favourite Movies</a>
-                                </li>
-                                <li class="nav-item" id="alreadywatched">
-                                    <a class="nav-link" href="#" id="seen">Already Watched</a>
-                                </li>
-                                <li class="nav-item " id="watchlists">
-                                    <a class="nav-link" href="#" id="watch">Watch Later</a>
+                                    <a class="nav-link" href="myMovies" id="fav">My movies</a>
                                 </li>
                                 <li class="nav-item vertical-line">
                                     <a class="nav-link" href="${pageContext.request.contextPath}/logout">Sign out</a>
@@ -124,5 +117,5 @@
     </body>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="static/profile.js"></script>
+
 </html>
