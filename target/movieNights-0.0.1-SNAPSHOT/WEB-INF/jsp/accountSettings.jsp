@@ -67,9 +67,10 @@
             </div>
         </div>
 
-        ${settings}
+        
         <div class="">
             <article class="card-body mx-auto" style="max-width: 400px;">
+                <div id="set"> ${settings} </div>
                 <form:form modelAttribute="user" method="POST" action="${pageContext.request.contextPath}/resetSettings">
                     <form:input type="hidden" path="id"/>
                     <div class="form-group input-group">
