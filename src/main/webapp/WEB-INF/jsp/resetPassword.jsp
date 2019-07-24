@@ -29,7 +29,7 @@
 
         <div class="content text-center">
             <div class="graphics">
-                <img src="../static/dr.strange.png" class="container">
+                <img src="../static/pictures/dr.strange.png" class="container">
             </div>
         </div>
         <div class="forgot">

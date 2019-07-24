@@ -20,7 +20,7 @@
     <body>
         <div class="content text-center">
             <div class="graphics">
-                <img src="static/dr.strange.png" class="container img-fluid" id="dr">
+                <img src="static/pictures/dr.strange.png" class="container img-fluid" id="dr">
             </div>
         </div>
         <div class="forgot">

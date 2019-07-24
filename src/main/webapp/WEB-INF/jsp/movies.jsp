@@ -40,7 +40,7 @@
                 <div class="row">
                     <!-- MovieNights Logo -->
                     <div class="col-md-4 col-xs-12 mt-3">
-                        <img src="static/mn.png" class="mx-5 img-fluid" id="movienights">
+                        <img src="static/pictures/mn.png" class="mx-5 img-fluid" id="movienights">
                     </div>
                     <!-- End -->
                     <div class="col-md-4 col-xs-12 mt-4">

@@ -25,7 +25,7 @@
                 <!-- MovieNights Logo -->
                 <div class="col-md-4 col-xs-12 mt-3">
                     <a href="${pageContext.request.contextPath}/movies">
-                        <img src="static/mn.png" class="mx-5 img-fluid" id="movienightsprof" title="Home">
+                        <img src="static/pictures/mn.png" class="mx-5 img-fluid" id="movienightsprof" title="Home">
                     </a>
                 </div>
                 <!-- End -->
