@@ -1,5 +1,4 @@
 body {
-    /* background-color: darkgray; */
     background-image: url("static/bg2.png");
 }
 
@@ -8,7 +7,6 @@ body {
     margin: 0 auto;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 #adminmenu{
@@ -81,6 +79,15 @@ body {
     top: -12px;
     right: 14px;
     z-index: 9;
+}
+
+/*Hover*/
+.dropdown1:hover > .dropdown-menu {
+    display: block;
+}
+.dropdown1 > .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
 }
 
 /* END */
