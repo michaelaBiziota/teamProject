@@ -72,7 +72,7 @@
             <article class="card-body mx-auto" style="max-width: 400px;">
                 <div id="set"> ${settings} </div>
                 <form:form modelAttribute="user" method="POST" action="${pageContext.request.contextPath}/resetSettings">
-                    <form:input type="hidden" path="id"/>
+                    <form:input type="hidden" path="id" name="id"/>
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
@@ -100,7 +100,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                         </div>
-                        <form:input  path="email"  placeholder="Email" class="form-control" type="email" title="Update Email Address" required="required"/>
+                        <form:input  path="email"  placeholder="Email" class="form-control" type="email" title="Update Email Address" required="required" name="email"/>
                     </div> 
 
                     <div class="form-group input-group">

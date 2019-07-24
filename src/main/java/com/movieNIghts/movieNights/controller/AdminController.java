@@ -74,21 +74,5 @@ public class AdminController {
 
     }
 
-    @RequestMapping(value = "insertByAdmin", method = RequestMethod.GET)
-    public String inserByAdmin(ModelMap mm) {
-        User u = new User();
-        mm.addAttribute("user", u);
-        mm.addAttribute("rolesArray", dr.getAll());
 
-        return "adminInsert";
-    }
-
-    @RequestMapping(value = "doInsertByAdmin", method = RequestMethod.POST)
-    public String doInsertByAdminUser(@RequestParam(value = "password") String pass, @ModelAttribute("user") User us) {
-        us.setPassword(passwordEncoder.encode(pass));
-        us.setEnabled(true);
-        du.registration(us);
-
-        return "redirect:/allusers";
-    }
 }

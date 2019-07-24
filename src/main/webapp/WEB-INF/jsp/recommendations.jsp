@@ -37,11 +37,12 @@
                 </c:forEach>
 
         </table>
-        <button id="button">Search!</button>
+<!--        <button id="button">Search!</button>-->
         <div class="container">
             <div id="movies" class="row"></div>
             <div class="text-center">
-               <a href="${pageContext.request.contextPath}/movies" class="pager btn btn-primary my-5">Back to movies</a>
+                     <div>   <button class="pager btn" id="button">See what we recommend</button> </div>
+               <a href="${pageContext.request.contextPath}/movies" class="pager btn btn-primary my-5 ">Back to movies</a>
            </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

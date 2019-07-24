@@ -32,6 +32,7 @@
                 <img src="../static/pictures/dr.strange.png" class="container">
             </div>
         </div>
+
         <div class="forgot">
 
             <article class="card-body mx-auto" style="max-width: 400px;">
@@ -45,16 +46,46 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                         </div>
-                        <input placeholder="New Password" class="form-control" name="newPassword" minlength="5" type="password" title="The password must be at least 5 characters" required/>
+                        <input id="p" placeholder="New Password" class="form-control" name="newPassword" minlength="5" type="password" title="The password must be at least 5 characters" required/>
+
+
+                    </div> 
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input  placeholder="Confirm Password" type="password" id="confp" class="form-control"  required="required" />
                     </div> 
 
                     <div class="form-group">
-                        <input type="submit"  class="form-control btn btn-primary btn-block">   
+                        <input type="submit"  id="s" class="form-control btn btn-primary btn-block"> 
+
                     </div> 
                 </form>
+                <div id="conft"><div>
             </article>
         </div>
+                                
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script>
+            jQuery(App);
+            function App($) {
+                $("#confp").on("keyup", function () {
+                    if ($("#p").val() !== $("#confp").val()) {
+                        $("#s").prop("disabled", true);
+                        $("#conft").html("confirm password and password do not match");
+                    } else {
+                        $("#s").prop("disabled", false);
+                        $("#conft").html("");
+
+                    }
+                });
+
+            }
 
 
+
+        </script>
     </body>
 </html>

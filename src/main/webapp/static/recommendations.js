@@ -1,6 +1,6 @@
 jQuery(Load);
 function Load($) {
-
+$("#button").css("display","box");
     var favouriteArray = [];
     $("#favouriteMovies td input").each(function () {
         favouriteArray.push($(this).val());
@@ -43,6 +43,7 @@ function Load($) {
 
     }
     $("#button").on("click", function () {
+        $("#button").css("display","none");
 results = recommendedMovies.filter((a, i, aa) => aa.indexOf(a) === i && aa.lastIndexOf(a) !== i);
         console.log(results, recommendedMovies,seenArray);
         for (i = 0; i < results.length; i++) {

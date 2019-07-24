@@ -28,7 +28,7 @@
         <div class="container">
             <div class="d-flex justify-content-center h-100">
                 <div class="card">
-                    <c:if test="${empty EmailSent && empty reset&& empty invalidToken && empty savePass}">
+                    <c:if test="${empty EmailSent && empty reset && empty invalidToken && empty savePass}">
                         <div id="bc">    <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}"/> </div>
 
                     </c:if>

@@ -16,7 +16,9 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
         <link rel="stylesheet" type="text/css" href="static/register.css">
-        <style>.error{background-color: red} </style>
+        <style>.error{color: white;
+               font-size: 20px;
+            } </style>
     </head>
     <body>
         <div class="content">
@@ -46,22 +48,23 @@
                     </div> <!-- form-group// -->
 
                     <hr>
-
+                    <form:errors  path="username" cssClass="error"/>
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                         </div>
                         <form:input  path="username"  placeholder="Username" class="form-control" title="Enter Username"  required="required" />
-                        <form:errors  path="username" cssClass="error"/>
-                    </div> <!-- form-group// -->
 
+                    </div> <!-- form-group// -->
+                    <div>   <form:errors  path="email" cssClass="error"/> </div>
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                         </div>
                         <form:input  path="email"  placeholder="Email" class="form-control" type="email" title="Enter Email Address" required="required"/>
-                        <form:errors  path="email" cssClass="error"/>
+
                     </div> <!-- form-group// -->
+
 
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
@@ -75,7 +78,7 @@
                             <span class="input-group-text"> <i class="fa fa-cog"></i> </span>
                         </div>
                         <form:select path="role" class="form-control">
-                            <form:option value="-1">Select role</form:option>
+                            <form:option value="-1" disabled="${true}">Select role</form:option>
                             <form:options items="${rolesArray}" itemLabel="userrole" itemValue="id" />
                         </form:select>
                     </div>
@@ -83,7 +86,7 @@
                         <input type="submit" value="Insert" class="form-control btn btn-primary btn-block">   
                     </div> <!-- form-group// -->
                 </form:form>
-
-
-                </body>
-                </html>
+            </article>
+        </div>
+    </body>
+</html>
