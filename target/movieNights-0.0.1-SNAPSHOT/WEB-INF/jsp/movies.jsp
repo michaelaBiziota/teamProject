@@ -116,7 +116,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Whatever</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="New Movies.jsp">New Movies</a>
+                    </li>
                     <li class="nav-item dropdown" id="dropdownli">
                         <a class=" nav-link dropdown-toggle " id="navbarDropdownMenuLink" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
@@ -135,15 +137,7 @@
                             <a class="dropdown-item hvr-sweep-to- genres" id="thriller"> Thriller</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="New Movies.jsp">New Movies</a>
-                    </li>
-                    <li class="nav-item vertical-line">
-                        <a class="nav-link" href="Contact Us.jsp">Contact Us</a>
-                    </li>
-
-                    <!-- Slider -->
-                    <li class="nav-item vertical-line ">
+                     <li class="nav-item vertical-line ">
                         <div class="nav-link">
                             <div class="slidecontainer">
                                 <p class="text-center mt-2">Released in: <span id="year"></span></p>
@@ -151,6 +145,12 @@
                             </div>
                         </div>
                     </li>
+                    <li class="nav-item vertical-line">
+                        <a class="nav-link" href="Contact Us.jsp">Contact Us</a>
+                    </li>
+
+                    <!-- Slider -->
+                   
                     <!-- Slider END -->
                 </ul>
                 <!-- Links -->

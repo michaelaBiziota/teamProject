@@ -22,6 +22,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
@@ -50,20 +51,21 @@ public class MoviesController {
     }
 
     @RequestMapping(value = "/seen/{id}", method = RequestMethod.GET)
-
-    public String addToSeen(@PathVariable("id") int movieId, RedirectAttributes redirAttr) {
+    @ResponseBody
+    public void addToSeen(@PathVariable("id") int movieId, RedirectAttributes redirAttr) {
         UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userd.getUser();
         Seenmovies sm = new Seenmovies(movieId, user.getId());
         sm.setUser(user);
         dsm.addToseenMovies(sm);
-        redirAttr.addFlashAttribute("seen", "Already watched that movie? Recommendations will be made based on your feedback");
-        return "redirect:/getMovie/" + movieId;
+//        redirAttr.addFlashAttribute("seen", "Already watched that movie? Recommendations will be made based on your feedback");
+//        return "redirect:/getMovie/" + movieId;
 
     }
 
     @RequestMapping(value = "/like/{id}", method = RequestMethod.GET)
-    public String like(@PathVariable("id") int movieId, RedirectAttributes redirAttr) {
+    @ResponseBody
+    public void like(@PathVariable("id") int movieId, RedirectAttributes redirAttr) {
         UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userd.getUser();
         Userandmovie um = new Userandmovie(movieId, user.getId());
@@ -72,20 +74,21 @@ public class MoviesController {
         Seenmovies sm = new Seenmovies(movieId, user.getId());
         sm.setUser(user);
         dsm.addToseenMovies(sm);
-        redirAttr.addFlashAttribute("like", "This movie has been added to your favorites and to your already have watched list. Recommendations will be made based on your feedback");
-        return "redirect:/getMovie/" + movieId;
+//        redirAttr.addFlashAttribute("like", "This movie has been added to your favorites and to your already have watched list. Recommendations will be made based on your feedback");
+//        return "redirect:/getMovie/" + movieId;
 
     }
 
     @RequestMapping(value = "/watchlist/{id}", method = RequestMethod.GET)
-    public String watchlist(@PathVariable("id") int movieId, RedirectAttributes redirAttr) {
+    @ResponseBody
+    public void watchlist(@PathVariable("id") int movieId, RedirectAttributes redirAttr) {
         UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userd.getUser();
         Watchlist w = new Watchlist(movieId, user.getId());
         w.setUser(user);
         dw.addToWatchList(w);
-        redirAttr.addFlashAttribute("watchlist", "Added to your watchlist.");
-        return "redirect:/getMovie/" + movieId;
+//        redirAttr.addFlashAttribute("watchlist", "Added to your watchlist.");
+//        return "redirect:/getMovie/" + movieId;
 
     }
 
