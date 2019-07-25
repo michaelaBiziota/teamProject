@@ -1,4 +1,4 @@
-<%-- 
+ <%-- 
     Document   : movies
     Created on : 7 Ιουλ 2019, 8:57:27 μμ
     Author     : bizmi
@@ -40,7 +40,9 @@
                 <div class="row">
                     <!-- MovieNights Logo -->
                     <div class="col-md-4 col-xs-12 mt-3">
-                        <img src="static/pictures/mn.png" class="mx-5 img-fluid" id="movienights">
+                       <a href="${pageContext.request.contextPath}/movies">
+                        <img src="static/pictures/mn.png" class="mx-5 img-fluid" id="movienightsprof" title="Home">
+                    </a>
                     </div>
                     <!-- End -->
                     <div class="col-md-4 col-xs-12 mt-4">

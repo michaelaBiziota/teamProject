@@ -39,4 +39,41 @@ iframe {
 
 #title {
     margin: 0 auto;
+    font-family: Noto Sans, sans-serif;
 }
+
+/*Buttons*/
+
+span {
+    color: white;
+}
+
+.btn.heart.fa-heart-o {
+    font-size: 19px;
+}
+.btn.heart.fa-heart {
+    color: red;
+}
+
+.btn.clock.fa-clock-o {
+    font-size: 19px;
+}
+
+.btn.clock.fa-clock-o.green {
+    color: rgb(22, 212, 22);
+}
+
+.btn.eye.fa-eye {
+    font-size: 19px;
+}
+
+.btn.eye.fa-eye.green {
+    color: rgb(22, 212, 22);
+}
+.btn{
+    font-size: 19px;
+}
+
+/*h3{
+    text-align: center;
+}*/

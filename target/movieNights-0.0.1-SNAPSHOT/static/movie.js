@@ -75,16 +75,18 @@ function Load($) {
       mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen"
       webkitallowfullscreen="webkitallowfullscreen"></iframe>
     </div>
-          <div class="row">
-            <div class="well mx-4 my-3">
-              <h3>Plot</h3>` + data.overview + `<hr>
-              <a href="http://imdb.com/title/${data.imdb_id}" target="_blank" class="btn btn-primary">View IMDB</a>
-              <a href="http://localhost:8080/movieNights/movies" class="btn btn-primary">Go Back</a>
-      <a href="http://localhost:8080/movieNights/like/${data.id}" class="btn btn-primary">Like</a>
-      <a href="http://localhost:8080/movieNights/seen/${data.id}" class="btn btn-primary">Already watched</a>
-      <a href="http://localhost:8080/movieNights/watchlist/${data.id}" class="btn btn-primary my-1">Add to watchlist</a>
+    <div class="row">
+        <div class="well mx-4 my-3">
+            <h3>Plot</h3>` + data.overview + `<hr>
+            <div class="text-center">
+                <a href="http://localhost:8080/movieNights/like/${data.id}" class="btn btn-primary heart fa fa-heart-o mx-1 my-1" title="Add to Favorites"> Like</a>
+                <a href="http://localhost:8080/movieNights/watchlist/${data.id}" class="btn btn-primary clock fa fa-clock-o mx-1 my-1" title="Add to watchlist"> Watch Later</a>
+                <a href="http://localhost:8080/movieNights/seen/${data.id}" class="btn btn-primary eye fa fa-eye mx-1 my-1" title="Add to watchedlist"> Already Watched</a>
+                <a href="http://imdb.com/title/${data.imdb_id}" target="_blank" class="btn btn-primary fa fa-imdb mx-1 my-1" title="Visit IMDB"> View IMDB</a>
+                <a href="http://localhost:8080/movieNights/movies" class="btn btn-primary fa fa-arrow-left mx-1 my-1" title="Back to movies"> Go Back</a>
             </div>
-          </div>
+        </div>
+    </div>
         `);
 
         if (data.genres.length === 1) {
@@ -97,10 +99,25 @@ function Load($) {
     }
 
 
-
     function handleError(jqXHR, textStatus, errorThrown) {
         console.log(textStatus, errorThrown);
     }
+
+//    Buttons
+
+    $(".heart.fa").click(function () {
+        $(this).toggleClass("fa-heart fa-heart-o");
+    });
+
+    $(".eye.fa").click(function () {
+        $(this).toggleClass("fa-eye");
+        $(this).toggleClass("fa-eye green");
+    });
+
+    $(".clock.fa").click(function () {
+        $(this).toggleClass("fa-clock-o");
+        $(this).toggleClass("fa-clock-o green");
+    });
 
 }
 
