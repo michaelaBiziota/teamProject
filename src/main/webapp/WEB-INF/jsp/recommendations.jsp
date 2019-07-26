@@ -26,7 +26,6 @@
                         <input type="number" value="<c:out value="${i.userandmoviePK.movieid}"/>">
                     </td> </tr>
                 </c:forEach>
-
         </table>
         <table id="seenMovies" hidden>
 
@@ -35,17 +34,30 @@
                         <input type="number" value="<c:out value="${i.seenmoviesPK.movieid}"/>">
                     </td> </tr>
                 </c:forEach>
-
         </table>
-        <!--        <button id="button">Search!</button>-->
-        <div class="container my-4">
-            <div id="movies" class="row"></div>
-            <div class="text-center">
-                <div>   <button class="pager btn" id="button">See what we recommend</button> </div>
-                <a href="${pageContext.request.contextPath}/movies" class="pager btn btn-primary my-5 ">Back to movies</a>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-xs-12 mt-3">
+                    <a href="${pageContext.request.contextPath}/movies">
+                        <img src="static/pictures/mn.png" class="mx-5 img-fluid" id="movienightsrec" title="Home">
+                    </a>
+                </div>
+            </div>
+
+            <div class="par">
+                <p>Many apps offer recommendations but usually fail to provide good ones.<br>
+                    We decided to focus on great browsing experience that makes it easy to quickly find a movie you'll enjoy watching.</p>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="static/recommendations.js"></script>   
+        <div class="container">
+            <div class="container my-4">
+                <div id="movies" class="row"></div>
+                <div class="text-center">
+                    <button class="btn" id="button"> <img src="static/pictures/recommendation.png" class="mx-5 img-fluid" id="recimg" title="Press for Recommendations"></button>
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+            <script src="static/recommendations.js"></script>   
     </body>
 </html>

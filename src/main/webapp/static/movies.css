@@ -68,3 +68,34 @@ h2 ,.profpage{
 .profnavbar-nav {
     margin-top:10px;
 }
+/*Profile CSS END*/
+
+
+/*Recommendations*/
+
+#recimg{
+    width:500px;
+    transition: 0.8s;
+    border-radius: 150px;
+    margin: 0 auto;
+    margin-left: 50%;
+}
+
+#recimg:hover{
+    width:550px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.57), 0 17px 50px 0 rgba(0, 0, 0, 0.42);
+}
+
+.par {
+    font-size: 18px;
+    background-color: rgba(128, 128, 128, 0.178);
+    padding: 10px;
+    border-radius: 15px;
+    margin: 40px;
+    text-align: center;
+    padding: 10px;
+}
+
+#movienightsrec {
+    width: 400px;
+}
