@@ -28,12 +28,15 @@ public class HomeController {
         return "";
     }
 
-    @RequestMapping(value = "/movies",method=RequestMethod.GET)
+    @RequestMapping(value = "/movies", method = RequestMethod.GET)
     public String movies() {
 
         return "movies";
     }
 
-
+    @RequestMapping(value = "/about", method = RequestMethod.GET)
+    public String about() {
+        return "about";
+    }
 
 }

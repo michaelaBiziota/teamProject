@@ -26,6 +26,10 @@ body {
 #moviestitle{
     font-size: 18px;
 }
+.nav-link{
+    margin-left: 8px;
+    text-align: center;
+}
 
 
 
@@ -74,15 +78,15 @@ h2 ,.profpage{
 /*Recommendations*/
 
 #recimg{
-    width:500px;
-    transition: 0.8s;
+    width:450px;
+    transition: 0.5s;
     border-radius: 150px;
     margin: 0 auto;
-    margin-left: 50%;
+
 }
 
 #recimg:hover{
-    width:550px;
+    width:500px;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.57), 0 17px 50px 0 rgba(0, 0, 0, 0.42);
 }
 

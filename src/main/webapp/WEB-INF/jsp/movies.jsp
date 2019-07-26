@@ -119,8 +119,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="New Movies.jsp">New Movies</a>
                     </li>
-                    <li class="nav-item dropdown" id="dropdownli">
-                        <a class=" nav-link dropdown-toggle " id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    <li class="nav-item dropdown border-left border-secondary" id="dropdownli">
+                        <a class=" nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
                             Genre
                         </a>
@@ -145,8 +145,8 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item vertical-line">
-                        <a class="nav-link" href="Contact Us.jsp">Contact Us</a>
+                    <li class="nav-item vertical-line border-left border-secondary">
+                        <a class="nav-link" href="about">About us</a>
                     </li>
 
                     <!-- Slider -->
