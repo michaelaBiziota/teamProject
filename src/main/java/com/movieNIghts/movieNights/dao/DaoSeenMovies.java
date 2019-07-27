@@ -18,14 +18,24 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DaoSeenMovies {
-  
+
     @Autowired
     SeenMoviesRepository sr;
-    
-    public void addToseenMovies(Seenmovies seenmovie){
-    sr.save(seenmovie);
+
+    public void addToseenMovies(Seenmovies seenmovie) {
+        sr.save(seenmovie);
     }
-    public List <Seenmovies> findMovieByUserid(int userid){
-    return sr.findByuserId(userid);
+
+    public List<Seenmovies> findMovieByUserid(int userid) {
+        return sr.findByuserId(userid);
     }
+
+    public Seenmovies findByUserIdandMovieId(int userid, int movieid) {
+        return sr.findByuserIdAndMovieId(userid, movieid);
+    }
+
+    public void deleteByUserIdandMovieId(Seenmovies sm) {
+        sr.delete(sm);
+    }
+;
 }

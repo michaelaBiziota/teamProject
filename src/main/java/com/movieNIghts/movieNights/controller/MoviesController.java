@@ -46,6 +46,23 @@ public class MoviesController {
 
     @RequestMapping(value = "getMovie/{id}", method = RequestMethod.GET)
     public String findMovie(ModelMap mm, @PathVariable("id") int movieId) {
+        UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userd.getUser();
+        if (dum.findByUserIdandMovieId(user.getId(), movieId) != null) {
+            mm.addAttribute("favouritemessage", "ok");
+        } else {
+            mm.addAttribute("favouritemessage", "notok");
+        }
+        if (dsm.findByUserIdandMovieId(user.getId(), movieId) != null) {
+            mm.addAttribute("seenmessage", "ok");
+        } else {
+            mm.addAttribute("seenmessage", "notok");
+        }
+        if (dw.findByUserIdandMovieId(user.getId(), movieId) != null) {
+            mm.addAttribute("watchmessage", "ok");
+        } else {
+            mm.addAttribute("watchmessage", "notok");
+        }
         mm.addAttribute("mId", movieId);
         return "movie";
     }
@@ -57,9 +74,11 @@ public class MoviesController {
         User user = userd.getUser();
         Seenmovies sm = new Seenmovies(movieId, user.getId());
         sm.setUser(user);
-        dsm.addToseenMovies(sm);
-//        redirAttr.addFlashAttribute("seen", "Already watched that movie? Recommendations will be made based on your feedback");
-//        return "redirect:/getMovie/" + movieId;
+        if (dsm.findByUserIdandMovieId(user.getId(), movieId) == null) {
+            dsm.addToseenMovies(sm);
+        } else {
+            dsm.deleteByUserIdandMovieId(sm);
+        }
 
     }
 
@@ -70,13 +89,14 @@ public class MoviesController {
         User user = userd.getUser();
         Userandmovie um = new Userandmovie(movieId, user.getId());
         um.setUser(user);
-        dum.addToUserAndMovie(um);
-        Seenmovies sm = new Seenmovies(movieId, user.getId());
-        sm.setUser(user);
-        dsm.addToseenMovies(sm);
-//        redirAttr.addFlashAttribute("like", "This movie has been added to your favorites and to your already have watched list. Recommendations will be made based on your feedback");
-//        return "redirect:/getMovie/" + movieId;
-
+        if (dum.findByUserIdandMovieId(user.getId(), movieId) == null) {
+            dum.addToUserAndMovie(um);
+            Seenmovies sm = new Seenmovies(movieId, user.getId());
+            sm.setUser(user);
+            dsm.addToseenMovies(sm);
+        } else {
+            dum.deleteByUserIdandMovieId(um);
+        }
     }
 
     @RequestMapping(value = "/watchlist/{id}", method = RequestMethod.GET)
@@ -86,10 +106,11 @@ public class MoviesController {
         User user = userd.getUser();
         Watchlist w = new Watchlist(movieId, user.getId());
         w.setUser(user);
-        dw.addToWatchList(w);
-//        redirAttr.addFlashAttribute("watchlist", "Added to your watchlist.");
-//        return "redirect:/getMovie/" + movieId;
-
+        if (dw.findByUserIdandMovieId(user.getId(), movieId) == null) {
+        dw.addToWatchList(w);}
+        else {
+            dw.deleteByUserIdandMovieId(w);
+        }
     }
 
 }

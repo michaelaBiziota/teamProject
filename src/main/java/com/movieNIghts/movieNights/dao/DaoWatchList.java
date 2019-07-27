@@ -17,15 +17,23 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DaoWatchList {
-    
+
     @Autowired
     WatchListRepository wlr;
-    
-    public void addToWatchList(Watchlist watchlist){
-    wlr.save(watchlist);
-    } 
-    public List <Watchlist> findWatchListByUserId(int userid){
-   return wlr.findByuserId(userid);
+
+    public void addToWatchList(Watchlist watchlist) {
+        wlr.save(watchlist);
     }
-   
+
+    public List<Watchlist> findWatchListByUserId(int userid) {
+        return wlr.findByuserId(userid);
+    }
+
+    public Watchlist findByUserIdandMovieId(int userid, int movieid) {
+        return wlr.findByuserIdAndMovieId(userid, movieid);
+    }
+    
+    public void deleteByUserIdandMovieId(Watchlist wm) {
+        wlr.delete(wm);
+    }
 }

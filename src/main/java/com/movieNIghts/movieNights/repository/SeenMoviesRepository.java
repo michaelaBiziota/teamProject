@@ -22,4 +22,7 @@ public interface SeenMoviesRepository extends JpaRepository<Seenmovies, Seenmovi
 
     @Query(value = "Select * from seenmovies where userid= :userid", nativeQuery = true)
     public List<Seenmovies> findByuserId(@Param("userid") int userid);
+    
+    @Query(value="Select *  from seenmovies where userid= :userid and movieid= :movieid",nativeQuery=true)
+    public Seenmovies findByuserIdAndMovieId(@Param("userid") int userid,@Param("movieid") int movieid);
 }

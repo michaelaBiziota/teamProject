@@ -22,5 +22,7 @@ import org.springframework.stereotype.Repository;
 public interface WatchListRepository extends JpaRepository<Watchlist,WatchlistPK>{
     @Query(value = "Select * from watchlist where userid= :userid", nativeQuery = true)
     public List<Watchlist> findByuserId(@Param("userid") int userid);
-  
+    
+    @Query(value="Select *  from watchlist where userid= :userid and movieid= :movieid",nativeQuery=true)
+    public Watchlist findByuserIdAndMovieId(@Param("userid") int userid,@Param("movieid") int movieid);
 }

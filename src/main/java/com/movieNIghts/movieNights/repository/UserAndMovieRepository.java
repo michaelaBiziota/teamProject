@@ -24,4 +24,6 @@ public interface UserAndMovieRepository extends JpaRepository<Userandmovie,Usera
     @Query(value="Select * from userandmovie where userid= :userid",nativeQuery=true)
     public List <Userandmovie> findByuserId(@Param("userid") int userid);
     
+    @Query(value="Select *  from userandmovie where userid= :userid and movieid= :movieid",nativeQuery=true)
+    public Userandmovie findByuserIdAndMovieId(@Param("userid") int userid,@Param("movieid") int movieid);
 }
