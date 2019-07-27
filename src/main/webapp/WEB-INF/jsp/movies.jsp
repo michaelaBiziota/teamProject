@@ -116,8 +116,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Whatever</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="New Movies.jsp">New Movies</a>
+                    <li class="nav-item" id="intheaters">
+                        <a class="nav-link" href="#">In Theaters</a>
                     </li>
                     <li class="nav-item dropdown border-left border-secondary" id="dropdownli">
                         <a class=" nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"

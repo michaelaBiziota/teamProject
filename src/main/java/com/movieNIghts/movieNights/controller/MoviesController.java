@@ -66,7 +66,54 @@ public class MoviesController {
         mm.addAttribute("mId", movieId);
         return "movie";
     }
-
+    
+    @RequestMapping(value = "getMovieThroughMyMovies/{id}", method = RequestMethod.GET)
+    public String findMovieThroughMyMovies(ModelMap mm, @PathVariable("id") int movieId) {
+        UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userd.getUser();
+        if (dum.findByUserIdandMovieId(user.getId(), movieId) != null) {
+            mm.addAttribute("favouritemessage", "ok");
+        } else {
+            mm.addAttribute("favouritemessage", "notok");
+        }
+        if (dsm.findByUserIdandMovieId(user.getId(), movieId) != null) {
+            mm.addAttribute("seenmessage", "ok");
+        } else {
+            mm.addAttribute("seenmessage", "notok");
+        }
+        if (dw.findByUserIdandMovieId(user.getId(), movieId) != null) {
+            mm.addAttribute("watchmessage", "ok");
+        } else {
+            mm.addAttribute("watchmessage", "notok");
+        }
+        mm.addAttribute("camefrom", "mymovies");
+        mm.addAttribute("mId", movieId);
+        return "movie";
+    }
+    @RequestMapping(value = "getMovieThroughRecommendations/{id}", method = RequestMethod.GET)
+    public String findMovieThroughRecommendations(ModelMap mm, @PathVariable("id") int movieId) {
+        UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userd.getUser();
+        if (dum.findByUserIdandMovieId(user.getId(), movieId) != null) {
+            mm.addAttribute("favouritemessage", "ok");
+        } else {
+            mm.addAttribute("favouritemessage", "notok");
+        }
+        if (dsm.findByUserIdandMovieId(user.getId(), movieId) != null) {
+            mm.addAttribute("seenmessage", "ok");
+        } else {
+            mm.addAttribute("seenmessage", "notok");
+        }
+        if (dw.findByUserIdandMovieId(user.getId(), movieId) != null) {
+            mm.addAttribute("watchmessage", "ok");
+        } else {
+            mm.addAttribute("watchmessage", "notok");
+        }
+        mm.addAttribute("camefrom", "recommendations");
+        mm.addAttribute("mId", movieId);
+        return "movie";
+    }
+    
     @RequestMapping(value = "/seen/{id}", method = RequestMethod.GET)
     @ResponseBody
     public void addToSeen(@PathVariable("id") int movieId, RedirectAttributes redirAttr) {

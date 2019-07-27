@@ -112,7 +112,9 @@ $("#searchForm").on("keyup",function (event) {
      URL = "https://api.themoviedb.org/3/discover/movie?api_key=e58e3961f5be7e510894dc736fee6937&language=en-US&sort_by=popularity.desc&include_adult=false&with_genres="+genre+"&page=1&vote_count.gte=200";
     }else if($(".active").attr("id")==="toprated"){
       URL = "https://api.themoviedb.org/3/discover/movie?api_key=e58e3961f5be7e510894dc736fee6937&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=2100&with_genres="+genre;  
-    }//TODO
+    }else if($(".active").attr("id")==="intheaters"){
+      URL = "https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2019-06-01&api_key=e58e3961f5be7e510894dc736fee6937&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=50&with_genres="+genre;  
+    }
     $.ajax({
 
         url: URL,
@@ -164,5 +166,32 @@ $("#toprated").on("click",function(){
     };  
  });
  
+ //IN THEATERS
+$("#intheaters").on("click",function(){
+        let URL = "https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2019-06-01&api_key=e58e3961f5be7e510894dc736fee6937&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=50";
+    $.ajax({
+
+        url: URL,
+        success: handleResponse,
+        error: handleError
+    });
+
+    function handleResponse(data) {
+        $("#movies").html("");
+        console.log(data);
+        for (i = 0; i < 20; i++) {
+            $("#movies").append("<div class='col-md-3'><div class=' text-center'><a href='getMovie/"+data.results[i].id+"'><img src='https://image.tmdb.org/t/p/w300" + data.results[i].poster_path + "'></a><h5 id='moviestitle'>"+data.results[i].title+"</h5></div></div>");   
+          
+        
+        }
+       $("#basicExampleNav ul li").removeClass("active"); 
+       $("#intheaters").attr("class","nav-item active");
+    };
+   function handleError(jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+
+    };  
+ });
+
  
  }

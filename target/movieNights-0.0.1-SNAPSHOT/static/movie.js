@@ -1,7 +1,6 @@
 jQuery(Load);
 function Load($) {
 
-
 //toggleAtr
     $.fn.toggleAttrVal = function (attr, val1, val2) {
         var test = $(this).attr(attr);
@@ -101,7 +100,7 @@ function Load($) {
                 <button id="watchlaterbutton" class="btn btn-primary clock fa  mx-1 my-1" ><span> Watch Later</span></button>
                 <button id="watchedbutton" class="btn btn-primary eye fa  mx-1 my-1" ><span> Already Watched</span></button>
                 <a href="http://imdb.com/title/${data.imdb_id}" target="_blank" class="btn btn-primary fa fa-imdb mx-1 my-1" title="Visit IMDB"> View IMDB</a>
-                <a href="http://localhost:8080/movieNights/movies" class="btn btn-primary fa fa-arrow-left mx-1 my-1" title="Back to movies"> Go Back</a>
+                <a href="http://localhost:8080/movieNights/movies" class="btn btn-primary fa fa-arrow-left mx-1 my-1" title="Back to movies" id="back"> Go Back</a>
             </div>
         </div>
     </div>
@@ -152,8 +151,7 @@ function Load($) {
             } else if ($(this).attr("title") === "Remove from favourites") {
                 $(this).toggleAttrVal('title', "Add to favourites", "Remove from favourites");
             }
-
-            let URL = "/movieNights/like/" + movieId;
+       let URL = "/movieNights/like/" + movieId;
             $.ajax({
 
                 url: URL,
@@ -191,6 +189,13 @@ function Load($) {
                 error: handleError
             });
         });
+         //GO BACK WHERE YOU CAME FROM
+        if ($("#camefrom").html()==="mymovies"){
+            $("#back").attr("href","http://localhost:8080/movieNights/myMovies").attr("title","Go back to your Movies");
+        }else if($("#camefrom").html()==="recommendations"){
+             $("#back").attr("href","http://localhost:8080/movieNights/getRecommendations").attr("title","Go back to your Recommendations");
+        }
+            
     }
 
     function handleError(jqXHR, textStatus, errorThrown) {
