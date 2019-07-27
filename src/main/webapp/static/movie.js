@@ -68,7 +68,7 @@ function Load($) {
         $("#movie").html(`
 
    <div class="row">
-     <h2 class="my-2 text-center" id="title">` + data.title + `</h2>
+     <h2 class="text-center" id="title">` + data.title + `</h2>
    </div>
     <div class="row">
      <div class="col-md-3">
@@ -92,7 +92,7 @@ function Load($) {
       webkitallowfullscreen="webkitallowfullscreen"></iframe>
     </div>
     <div class="row">
-        <div class="well mx-4 my-3">
+        <div class="well mx-4 mt-0 mb-3 mt-2">
             <h3>Plot</h3>` + data.overview + `<hr>
             <div class="text-center">
                 <button id="likebutton" class="btn btn-primary heart fa fa-heart-o mx-1 my-1" title="Add to Favorites"><span> Like</span></button>

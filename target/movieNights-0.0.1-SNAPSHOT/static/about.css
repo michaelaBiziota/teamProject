@@ -1,0 +1,28 @@
+body {
+    background-image: url("pictures/bg.png");
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.par {
+    font-size: 18px;
+    background-color: rgba(128, 128, 128, 0.178);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+a {
+    color: aliceblue;
+    font-size: 20px;
+}
+
+a:hover {
+    color: aliceblue;
+}
+
+#movienightsprof {
+    width: 400px;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration:none;
+}

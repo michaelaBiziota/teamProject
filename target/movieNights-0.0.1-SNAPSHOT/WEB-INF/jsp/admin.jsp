@@ -23,7 +23,7 @@
     </head>
     <body>
         <h2 class="text-white">Users</h2>
-        <table class="table-hover my-5">
+        <table class="col-9 table-hover my-5">
             <tr><th>Username</th>
                 <th>Email Address</th>
                 <th>Firstname</th>
