@@ -88,7 +88,7 @@
                     </div> 
 
                     <hr>
-
+${ue}
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
@@ -96,6 +96,7 @@
                         <form:input  path="username"  placeholder="Username" class="form-control" title="Update Username"  required="required" />
                     </div> 
 
+${ee}
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>

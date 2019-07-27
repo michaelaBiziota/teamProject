@@ -26,6 +26,7 @@ public class UserValidation implements Validator {
 
     @Override
     public boolean supports(Class<?> type) {
+        Boolean b=User.class.equals(type);
         return User.class.equals(type);
     }
 

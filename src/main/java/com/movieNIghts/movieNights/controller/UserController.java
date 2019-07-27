@@ -184,7 +184,35 @@ public class UserController {
     }
 
     @RequestMapping(value = "resetSettings", method = RequestMethod.POST)
-    public String resetSettings(ModelMap mm, @RequestParam(value = "password") String pass, @ModelAttribute("user") User us) {
+    public String resetSettings(ModelMap mm, @RequestParam(value = "email") String email, @RequestParam(value = "username") String username, @RequestParam(value = "password") String pass, @ModelAttribute("user") User us) {
+                User u = ur.findByUsername(username);
+        User u2 = ur.findByEmail(email);
+
+        UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userd.getUser();
+        int temp1 = user.getId();
+
+        if (u != null) {
+            int temp = ur.findByUsername(username).getId();
+
+            if (temp != temp1) {
+                mm.addAttribute("ue", "username already exists");
+                if (u2 != null) {
+                    int temp2 = ur.findByEmail(email).getId();
+                    if (temp2 != temp1) {
+                        mm.addAttribute("ee", "email already exists");
+                    }
+                }
+                return "accountSettings";
+            }
+        }
+        if (u2 != null) {
+            int temp2 = ur.findByEmail(email).getId();
+            if (temp2 != temp1) {
+                mm.addAttribute("ee", "email already exists");
+                return "accountSettings";
+            }
+        }
 
         us.setPassword(passwordEncoder.encode(pass));
         us.setEnabled(true);

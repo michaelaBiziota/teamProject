@@ -5,12 +5,15 @@
  */
 package com.movieNIghts.movieNights.controller;
 
+import com.movieNIghts.movieNights.conf.UserDetailsImpl;
 import com.movieNIghts.movieNights.dao.DaoRoles;
 import com.movieNIghts.movieNights.dao.DaoUser;
 import com.movieNIghts.movieNights.model.User;
+import com.movieNIghts.movieNights.repository.UserRepository;
 import com.movieNIghts.movieNights.validation.UserValidation;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -23,6 +26,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  *
@@ -39,7 +43,14 @@ public class AdminController {
     UserValidation uv;
     @Autowired
     DaoRoles dr;
+    @Autowired
+    UserRepository ur;
 
+//        @InitBinder
+//    private void initBider(final WebDataBinder binder) {
+//        binder.setValidator(uv);
+//
+//    }
     @RequestMapping(value = "/allusers", method = RequestMethod.GET)
     public String getAllUsers(ModelMap m) {
         m.addAttribute("userlist", du.getAll());
@@ -74,5 +85,5 @@ public class AdminController {
 
     }
 
-
 }
+//@RequestParam(value = "oldusername") String oldu,

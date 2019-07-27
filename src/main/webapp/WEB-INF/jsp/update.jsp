@@ -29,7 +29,7 @@
                 <h3 class="card-title mt-3 text-center">Update Account</h3>
 
                 <form:form modelAttribute="id" method="POST" action="${pageContext.request.contextPath}/updatedUser">
-                    <form:input type="hidden" path="id"/>
+                    <form:input  path="id" name="uid"/>
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
@@ -52,14 +52,14 @@
                         </div>
                         <form:input  path="username"  placeholder="Username" class="form-control" title="Update Username"  required="required" />
                     </div> 
-
+<div>${ue}</div>
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                         </div>
                         <form:input  path="email"  placeholder="Email" class="form-control" type="email" title="Update Email Address" required="required"/>
                     </div> 
-
+<div>${ee}</div>
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
@@ -78,6 +78,8 @@
                         </form:select>
                     </div>
                     <div class="form-group">
+                        <input type="text" value="${oldusername}" name="oldu"/>
+                        <input type="text" value="${oldemail}" name="olde"/>
                         <input type="submit" value="Update" class="form-control btn btn-primary btn-block">   
                     </div> <!-- form-group// -->
                 </form:form>

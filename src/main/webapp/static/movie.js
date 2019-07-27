@@ -137,7 +137,7 @@ function Load($) {
     });
      $("#watchedbutton").on("click",function () {
         $(this).toggleClass("fa-clock-o fa-clock-o green");
-        $(this).toggleAttrVal("title","Remove from watched list","Add to watched list")
+        $(this).toggleAttrVal("title","Remove from watched list","Add to watched list");
          let URL= "/movieNights/seen/"+movieId;
          $.ajax({
 
