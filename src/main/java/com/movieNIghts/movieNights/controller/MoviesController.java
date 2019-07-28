@@ -124,7 +124,10 @@ public class MoviesController {
         if (dsm.findByUserIdandMovieId(user.getId(), movieId) == null) {
             dsm.addToseenMovies(sm);
         } else {
+            Userandmovie um = new Userandmovie(movieId, user.getId());
+        um.setUser(user);
             dsm.deleteByUserIdandMovieId(sm);
+            dum.deleteByUserIdandMovieId(um);
         }
 
     }

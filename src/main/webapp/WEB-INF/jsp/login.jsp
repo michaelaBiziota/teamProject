@@ -77,10 +77,18 @@
         <article >
             <div class="card-body text-center">
 
-                <p class="h5 text-white text-center" id="text">
-                    Movie Nights is the site for you.
-                    It's simple enough, you input a film you like and it returns results that offer similar action to your favorites.<br>
-                    Movie Nights is a full entertainment recommendation engine!
+                <p class="h5 text-white text-left" id="text">
+                   Welcome to Movie Nights, the biggest online   <br>
+                   Movies Library with a twist! Tons of websites <br>
+                   offer recommendations but fail to provide     <br>
+                   good ones. Instead of picking movies for you, <br>
+                   we make it super easy to discover great stuff <br>
+                   yourself.We’ve collected movie data from  <br>    
+                   around the web so you don’t have to. Just tell<br>
+                   us what kind of movies you’re looking for and <br>
+                   we’ll give you the best there are.     <br>
+                
+                    
                 </p>
             </div>
         </article>
