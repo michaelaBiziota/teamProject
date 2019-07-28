@@ -110,9 +110,7 @@
             <div id="pagetitle" class="my-5 text-center "></div>
             <div id="movies" class="row"></div>
 
-            <!--            <div class="text-center">
-                            <a href="${pageContext.request.contextPath}/movies" class="pager btn btn-primary my-5">Back to movies</a>
-                        </div>-->
+          
         </div>
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

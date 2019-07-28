@@ -33,5 +33,11 @@ public class DaoUserAndMovie {
 public List<Userandmovie> findMovieByUserId(int userid){
 return umr.findByuserId(userid);
 }
-    
+  
+public Userandmovie findByUserIdandMovieId(int userid,int movieid){
+return umr.findByuserIdAndMovieId(userid, movieid);
+}
+public void deleteByUserIdandMovieId(Userandmovie um) {
+        umr.delete(um);
+    }
 }

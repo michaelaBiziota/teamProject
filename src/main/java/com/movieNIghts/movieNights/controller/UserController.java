@@ -127,26 +127,6 @@ public class UserController {
         return "profile";
     }
 
-//    @RequestMapping(value = "/alreadyWatchedMovies", method = RequestMethod.GET)
-//    public String getAlreadyWatched(ModelMap mm) {
-//        UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        User userm = userd.getUser();
-//        mm.addAttribute("favoriteMovies", dum.findMovieByUserId(userm.getId()));
-//        mm.addAttribute("seenMovies", sm.findMovieByUserid(userm.getId()));
-//        mm.addAttribute("watchlist", wl.findWatchListByUserId(userm.getId()));
-//        return "profile";
-//    }
-//
-//    @RequestMapping(value = "/watchList", method = RequestMethod.GET)
-//    public String watchList(ModelMap mm) {
-//        UserDetailsImpl userd = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        User userm = userd.getUser();
-//        mm.addAttribute("favoriteMovies", dum.findMovieByUserId(userm.getId()));
-//        mm.addAttribute("seenMovies", sm.findMovieByUserid(userm.getId()));
-//        mm.addAttribute("watchlist", wl.findWatchListByUserId(userm.getId()));
-//        return "profile";
-//    }
-
     private String getAppUrl(HttpServletRequest request) {
         return "http://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
     }

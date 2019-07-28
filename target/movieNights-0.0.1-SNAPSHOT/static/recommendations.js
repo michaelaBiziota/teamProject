@@ -59,7 +59,7 @@ results = recommendedMovies.filter((a, i, aa) => aa.indexOf(a) === i && aa.lastI
             function handleResponse(data) {
                 console.log(data);
                     if (seenArray.includes(data.id)===false){
-                        $("#movies").append("<div class='col-md-3'><div class=' text-center'><a href='getMovie/" + data.id + "'><img src='https://image.tmdb.org/t/p/w300" + data.poster_path + "'></a><h5 id='moviestitle'>" + data.title + "</h5></div></div>");
+                        $("#movies").append("<div class='col-md-3'><div class=' text-center'><a href='getMovieThroughRecommendations/" + data.id + "'><img src='https://image.tmdb.org/t/p/w300" + data.poster_path + "'></a><h5 id='moviestitle'>" + data.title + "</h5></div></div>");
                     }
                
             }

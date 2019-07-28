@@ -26,7 +26,7 @@ function Load($) {
             function handleResponse(data) {
                 console.log(data);
 
-                $("#movies").append("<div class='col-md-3'><div class=' text-center'><a href='getMovie/" + data.id + "'><img src='https://image.tmdb.org/t/p/w300" + data.poster_path + "'></a><h5 id='moviestitle'>" + data.title + "</h5></div></div>");
+                $("#movies").append("<div class='col-md-3'><div class=' text-center'><a href='getMovieThroughMyMovies/" + data.id + "'><img src='https://image.tmdb.org/t/p/w300" + data.poster_path + "'></a><h5 id='moviestitle'>" + data.title + "</h5></div></div>");
 
             }
 
@@ -58,7 +58,7 @@ function Load($) {
             function handleResponse(data) {
                 console.log(data);
 
-                $("#movies").append("<div class='col-md-3'><div class=' text-center'><a href='getMovie/" + data.id + "'><img src='https://image.tmdb.org/t/p/w300" + data.poster_path + "'></a><h5 id='moviestitle'>" + data.title + "</h5></div></div>");
+                $("#movies").append("<div class='col-md-3'><div class=' text-center'><a href='getMovieThroughMyMovies/" + data.id + "'><img src='https://image.tmdb.org/t/p/w300" + data.poster_path + "'></a><h5 id='moviestitle'>" + data.title + "</h5></div></div>");
 
             }
 
@@ -92,7 +92,7 @@ function Load($) {
             function handleResponse(data) {
                 console.log(data);
 
-                $("#movies").append("<div class='col-md-3'><div class=' text-center'><a href='getMovie/" + data.id + "'><img src='https://image.tmdb.org/t/p/w300" + data.poster_path + "'></a><h5 id='moviestitle'>" + data.title + "</h5></div></div>");
+                $("#movies").append("<div class='col-md-3'><div class=' text-center'><a href='getMovieThroughMyMovies/" + data.id + "'><img src='https://image.tmdb.org/t/p/w300" + data.poster_path + "'></a><h5 id='moviestitle'>" + data.title + "</h5></div></div>");
 
             }
 
@@ -127,7 +127,7 @@ function Load($) {
 
                 console.log(data);
 
-                $("#movies").append("<div class='col-md-3'><div class=' text-center'><a href='getMovie/" + data.id + "'><img src='https://image.tmdb.org/t/p/w300" + data.poster_path + "'></a><h5 id='moviestitle'>" + data.title + "</h5></div></div>");
+                $("#movies").append("<div class='col-md-3'><div class=' text-center'><a href='getMovieThroughMyMovies/" + data.id + "'><img src='https://image.tmdb.org/t/p/w300" + data.poster_path + "'></a><h5 id='moviestitle'>" + data.title + "</h5></div></div>");
 
 
             }
