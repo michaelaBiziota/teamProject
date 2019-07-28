@@ -1,6 +1,5 @@
 jQuery(Load);
 function Load($) {
-
 //toggleAtr
     $.fn.toggleAttrVal = function (attr, val1, val2) {
         var test = $(this).attr(attr);
@@ -16,12 +15,9 @@ function Load($) {
         $(this).attr(attr, val1);
         return this;
     };
-
-
     var movieId = $("#hidden").html();
     let URL = "https://api.themoviedb.org/3/movie/" + movieId + "?api_key=e58e3961f5be7e510894dc736fee6937&append_to_response=casts,videos";
     $.ajax({
-
         url: URL,
         success: handleResponse,
         error: handleError
@@ -60,14 +56,9 @@ function Load($) {
         for (i = 0; i < data.videos.results.length; i++) {
             if (data.videos.results[i].type === "Trailer") {
                 var trailer = data.videos.results[i].key;
-
             }
         }
-
-
-
         $("#movie").html(`
-
    <div class="row">
      <h2 class="text-center" id="title">` + data.title + `</h2>
    </div>
@@ -88,7 +79,6 @@ function Load($) {
       </ul>
    </div>
 <div class="col-md-3"><iframe src="https://www.youtube.com/embed/` + trailer + `" allowfullscreen="allowfullscreen"
-
       mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen"
       webkitallowfullscreen="webkitallowfullscreen"></iframe>
     </div>
@@ -105,7 +95,6 @@ function Load($) {
         </div>
     </div>
         `);
-
         if (data.genres.length === 1) {
             $("#gen").append(data.genres[0].name);
         } else if (data.genres.length === 2) {
@@ -113,42 +102,6 @@ function Load($) {
         } else {
             $("#gen").append(data.genres[0].name + ", " + data.genres[1].name + ", " + data.genres[2].name);
         }
-<<<<<<< HEAD
-         //BUTTONS AJAX TO CALL CONTROLLER
-    $("#likebutton").on("click",function () {
-        $(this).toggleClass("fa-heart fa-heart-o");
-        $(this).toggleAttrVal('title',"Remove from Favourites","Add to Favorites");
-        let URL= "/movieNights/like/"+movieId;
-         $.ajax({
-
-        url: URL,
-        success: handleResponse,
-        error: handleError
-    });
-    });
-    $("#watchlaterbutton").on("click",function () {
-        $(this).toggleClass("fa-eye fa-eye green");
-        $(this).toggleAttrVal("title","Remove from watchlist","Add to watchlist");
-           let URL= "/movieNights/watchlist/"+movieId;
-         $.ajax({
-
-        url: URL,
-        success: handleResponse,
-        error: handleError
-    });
-    });
-     $("#watchedbutton").on("click",function () {
-        $(this).toggleClass("fa-clock-o fa-clock-o green");
-        $(this).toggleAttrVal("title","Remove from watched list","Add to watched list");
-         let URL= "/movieNights/seen/"+movieId;
-         $.ajax({
-
-        url: URL,
-        success: handleResponse,
-        error: handleError
-    });
-    });
-=======
         //ButtonCheckMessage
         //FAVOURITE
         if ($("#favouritemessage").html() === "ok") {
@@ -162,7 +115,6 @@ function Load($) {
         if ($("#seenmessage").html() === "ok") {
             $("#watchedbutton").addClass("fa-eye green");
             $("#watchedbutton").attr("title", "Remove from already watched");
-
         } else if ($("#seenmessage").html() === "notok") {
             $("#watchedbutton").addClass("fa-eye");
             $("#watchedbutton").attr("title", "Add to already watched");
@@ -171,7 +123,6 @@ function Load($) {
         if ($("#watchmessage").html() === "ok") {
             $("#watchlaterbutton").addClass("fa-clock-o green");
             $("#watchlaterbutton").attr("title", "Remove from watchlist");
-
         } else if ($("#watchmessage").html() === "notok") {
             $("#watchlaterbutton").addClass("fa-clock-o");
             $("#watchlaterbutton").attr("title", "Add to watchlist");
@@ -180,7 +131,6 @@ function Load($) {
         //
         //BUTTONS AJAX TO CALL CONTROLLER
         $("#likebutton").on("click", function () {
-
             $(this).toggleClass("fa-heart-o fa-heart");
             if ($(this).attr("title") === "Add to favourites") {
                 $(this).toggleAttrVal("title", "Remove from favourites", "Add to favourites");
@@ -189,7 +139,6 @@ function Load($) {
             }
        let URL = "/movieNights/like/" + movieId;
             $.ajax({
-
                 url: URL,
                 success: handleResponse,
                 error: handleError
@@ -204,7 +153,6 @@ function Load($) {
             }
             let URL = "/movieNights/watchlist/" + movieId;
             $.ajax({
-
                 url: URL,
                 success: handleResponse,
                 error: handleError
@@ -219,7 +167,6 @@ function Load($) {
             }
             let URL = "/movieNights/seen/" + movieId;
             $.ajax({
-
                 url: URL,
                 success: handleResponse,
                 error: handleError
@@ -232,21 +179,8 @@ function Load($) {
              $("#back").attr("href","http://localhost:8080/movieNights/getRecommendations").attr("title","Go back to your Recommendations");
         }
             
->>>>>>> master
     }
-
     function handleError(jqXHR, textStatus, errorThrown) {
         console.log(textStatus, errorThrown);
     }
-
-
-
-
-
-
-
-
 }
-
-
-
