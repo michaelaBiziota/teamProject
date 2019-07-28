@@ -11,6 +11,7 @@ import com.movieNIghts.movieNights.dao.DaoUser;
 import com.movieNIghts.movieNights.model.User;
 import com.movieNIghts.movieNights.repository.UserRepository;
 import com.movieNIghts.movieNights.validation.UserValidation;
+import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -68,6 +69,7 @@ public class AdminController {
     public String update(ModelMap m, @PathVariable int id, @ModelAttribute("users") User u) {
 
         User user = du.findById(id);
+
         m.addAttribute("id", user);
         m.addAttribute("rolesArray", dr.getAll());
 
@@ -75,9 +77,63 @@ public class AdminController {
     }
 
     @RequestMapping(value = "updatedUser", method = RequestMethod.POST)
-    public String updatedUser(@RequestParam(value = "password") String pass, @ModelAttribute("id") User us) {
+    public String updatedUser(ModelMap mm, @RequestParam(value = "myusername") String ou, @RequestParam(value = "myemail") String oe, @RequestParam(value = "mypass") String pass, @ModelAttribute("id") User us) {
+        System.out.println("");
+//       String n= us.getUsername();
+//
+//        if (!us.getUsername().equals(ou)) {
+//            User t = ur.findByUsername(us.getUsername());
+//            if (t != null) {
+//                mm.addAttribute("ue", "username already exists");
+//                mm.addAttribute("rolesArray", dr.getAll());
+//            }
+//            if (!us.getEmail().equals(oe)) {
+//                User t2 = ur.findByEmail(us.getEmail());
+//                if (t2 != null) {
+//                    mm.addAttribute("ee", "email already exists");
+//                    
+//                }
+//            }
+//            return "update";
+//        }
+//        if ((!us.getEmail().equals(oe))) {
+//            User t2 = ur.findByEmail(us.getEmail());
+//            if (t2 != null) {
+//                mm.addAttribute("ee", "email already exists");
+//                mm.addAttribute("rolesArray", dr.getAll());
+//                return "update";
+//            }
+//        }
 
-        us.setPassword(passwordEncoder.encode(pass));
+               User u = ur.findByUsername(us.getUsername());
+        User u2 = ur.findByEmail(us.getEmail());
+        int temp1 = us.getId();
+               if (u != null) {
+            int temp = ur.findByUsername(u.getUsername()).getId();
+
+            if (temp != temp1) {
+                mm.addAttribute("ue", "username already exists");
+                if (u2 != null) {
+                    int temp2 = ur.findByEmail(us.getEmail()).getId();
+                    if (temp2 != temp1) {
+                        mm.addAttribute("ee", "email already exists");
+                    }
+                }
+                mm.addAttribute("rolesArray", dr.getAll());
+                return "update";
+            }
+        }
+        if (u2 != null) {
+            int temp2 = ur.findByEmail(us.getEmail()).getId();
+            if (temp2 != temp1) {
+                mm.addAttribute("ee", "email already exists");
+                mm.addAttribute("rolesArray", dr.getAll());
+                return "update";
+            }
+        }
+
+
+ 
 
         du.registration(us);
 

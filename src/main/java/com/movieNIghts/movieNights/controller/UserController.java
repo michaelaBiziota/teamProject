@@ -216,7 +216,9 @@ public class UserController {
 
         us.setPassword(passwordEncoder.encode(pass));
         us.setEnabled(true);
-        us.setRole(dr.getRole(1));
+        
+        us.setRole(user.getRole());
+        
 
         du.registration(us);
         mm.addAttribute("settings", "Your data have been successfully updated");

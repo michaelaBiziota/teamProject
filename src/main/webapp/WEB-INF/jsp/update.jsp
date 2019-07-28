@@ -29,7 +29,7 @@
                 <h3 class="card-title mt-3 text-center">Update Account</h3>
 
                 <form:form modelAttribute="id" method="POST" action="${pageContext.request.contextPath}/updatedUser">
-                    <form:input  path="id" name="uid"/>
+                    <form:hidden  path="id" />
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
@@ -45,27 +45,32 @@
                     </div> 
 
                     <hr>
-
+<div>${ue}</div>
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                         </div>
                         <form:input  path="username"  placeholder="Username" class="form-control" title="Update Username"  required="required" />
+<input type=hidden name="myusername" value="${id.username}"  />
                     </div> 
-<div>${ue}</div>
+
+<div>${ee}</div>
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                         </div>
                         <form:input  path="email"  placeholder="Email" class="form-control" type="email" title="Update Email Address" required="required"/>
+                       
+                        <input type=hidden name="myemail" value="${id.email}"  />
                     </div> 
-<div>${ee}</div>
-                    <div class="form-group input-group">
+
+<!--                    <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                        </div>
-                        <form:input  path="password"  name="password" placeholder="Password"  minlength="5" title="Update password, must be at least 5 characters" class="form-control" required="required" />
-                    </div> 
+                        </div>-->
+                        <form:hidden  path="password"  name="password" placeholder="Password"  minlength="5" title="Update password, must be at least 5 characters" class="form-control" required="required" />
+                        <input type=hidden name="mypass" value="${id.password}"  />
+<!--                    </div> -->
 
 
                     <div class="form-group input-group">
@@ -73,13 +78,11 @@
                             <span class="input-group-text"> <i class="fa fa-cog"></i> </span>
                         </div>
                         <form:select path="role" class="form-control">
-                            <form:option value="-1">Select role</form:option>
+                            <form:option value="-1" disabled="${true}">Select role</form:option>
                             <form:options items="${rolesArray}" itemLabel="userrole" itemValue="id" />
                         </form:select>
                     </div>
                     <div class="form-group">
-                        <input type="text" value="${oldusername}" name="oldu"/>
-                        <input type="text" value="${oldemail}" name="olde"/>
                         <input type="submit" value="Update" class="form-control btn btn-primary btn-block">   
                     </div> <!-- form-group// -->
                 </form:form>
