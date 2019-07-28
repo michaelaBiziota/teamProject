@@ -78,17 +78,15 @@
             <div class="card-body text-center">
 
                 <p class="h5 text-white text-left" id="text">
-                   Welcome to Movie Nights, the biggest online   <br>
-                   Movies Library with a twist! Tons of websites <br>
-                   offer recommendations but fail to provide     <br>
-                   good ones. Instead of picking movies for you, <br>
-                   we make it super easy to discover great stuff <br>
-                   yourself.We’ve collected movie data from  <br>    
-                   around the web so you don’t have to. Just tell<br>
-                   us what kind of movies you’re looking for and <br>
-                   we’ll give you the best there are.     <br>
-                
-                    
+                    Welcome to Movie Nights,<br> the biggest online
+                    Movies Library with a twist!<br><br> Tons of websites
+                    offer recommendations but fail to provide
+                    good ones.<br><br> Instead of picking movies for you,
+                    we make it super easy to discover great stuff
+                    yourself.We’ve collected movie data from
+                    around the web so you don’t have to.<br><br> Just tell
+                    us what kind of movies you’re looking for and
+                    we’ll give you the best there are.
                 </p>
             </div>
         </article>

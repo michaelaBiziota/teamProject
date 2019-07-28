@@ -38,11 +38,14 @@
 
         <div class="container">
             <div class="row">
+                <!-- MovieNights Logo -->
                 <div class="col-md-4 col-xs-12 mt-3">
                     <a href="${pageContext.request.contextPath}/movies">
-                        <img src="static/pictures/mn.png" class="mx-5 img-fluid" id="movienightsrec" title="Home">
+                        <img src="static/pictures/mn.png" class="mx-5 img-fluid" id="movienights" title="Home">
                     </a>
                 </div>
+                <!-- End -->
+                <div class="col-md-4 text-center mt-3"><h2>Recommendations</h2></div>
             </div>
 
             <div class="par">

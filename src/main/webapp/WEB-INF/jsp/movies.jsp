@@ -1,7 +1,7 @@
- <%-- 
-    Document   : movies
-    Created on : 7 Ιουλ 2019, 8:57:27 μμ
-    Author     : bizmi
+<%-- 
+   Document   : movies
+   Created on : 7 Ιουλ 2019, 8:57:27 μμ
+   Author     : bizmi
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -40,9 +40,9 @@
                 <div class="row">
                     <!-- MovieNights Logo -->
                     <div class="col-md-4 col-xs-12 mt-3">
-                       <a href="${pageContext.request.contextPath}/movies">
-                        <img src="static/pictures/mn.png" class="mx-5 img-fluid" id="movienightsprof" title="Home">
-                    </a>
+                        <a href="${pageContext.request.contextPath}/movies">
+                            <img src="static/pictures/mn.png" class="mx-5 img-fluid" id="movienightsprof" title="Home">
+                        </a>
                     </div>
                     <!-- End -->
                     <div class="col-md-4 col-xs-12 mt-4">
@@ -103,23 +103,20 @@
             <div class="collapse navbar-collapse" id="basicExampleNav">
 
                 <!-- Links -->
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item" id="popular">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-1" id="popular">
                         <a class="nav-link" href="#">Most Popular
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
 
-                    <li class="nav-item" id="toprated">
+                    <li class="nav-item mx-1" id="toprated">
                         <a class="nav-link" href="#">Top Rated</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Whatever</a>
-                    </li>
-                    <li class="nav-item" id="intheaters">
+                    <li class="nav-item mx-1" id="intheaters">
                         <a class="nav-link" href="#">In Theaters</a>
                     </li>
-                    <li class="nav-item dropdown border-left border-secondary" id="dropdownli">
+                    <li class="nav-item dropdown border-left border-secondary mx-1" id="dropdownli">
                         <a class=" nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
                             Genre
@@ -137,7 +134,7 @@
                             <a class="dropdown-item hvr-sweep-to- genres" id="thriller"> Thriller</a>
                         </div>
                     </li>
-                     <li class="nav-item vertical-line ">
+                    <li class="nav-item vertical-line mx-1">
                         <div class="nav-link">
                             <div class="slidecontainer">
                                 <p class="text-center mt-2">Released in: <span id="year"></span></p>
@@ -145,12 +142,12 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item vertical-line border-left border-secondary">
+                    <li class="nav-item vertical-line border-left border-secondary mx-1">
                         <a class="nav-link" href="about">About us</a>
                     </li>
 
                     <!-- Slider -->
-                   
+
                     <!-- Slider END -->
                 </ul>
                 <!-- Links -->
