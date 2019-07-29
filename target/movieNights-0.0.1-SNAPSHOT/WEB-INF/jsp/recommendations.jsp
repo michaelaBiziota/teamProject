@@ -48,7 +48,7 @@
                 <div class="col-md-4 text-center mt-3"><h2>Recommendations</h2></div>
             </div>
 
-            <div class="par">
+            <div id="text" class="par">
                 <p>Many apps offer recommendations but usually fail to provide good ones.<br>
                     We decided to focus on great browsing experience that makes it easy to quickly find a movie you'll enjoy watching.
                     <br> Our recommendations are based on your preferences, so if you haven't done any exploring go back and do so!</p>

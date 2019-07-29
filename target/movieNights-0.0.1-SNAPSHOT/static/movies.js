@@ -60,7 +60,7 @@ function Load($) {
    
    
 //SEARCH BOX
-$("#searchForm").on("keyup",function (event) {
+$("#searchText").on("keyup",function (event) {
     event.preventDefault();
     let $userInput=$("#searchText").val();
     let URL = "https://api.themoviedb.org/3/search/movie?api_key=e58e3961f5be7e510894dc736fee6937&query="+$userInput;
