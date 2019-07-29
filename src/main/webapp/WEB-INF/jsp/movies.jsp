@@ -156,12 +156,12 @@
 
 
             <!-- Search -->
-            <form class="search" id="searchForm">
+           
                 <div class="md-form my-auto">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"
+                    <input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search"
                            id="searchText">
                 </div>
-            </form>
+            
             <!-- Search END -->
 
         </nav>
