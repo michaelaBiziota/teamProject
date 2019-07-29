@@ -20,7 +20,7 @@
             <!-- MovieNights Logo -->
             <div class="col-md-4 col-xs-12 mt-3">
                 <a href="${pageContext.request.contextPath}/movies">
-                    <img src="static/pictures/mn.png" class="mx-5 img-fluid" id="movienightsprof" title="Home">
+                    <img src="static/pictures/mn.png" class="mx-5 img-fluid" id="movienights" title="Home">
                 </a>
             </div>
             <!-- End -->
@@ -48,13 +48,20 @@
                     <h2 class="text-center my-3">Help us Grow</h2>
                 </div>
                 <p class="text-center par">Show us some love if you like what we're doing!</p>
-                <form method="post" action="paypal/make/payment">
-                    <input type="number" name="sum">Give me your money
-                    <input type="submit">
-                    
-                </form>
-            </div>
 
+                <div class="input-group mb-3 donate">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <div class="input-group-append">
+                        <span class="input-group-text">.00</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="paypal/make/payment"><img src="static/pictures/paypalbtn.png" class="mx-5 img-fluid mb-3" id="paypalbtn"></a>
+                </div>
+            </div>
         </div>
     </body>
 </html>

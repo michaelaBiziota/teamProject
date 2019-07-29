@@ -63,13 +63,7 @@
                                     <li><a href="accountSettings">Account Settings <span
                                                 class="glyphicon glyphicon-cog pull-right"></span></a>
                                     </li>
-                                    <li class="divider"></li><!--
-                                    <li><a href="watchList">Watchlist<span class="glyphicon  glyphicon-eye-open pull-right"></span></a>
-                                    </li>
                                     <li class="divider"></li>
-                                    <li><a href="alreadyWatchedMovies">Already Watched<span class="glyphicon glyphicon-eye-close pull-right"></span></a>
-                                    </li>
-                                    <li class="divider"></li>-->
                                     <li><a href="myMovies">My Movies <span class="glyphicon glyphicon-heart pull-right"></span></a>
                                     </li>
                                     <li class="divider"></li>

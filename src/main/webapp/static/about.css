@@ -26,3 +26,19 @@ a:hover {
     margin-right: auto;
     text-decoration:none;
 }
+
+.form-control{
+    text-align: right;
+}
+
+.donate{
+    width:200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+#paypalbtn{
+    width: 140px;
+    height: auto;
+}
