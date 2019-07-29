@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Recommendations</title>
+        <title>🎬 Recommendations</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -50,8 +50,10 @@
 
             <div class="par">
                 <p>Many apps offer recommendations but usually fail to provide good ones.<br>
-                    We decided to focus on great browsing experience that makes it easy to quickly find a movie you'll enjoy watching.</p>
+                    We decided to focus on great browsing experience that makes it easy to quickly find a movie you'll enjoy watching.
+                    <br> Our recommendations are based on your preferences, so if you haven't done any exploring go back and do so!</p>
             </div>
+
         </div>
         <div class="container">
             <div class="container my-4">

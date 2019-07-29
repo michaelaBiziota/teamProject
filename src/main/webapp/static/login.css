@@ -111,11 +111,11 @@ input:focus {
     z-index: 0;
 }
 
-#text{
+article{
     width: 30%;
     position: absolute;
-    top: 90px;
-    margin-top: 90px;
+    top: 10px;
+    margin-top: 20px;
     left:50px;
     z-index: 0;
 }
