@@ -49,7 +49,7 @@ public Map<String, Object> createPayment(String sum){
 
     RedirectUrls redirectUrls = new RedirectUrls();
     redirectUrls.setCancelUrl("http://localhost:8080/cancel");
-    redirectUrls.setReturnUrl("http://localhost:8080/movieNights/payPalSuccess.jsp");
+    redirectUrls.setReturnUrl("http://localhost:8080/movieNights/index.jsp");
     payment.setRedirectUrls(redirectUrls);
     Payment createdPayment;
     try {

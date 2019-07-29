@@ -40,5 +40,12 @@ public Map<String, Object> completePayment(HttpServletRequest request){
     return payPalClient.completePayment(request);
 }
 
-
+//    @GetMapping(value = "/semicomplete")
+//public String semicompletePayment(ModelMap mm,@RequestParam("paymentId") String p, @RequestParam("PayerID") String pa){
+//    mm.addAttribute("payment",p);
+//    mm.addAttribute("payer",pa);
+//    return "payPalSuccess";
 }
+
+
+
