@@ -28,7 +28,6 @@
         <link rel="stylesheet" type="text/css" href="static/header.css">
         <link rel="stylesheet" type="text/css" href="static/navbar.css">
         <link rel="stylesheet" type="text/css" href="static/movies.css">
-
     </head>
 
     <body>
@@ -156,12 +155,12 @@
 
 
             <!-- Search -->
-           
-                <div class="md-form my-auto">
-                    <input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search"
-                           id="searchText">
-                </div>
-            
+
+            <div class="md-form my-auto">
+                <input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search"
+                       id="searchText">
+            </div>
+
             <!-- Search END -->
 
         </nav>
@@ -174,6 +173,17 @@
         </div>
         <!-- Movies End-->
 
+        <!--Pagination-->
+        <div class="text-center h4 mb-4"> 
+            <span class="mx-2 mb-5 page" id="p1">&laquo;</span>
+            <span class="mx-2 page" id="p1">1</span>
+            <span  class="mx-2 page" id="p2">2</span>
+            <span  class="mx-2 page" id="p3">3</span>
+            <span  class="mx-2 page" id="p4">4</span>
+            <span  class="mx-2 page" id="p5">5</span>
+            <span  class="mx-2 mb-5 page" id="p5">&raquo;</span>
+        </div>
+        <!--Pagination END-->
         <script src="static/slider.js"></script>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="static/movies.js"></script>

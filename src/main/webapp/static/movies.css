@@ -103,3 +103,12 @@ h2 ,.profpage{
 #movienightsrec {
     width: 400px;
 }
+.page{
+   cursor: pointer;
+       padding: 5px;
+}
+.page:hover{
+    background-color: gray;
+    border-radius: 50px;
+    padding: 5px;
+}

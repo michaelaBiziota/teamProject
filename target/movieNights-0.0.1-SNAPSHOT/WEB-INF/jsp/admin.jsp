@@ -33,7 +33,7 @@
                 <!-- End -->
                 <div class="col-md-4 text-center mt-3 text-white"><h2>Users</h2></div>
             </div>
-            <table class="col-9 table-hover my-5">
+            <table class="col-10 table-hover my-5">
                 <tr><th>Username</th>
                     <th>Email Address</th>
                     <th>Firstname</th>
