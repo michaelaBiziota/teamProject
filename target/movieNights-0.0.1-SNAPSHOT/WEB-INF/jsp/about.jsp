@@ -49,19 +49,34 @@
                 </div>
                 <p class="text-center par">Show us some love if you like what we're doing!</p>
 
-                <div class="input-group mb-3 donate">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">$</span>
+                <form method="post" action="paypal/make/payment">
+                    <div class="input-group mb-3 donate">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+
+                        <input type="text" name="sum" class="form-control" aria-label="Amount (to the nearest dollar)">
+                        <div class="input-group-append">
+                            <span class="input-group-text">.00</span>
+                        </div>
                     </div>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    <div class="input-group-append">
-                        <span class="input-group-text">.00</span>
+                    <div class="text-center">
+                        <img src="static/pictures/paypalbtn.png" class="mx-5 img-fluid mb-3" id="paypalbtn">
+
                     </div>
-                </div>
-                <div class="text-center">
-                    <a href="paypal/make/payment"><img src="static/pictures/paypalbtn.png" class="mx-5 img-fluid mb-3" id="paypalbtn"></a>
-                </div>
+                </form>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script>
+            jQuery(Load);
+            function Load($) {
+                $("#paypalbtn").on("click", function () {
+                    $("form").submit();
+                }
+                );
+            }
+
+        </script>
     </body>
 </html>
