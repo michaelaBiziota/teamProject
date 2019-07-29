@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login Page</title>
+        <title>🎬 Login</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -75,16 +75,22 @@
             </div>
         </div>
         <article >
-            <div class="card-body text-center">
+            <div class="card-body text-left">
 
-                <p class="h5 text-white text-left" id="text">
+                <p class="h5 text-white my-5">
                     Welcome to Movie Nights,<br> the biggest online
-                    Movies Library with a twist!<br><br> Tons of websites
+                    Movies Library with a twist!
+                </p>
+                <p class="h5 text-white my-5">Tons of websites
                     offer recommendations but fail to provide
-                    good ones.<br><br> Instead of picking movies for you,
+                    good ones.
+                </p>
+                <p class="h5 text-white my-5">Instead of picking movies for you,
                     we make it super easy to discover great stuff
                     yourself.We’ve collected movie data from
-                    around the web so you don’t have to.<br><br> Just tell
+                    around the web so you don’t have to.
+                </p> 
+                <p class="h5 text-white my-5">Just tell
                     us what kind of movies you’re looking for and
                     we’ll give you the best there are.
                 </p>

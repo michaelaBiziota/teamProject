@@ -15,7 +15,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>MovieNights</title>
+        <title>🎬 MovieNights</title>
         <script src="https://code.jquery.com/jquery-3.4.0.min.js"
         integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -92,7 +92,7 @@
 
             <!--        <a href="#HOME" data-toggle="tooltip" data-placement="bottom" title="Home"><img class="logo" alt="Brand"
                             src="static/cam.png"></a>-->
-            <a class="navbar-brand " href="${pageContext.request.contextPath}/getRecommendations">Recommended Movies</a>
+            <a class="navbar-brand " href="${pageContext.request.contextPath}/getRecommendations">What should I watch?</a>
             <!-- Collapse button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
                     aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
