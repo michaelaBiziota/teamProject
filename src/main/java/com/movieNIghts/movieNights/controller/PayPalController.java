@@ -9,18 +9,20 @@ import com.movieNIghts.movieNights.paypal.PayPalClient;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
  * @author bizmi
  */
-@RestController
+@Controller
 @RequestMapping(value = "/paypal")
 public class PayPalController {
 
@@ -29,15 +31,16 @@ public class PayPalController {
     PayPalController(PayPalClient payPalClient){
         this.payPalClient = payPalClient;
     }
-
+//@ResponseBody
     @PostMapping(value = "/make/payment")
-    public Map<String, Object> makePayment(@RequestParam("sum") String sum){
-        return payPalClient.createPayment(sum);
+    public String makePayment(@RequestParam("sum") String sum){
+        return "redirect:" + payPalClient.createPayment(sum);
     }
     
     @GetMapping(value = "/complete/payment")
-public Map<String, Object> completePayment(HttpServletRequest request){
-    return payPalClient.completePayment(request);
+public String completePayment(HttpServletRequest request){
+     payPalClient.completePayment(request);
+     return "payPalSuccess";
 }
 
 //    @GetMapping(value = "/semicomplete")

@@ -29,7 +29,7 @@ import org.springframework.stereotype.Service;
 public class PayPalClient {
   String clientId = "ASusynDkqoPMuUr2mGt_cxbVqiI0_bZ8N-76m03dnfVK9I9aD5tltVZg4qEBeu0RX4iLx9YZj3xfjOo6";
 String clientSecret = "EACoVzgxBHbVORbNVpHJghIlATeDTaZ6PHZT4MzSFQ-c97ASGAQR2kXKvLQB1Xjq7vZlM77adM1WO8U-";
-public Map<String, Object> createPayment(String sum){
+public String createPayment(String sum){
     Map<String, Object> response = new HashMap<String, Object>();
     Amount amount = new Amount();
     amount.setCurrency("USD");
@@ -49,11 +49,12 @@ public Map<String, Object> createPayment(String sum){
 
     RedirectUrls redirectUrls = new RedirectUrls();
     redirectUrls.setCancelUrl("http://localhost:8080/cancel");
-    redirectUrls.setReturnUrl("http://localhost:8080/movieNights/index.jsp");
+    redirectUrls.setReturnUrl("http://localhost:8080/movieNights/paypal/complete/payment");
     payment.setRedirectUrls(redirectUrls);
     Payment createdPayment;
+    String redirectUrl = "";
     try {
-        String redirectUrl = "";
+        
         APIContext context = new APIContext(clientId, clientSecret, "sandbox");
         createdPayment = payment.create(context);
         if(createdPayment!=null){
@@ -64,13 +65,14 @@ public Map<String, Object> createPayment(String sum){
                     break;
                 }
             }
-            response.put("status", "success");
-            response.put("redirect_url", redirectUrl);
+//            response.put("status", "success");
+//            response.put("redirect_url", redirectUrl);
+            
         }
     } catch (PayPalRESTException e) {
         System.out.println("Error happened during payment creation!");
     }
-    return response;
+    return redirectUrl;
 } 
 
 

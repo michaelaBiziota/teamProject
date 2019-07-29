@@ -12,7 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href="paypal/complete/payment">Confirm</a>
+        <p>Thank you for your contribution.</p>
+        <a href="${pageContext.request.contextPath}/movies">Bsck to movieNights</a>
 
     </body>
     
