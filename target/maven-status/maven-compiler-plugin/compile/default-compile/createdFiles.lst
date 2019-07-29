@@ -28,7 +28,9 @@ com\movieNIghts\movieNights\model\Seenmovies.class
 com\movieNIghts\movieNights\authentication\AuthenticationFacadeImpl.class
 com\movieNIghts\movieNights\controller\AdminController.class
 com\movieNIghts\movieNights\repository\VerificationRepository.class
+com\movieNIghts\movieNights\paypal\PayPalClient.class
 com\movieNIghts\movieNights\model\Userandmovie.class
+com\movieNIghts\movieNights\controller\PayPalController.class
 com\movieNIghts\movieNights\ServletInitializer.class
 com\movieNIghts\movieNights\validation\UserValidation.class
 com\movieNIghts\movieNights\model\Roles_.class

@@ -48,6 +48,11 @@
                     <h2 class="text-center my-3">Help us Grow</h2>
                 </div>
                 <p class="text-center par">Show us some love if you like what we're doing!</p>
+                <form method="post" action="paypal/make/payment">
+                    <input type="number" name="sum">Give me your money
+                    <input type="submit">
+                    
+                </form>
             </div>
 
         </div>

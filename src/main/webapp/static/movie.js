@@ -1,5 +1,6 @@
 jQuery(Load);
 function Load($) {
+
 //toggleAtr
     $.fn.toggleAttrVal = function (attr, val1, val2) {
         var test = $(this).attr(attr);
