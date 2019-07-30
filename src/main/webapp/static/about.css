@@ -42,3 +42,17 @@ a:hover {
     width: 140px;
     height: auto;
 }
+
+/*Payment Successful*/
+
+#thankyou{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 45px;
+    width: 400px;
+}
+
+.btn{
+    font-size: 19px;
+}
