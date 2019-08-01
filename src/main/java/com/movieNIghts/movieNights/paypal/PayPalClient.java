@@ -65,8 +65,6 @@ public String createPayment(String sum){
                     break;
                 }
             }
-//            response.put("status", "success");
-//            response.put("redirect_url", redirectUrl);
             
         }
     } catch (PayPalRESTException e) {

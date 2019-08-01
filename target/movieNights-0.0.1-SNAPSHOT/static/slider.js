@@ -9,6 +9,7 @@ slider.oninput = function () {
 
 
 $("#myRange").on("keyup click",function(){
+    $("#pages").html("");
    var currentVal=slider.value;
      if($(".active").attr("id")==="popular"){
     URL = "https://api.themoviedb.org/3/discover/movie?api_key=e58e3961f5be7e510894dc736fee6937&language=en-US&sort_by=popularity.desc&include_adult=false&page=1&vote_count.gte=200&primary_release_year="+currentVal;

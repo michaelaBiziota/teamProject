@@ -168,14 +168,7 @@
         <!-- Movies End-->
 
         <!--Pagination-->
-        <div class="text-center h4 mb-4"> 
-            <span class="mx-2 mb-5 page" id="p1">&laquo;</span>
-            <span class="mx-2 page" id="p1">1</span>
-            <span  class="mx-2 page" id="p2">2</span>
-            <span  class="mx-2 page" id="p3">3</span>
-            <span  class="mx-2 page" id="p4">4</span>
-            <span  class="mx-2 page" id="p5">5</span>
-            <span  class="mx-2 mb-5 page" id="p5">&raquo;</span>
+        <div class="text-center h4 mb-4" id="pages">
         </div>
         <!--Pagination END-->
         <script src="static/slider.js"></script>
