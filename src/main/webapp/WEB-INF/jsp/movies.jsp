@@ -127,7 +127,7 @@
                             <a class="dropdown-item hvr-sweep-to- genres" id="thriller"> Thriller</a>
                         </div>
                     </li>
-                    <li class="nav-item vertical-line mx-1">
+                    <li class="nav-item vertical-line mx-1 mx-auto">
                         <div class="nav-link">
                             <div class="slidecontainer">
                                 <p class="text-center mt-2">Released in: <span id="year"></span></p>
@@ -150,7 +150,7 @@
 
             <!-- Search -->
 
-            <div class="md-form my-auto">
+            <div class="md-form my-auto mx-auto">
                 <input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search"
                        id="searchText">
             </div>

@@ -5,11 +5,19 @@ body {
 
 #movie img {
     width: auto;
+    height: 89%;
     border-radius: 15px;
     margin: 0 auto;
     display: flex;
     flex-wrap: nowrap;
     margin-top:17px;
+}
+
+#movienightsprof {
+    width: 400px;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #movie li {
@@ -30,7 +38,7 @@ body {
 iframe {
     border-radius: 15px;
     width: 100%;
-    height: 90%;
+    height: 89%;
     margin: 0 auto;
     border-style: none;
     margin-top:17px;
