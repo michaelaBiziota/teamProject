@@ -68,24 +68,6 @@
         </div>
                                 
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <script>
-            jQuery(App);
-            function App($) {
-                $("#confp").on("keyup", function () {
-                    if ($("#p").val() !== $("#confp").val()) {
-                        $("#s").prop("disabled", true);
-                        $("#conft").html("confirm password and password do not match");
-                    } else {
-                        $("#s").prop("disabled", false);
-                        $("#conft").html("");
-
-                    }
-                });
-
-            }
-
-
-
-        </script>
+        <script src="${pageContext.request.contextPath}/static/resetPassword.js"></script>
     </body>
 </html>

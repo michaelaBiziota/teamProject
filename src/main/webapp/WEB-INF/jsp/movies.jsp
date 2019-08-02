@@ -85,7 +85,7 @@
 
             <!--        <a href="#HOME" data-toggle="tooltip" data-placement="bottom" title="Home"><img class="logo" alt="Brand"
                             src="static/cam.png"></a>-->
-            <a class="navbar-brand " href="${pageContext.request.contextPath}/getRecommendations">What should I watch?</a>
+            <a class="navbar-brand " href="${pageContext.request.contextPath}/getRecommendations">What should I watch?</span></a>
             <!-- Collapse button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
                     aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">

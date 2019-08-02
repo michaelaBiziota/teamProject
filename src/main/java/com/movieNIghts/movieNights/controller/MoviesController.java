@@ -13,7 +13,6 @@ import com.movieNIghts.movieNights.dao.DaoWatchList;
 import com.movieNIghts.movieNights.model.Seenmovies;
 import com.movieNIghts.movieNights.model.User;
 import com.movieNIghts.movieNights.model.Userandmovie;
-import com.movieNIghts.movieNights.model.UserandmoviePK;
 import com.movieNIghts.movieNights.model.Watchlist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;

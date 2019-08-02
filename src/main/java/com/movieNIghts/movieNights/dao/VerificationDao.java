@@ -10,7 +10,6 @@ import com.movieNIghts.movieNights.model.Verificationtoken;
 import com.movieNIghts.movieNights.repository.VerificationRepository;
 import java.util.Calendar;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 /**

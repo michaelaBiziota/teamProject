@@ -7,11 +7,7 @@ package com.movieNIghts.movieNights.controller;
 
 import com.movieNIghts.movieNights.dao.DaoUser;
 import com.movieNIghts.movieNights.dao.PasswordResetDao;
-
-import com.movieNIghts.movieNights.model.PasswordResetToken;
 import com.movieNIghts.movieNights.model.User;
-import com.movieNIghts.movieNights.repository.PasswordResetTokenRepository;
-import com.movieNIghts.movieNights.repository.UserRepository;
 import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;

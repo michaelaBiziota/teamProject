@@ -8,7 +8,6 @@ package com.movieNIghts.movieNights.conf;
 import com.movieNIghts.movieNights.model.User;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.stream.Collectors;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

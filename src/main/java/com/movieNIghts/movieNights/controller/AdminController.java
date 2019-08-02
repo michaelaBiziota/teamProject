@@ -5,29 +5,22 @@
  */
 package com.movieNIghts.movieNights.controller;
 
-import com.movieNIghts.movieNights.conf.UserDetailsImpl;
+
 import com.movieNIghts.movieNights.dao.DaoRoles;
 import com.movieNIghts.movieNights.dao.DaoUser;
 import com.movieNIghts.movieNights.model.User;
 import com.movieNIghts.movieNights.repository.UserRepository;
 import com.movieNIghts.movieNights.validation.UserValidation;
-import java.util.List;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  *

@@ -5,7 +5,7 @@
  */
 package com.movieNIghts.movieNights.validation;
 
-import com.movieNIghts.movieNights.conf.MyUserDetailsService;
+
 import com.movieNIghts.movieNights.dao.DaoUser;
 import com.movieNIghts.movieNights.model.User;
 import org.springframework.beans.factory.annotation.Autowired;

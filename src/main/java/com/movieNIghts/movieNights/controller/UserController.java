@@ -16,10 +16,7 @@ import com.movieNIghts.movieNights.dao.DaoUserAndMovie;
 import com.movieNIghts.movieNights.dao.DaoWatchList;
 import com.movieNIghts.movieNights.dao.VerificationDao;
 import com.movieNIghts.movieNights.emailConfig.EmailService;
-import com.movieNIghts.movieNights.model.Roles;
 import com.movieNIghts.movieNights.model.User;
-import com.movieNIghts.movieNights.model.Userandmovie;
-import com.movieNIghts.movieNights.model.UserandmoviePK;
 import com.movieNIghts.movieNights.repository.UserRepository;
 import com.movieNIghts.movieNights.validation.UserValidation;
 import java.util.UUID;
@@ -36,12 +33,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  *

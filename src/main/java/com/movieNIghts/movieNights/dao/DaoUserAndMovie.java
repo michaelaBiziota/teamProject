@@ -5,7 +5,7 @@
  */
 package com.movieNIghts.movieNights.dao;
 
-import com.movieNIghts.movieNights.model.User;
+
 import com.movieNIghts.movieNights.model.Userandmovie;
 import com.movieNIghts.movieNights.model.UserandmoviePK;
 import com.movieNIghts.movieNights.repository.UserAndMovieRepository;
